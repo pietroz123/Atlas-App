@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Ícones -->
-        <link rel="shortcut icon" href="{{ asset('img/icons/logo.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('img/icons/atlas-heart.png') }}" type="image/x-icon">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">

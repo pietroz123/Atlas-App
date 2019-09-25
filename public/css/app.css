@@ -70,6 +70,10 @@
   transition: all 0.55s ease-in-out;
 }
 
+.mt-5rem {
+  margin-top: 5rem;
+}
+
 .mt-7rem {
   margin-top: 7rem;
 }
