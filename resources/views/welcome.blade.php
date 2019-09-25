@@ -14,14 +14,14 @@
         </div>
 
         <div class="choices">
-            <div class="choice">
+            <a href="" class="choice">
                 <div class="circle patients"></div>
                 <p>Sou um paciente</p>
-            </div>
-            <div class="choice">
+            </a>
+            <a href="" class="choice">
                 <div class="circle doctors"></div>
                 <p>Sou um médico</p>
-            </div>
+            </a>
         </div>
 
     </section>
