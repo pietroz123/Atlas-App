@@ -24,12 +24,25 @@ body {
 .main-icon {
     width: 40px;
 }
-.navbar-brand {
-    .brand {
-        display: inline-block;
-        font-size: 1.2rem;
-        vertical-align: middle;
-        padding-top: 5px;
+
+// =======================================================
+// BARRA DE NAVEGAÇÃO
+// =======================================================
+
+#main-navbar {
+    box-shadow: none;
+    padding: 30px 0;
+    font-size: 15px;
+    .navbar-brand {
+        .brand {
+            display: inline-block;
+            font-size: 1.2rem;
+            vertical-align: middle;
+            padding-top: 5px;
+        }
+    }
+    .nav-link {
+        
     }
 }
 
