@@ -4,65 +4,26 @@
 
 @section('content')
 
-    <style>
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
-            font-weight: 200;
-            height: 100vh;
-            margin: 0;
-        }
+    <section id="user-selection">
 
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
-    </style>
-
-    <div class="flex-center position-ref full-height">
-        <div class="content">
-            <div class="title m-b-md">
-                Atlas
+        <div class="row">
+            <div class="col-7">
+                <h2 class="mt-7rem">A plataforma perfeita para as suas necessidades. Seja você um paciente, ou médico.</h2>
+                <p>Com a nossa plataforma, marcar uma consulta vai ser mais fácil do que nunca.</p>
             </div>
         </div>
-    </div>
+
+        <div class="choices">
+            <div class="choice">
+                <div class="circle patients"></div>
+                <p>Sou um paciente</p>
+            </div>
+            <div class="choice">
+                <div class="circle doctors"></div>
+                <p>Sou um médico</p>
+            </div>
+        </div>
+
+    </section>
     
 @endsection
