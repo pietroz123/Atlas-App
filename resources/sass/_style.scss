@@ -31,7 +31,7 @@ body {
 
 #main-navbar {
     box-shadow: none;
-    padding: 30px 0;
+    padding: 15px 0;
     font-size: 15px;
     .navbar-brand {
         .brand {
@@ -42,7 +42,14 @@ body {
         }
     }
     .nav-link {
-        
+        border-bottom: 3px solid transparent;
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+        &:hover {
+            border-bottom: 3px solid $main-color;
+        }
     }
 }
 
@@ -77,8 +84,9 @@ body {
             -webkit-transition: all 0.55s ease-in-out;
             -o-transition: all 0.55s ease-in-out;
             transition: all 0.55s ease-in-out;
+            background: white;
             &.patients {
-                background: url(../img/icons/patients.png);
+                background-image: url(../img/icons/patients.png);
                 background-size: 100%;
                 background-position: center;
             }
@@ -90,7 +98,6 @@ body {
             }
         }
         &:hover {
-            color: #38a8f4;
             .circle {
                 transform: scale(1.05);
                 -webkit-transition: all 0.55s ease-in-out;
