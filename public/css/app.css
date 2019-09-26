@@ -153,6 +153,12 @@
 .cta-home:hover:after {
   opacity: 0.2;
 }
+.cta-home:active {
+  box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px #717171, 0 0 0 6px rgba(255, 255, 255, 0.5) !important;
+  outline: none !important;
+  transition: box-shadow 0.2s ease !important;
+  background-color: #3A688A;
+}
 
 #customers-hero {
   min-height: calc(100vh - 80px);

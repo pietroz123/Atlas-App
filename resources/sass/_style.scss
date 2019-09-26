@@ -177,7 +177,15 @@ body {
 		&:after {
 			opacity: .2;
 		}
-	}
+    }
+    &:active {
+        box-shadow: 0 0 0 4px #ffffff, 0 0 0 5px #717171, 0 0 0 6px rgba(255,255,255,0.5) !important;
+        outline: none !important;
+        -webkit-transition: box-shadow 0.2s ease !important;
+        -moz-transition: box-shadow 0.2s ease !important;
+        transition: box-shadow 0.2s ease !important;
+        background-color: $main-color-dark;
+    }
 }
 
 #customers-hero {
