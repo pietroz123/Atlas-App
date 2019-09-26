@@ -180,8 +180,13 @@ body {
 	}
 }
 
-#patients-hero {
+#customers-hero {
     min-height: calc(100vh - 80px);
+    .medics-background {
+        padding-top: 110px;
+        width: 100%;
+        transform: scale(1.1);
+    }
 }
 
 .features {

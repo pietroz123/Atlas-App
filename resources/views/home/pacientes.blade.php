@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <section id="patients-hero">
+    <section id="customers-hero">
         <div class="container">
 
             <div class="row">

@@ -154,8 +154,13 @@
   opacity: 0.2;
 }
 
-#patients-hero {
+#customers-hero {
   min-height: calc(100vh - 80px);
+}
+#customers-hero .medics-background {
+  padding-top: 110px;
+  width: 100%;
+  transform: scale(1.1);
 }
 
 .features {
