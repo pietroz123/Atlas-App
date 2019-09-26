@@ -28,7 +28,7 @@ body {
 }
 
 // =======================================================
-// BARRA DE NAVEGAÇÃO
+// NAVBAR
 // =======================================================
 
 #main-navbar {
@@ -37,6 +37,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     font-family: $font-exo;
+    min-height: 80px;
     .navbar-brand {
         .brand {
             display: inline-block;
@@ -174,4 +175,30 @@ body {
 			opacity: .2;
 		}
 	}
+}
+
+#patients-hero {
+    min-height: calc(100vh - 80px);
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    .feature {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 18rem;
+        text-align: center;
+        margin-bottom: 75px;
+        margin-right: 50px;
+        .feature-header {
+            font-weight: 600;
+        }
+        .icon {
+            height: 70px;
+            margin-bottom: 1rem;
+        }
+    }
 }
