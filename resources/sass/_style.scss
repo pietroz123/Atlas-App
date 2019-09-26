@@ -26,6 +26,9 @@ body {
 .main-icon {
     width: 49px;
 }
+.underlined {
+    border-bottom: 5px solid $main-color;
+}
 
 // =======================================================
 // NAVBAR
@@ -201,4 +204,10 @@ body {
             margin-bottom: 1rem;
         }
     }
+}
+
+section#start {
+    padding: 100px;
+    color: white;
+    background: #3a688a;
 }

@@ -18,6 +18,10 @@
   width: 49px;
 }
 
+.underlined {
+  border-bottom: 5px solid #5EB1D0;
+}
+
 #main-navbar {
   box-shadow: none;
   padding: 15px 0;
@@ -174,6 +178,12 @@
 .features .feature .icon {
   height: 70px;
   margin-bottom: 1rem;
+}
+
+section#start {
+  padding: 100px;
+  color: white;
+  background: #3a688a;
 }
 
 .mt-2rem {
