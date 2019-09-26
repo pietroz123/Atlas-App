@@ -78,8 +78,8 @@
   background: white;
 }
 .choices .choice .circle.patients {
-  background-image: url(../img/icons/patients.png);
-  background-size: 100%;
+  background-image: url(../img/icons/patients.svg);
+  background-size: 120%;
   background-position: center;
 }
 .choices .choice .circle.doctors {

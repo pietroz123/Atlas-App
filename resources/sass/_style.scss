@@ -95,8 +95,8 @@ body {
             transition: all 0.55s ease-in-out;
             background: white;
             &.patients {
-                background-image: url(../img/icons/patients.png);
-                background-size: 100%;
+                background-image: url(../img/icons/patients.svg);
+                background-size: 120%;
                 background-position: center;
             }
             &.doctors {
