@@ -160,7 +160,10 @@
 #customers-hero .medics-background {
   padding-top: 110px;
   width: 100%;
-  transform: scale(1.1);
+  transform: scale(1.2);
+}
+#customers-hero .patients-background {
+  padding-top: 20px;
 }
 
 .features {

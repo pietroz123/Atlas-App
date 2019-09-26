@@ -8,7 +8,7 @@
         <div class="container">
 
             <div class="row">
-                <div class="col-7">
+                <div class="col-5">
                     <h2 class="mt-7rem">Todas as suas consultas na palma da sua mão.</h2>
                     <p class="f-18 mt-3">Com a nossa plataforma, marcar uma consulta vai ser ainda mais fácil.</p>
                     <a class="cta-home mt-3">
@@ -16,6 +16,9 @@
                         <span class="icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                     </a>
                     <span class="d-block mt-2 f-13">Não existem taxas de adesão à plataforma.</span>
+                </div>
+                <div class="col">
+                    <img src="{{ asset('img/back/happy-family.svg') }}" class="patients-background" alt="Família feliz">
                 </div>
             </div>
 
