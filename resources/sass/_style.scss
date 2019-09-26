@@ -15,6 +15,8 @@ body {
     font-family: $font-asap !important;
     font-family: $font-exo !important;
     font-family: $font-open-sans !important;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 // =======================================================
@@ -22,7 +24,7 @@ body {
 // =======================================================
 
 .main-icon {
-    width: 40px;
+    width: 49px;
 }
 
 // =======================================================
@@ -32,11 +34,14 @@ body {
 #main-navbar {
     box-shadow: none;
     padding: 15px 0;
-    font-size: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: $font-exo;
     .navbar-brand {
         .brand {
             display: inline-block;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
+            font-family: $font-exo;
             vertical-align: middle;
             padding-top: 5px;
         }
@@ -106,4 +111,67 @@ body {
             }
         }
     }
+}
+
+.cta-home {
+	border-radius: 4px;
+	border: 2px solid $main-color;
+    color: white !important;
+    display: inline-block;
+    background: $main-color;
+	overflow: hidden;
+	padding: 16px 60px 16px 16px;
+	position: relative;
+	text-decoration: none;
+	line-height: 1;
+	.content {
+		font-size: 1em;
+		line-height: 1.2;
+		padding: 0 26px;
+		position: relative;
+		right: 0;
+		transition: right 300ms ease;
+		display: block;
+		text-align: left;
+	}
+	.icon {
+		border-left: 2px solid white;
+		position: absolute;
+		right: 0;
+		text-align: center;
+		top: 50%;
+		transition: all 300ms ease;
+		transform: translateY(-50%);
+		width: 58px;
+		height: 70%;
+		i {
+			position: relative;
+			top: 50%;
+			transform: translateY(-50%);
+		}
+	}
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		background-color: $main-color;
+		opacity: 0;
+		transition: opacity 300ms ease;
+	}
+	&:hover {
+		.content {
+			right: 100%;
+		}
+		.icon {
+			border-left: 0;
+			font-size: 1.8em;
+			width: 100%;
+		}
+		&:after {
+			opacity: .2;
+		}
+	}
 }
