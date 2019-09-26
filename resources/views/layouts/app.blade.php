@@ -32,11 +32,13 @@
         <div id="app">
             @include('includes.navbar')
             @yield('header-bar')
-            <main class="py-2 @yield('main-class')">
+            <main class="@yield('main-class')">
                 @include('includes.alerts')
                 @yield('content')
             </main>
         </div>
+
+        @include('includes.footer')
         
         <!-- Scripts -->
         <script src="{{ asset('js/mdbootstrap.js') }}"></script>            {{-- MDBootsrap --}}
