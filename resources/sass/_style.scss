@@ -247,3 +247,72 @@ section#start {
     color: white;
     background: #3a688a;
 }
+
+// =======================================================
+// HOME DOCTORS
+// =======================================================
+
+section#doctor-skeleton {
+    .rectangle {
+        background: #3a688a;
+        width: 400px;
+        height: 540px;
+        position: absolute;
+        top: 800px;
+    }
+    .container-skeleton {
+        display: flex;
+        .skeleton {
+            max-width: 66.66667%;
+        }
+        .skeleton-description {
+            padding-left: 50px;
+        }
+    }
+    .carousel-inner {
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+        border-radius: 10px;
+    }
+    .doctor-features {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 30px;
+        li {
+            padding: 15px;
+            font-size: 20px;
+            border-left: 6px solid $main-color;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
+            display: flex;
+            align-items: center;
+            &:not(:last-of-type) {
+                margin-bottom: 10px;
+            }
+            &::before {
+                font-size: 1.75rem;
+                padding-right: 10px;
+            }
+            &.agenda {
+                &::before {
+                    font-family: "Font Awesome 5 Pro"; font-weight: 900; content: "\f274";
+                    color: $main-color-dark;
+                }
+            }
+            &.ratings {
+                &::before {
+                    font-family: "Font Awesome 5 Pro"; font-weight: 900; content: "\f005";
+                    color: $main-color-dark;
+                }
+            }
+            &.payments {
+                &::before {
+                    font-family: "Font Awesome 5 Pro"; font-weight: 900; content: "\f09d";
+                    color: $main-color-dark;
+                }
+            }
+        }
+    }
+}
+
+.carousel-control-prev, .carousel-control-next {
+    color: black !important;
+}

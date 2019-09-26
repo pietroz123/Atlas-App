@@ -25,6 +25,45 @@
         </div>
     </section>
 
+    <section id="doctor-skeleton" class="py-5">
+        <div class="rectangle"></div>
+        <div class="container container-skeleton">
+
+            <div class="skeleton">
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="{{ asset('img/interface/1.png') }}" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ asset('img/interface/2.png') }}" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ asset('img/interface/3.png') }}" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                        <i class="fas fa-chevron-left"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                        <i class="fas fa-chevron-right"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="skeleton-description">
+                <h2>Uma única plataforma para todas as suas necessidades</h2>
+                <ul class="doctor-features">
+                    <li class="agenda">Agenda</li>
+                    <li class="ratings">Avaliações</li>
+                    <li class="payments">Pagamentos</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
     <section id="client-features" class="mt-5">
         <div class="container">
 
