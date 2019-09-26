@@ -19,7 +19,7 @@
                     <div class="circle patients"></div>
                     <p>Sou um paciente</p>
                 </a>
-                <a href="#!" class="choice">
+                <a href="/clientes/medicos" class="choice">
                     <div class="circle doctors"></div>
                     <p>Sou um médico</p>
                 </a>
