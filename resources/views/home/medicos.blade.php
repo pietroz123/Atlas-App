@@ -25,7 +25,7 @@
         </div>
     </section>
 
-    <section id="patients-features">
+    <section id="client-features" class="mt-5">
         <div class="container">
 
             <h2>O que você irá encontrar na nossa plataforma?</h2>

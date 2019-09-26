@@ -158,12 +158,7 @@
   min-height: calc(100vh - 80px);
 }
 #customers-hero .medics-background {
-  padding-top: 110px;
   width: 100%;
-  transform: scale(1.2);
-}
-#customers-hero .patients-background {
-  padding-top: 20px;
 }
 
 .features {
@@ -216,4 +211,17 @@ section#start {
 
 .f-38 {
   font-size: 38px !important;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1198.98px) {
+  #customers-hero .medics-background {
+    padding-top: 50px;
+    width: 100%;
+    transform: scale(1.1);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  #customers-hero .medics-background {
+    padding-top: 50px;
+  }
 }
