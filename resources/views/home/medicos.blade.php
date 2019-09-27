@@ -54,7 +54,7 @@
                 <div class="skeleton-description">
                     <h2>Uma única plataforma para todas as suas necessidades</h2>
                     <ul class="doctor-features">
-                        <li class="agenda"><span>Agenda</span></li>
+                        <li class="agenda active"><span>Agenda</span></li>
                         <li class="ratings"><span>Avaliações</span></li>
                         <li class="payments"><span>Pagamentos</span></li>
                     </ul>

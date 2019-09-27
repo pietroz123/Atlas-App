@@ -252,13 +252,24 @@ section#doctor-skeleton .doctor-features span {
 section#doctor-skeleton .doctor-features li {
   padding: 15px;
   font-size: 20px;
-  border-left: 6px solid #5EB1D0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   border-radius: 5px;
   display: flex;
   align-items: center;
+}
+section#doctor-skeleton .doctor-features li.active {
+  border-left: 6px solid #5EB1D0;
   background: white;
   color: black;
+}
+section#doctor-skeleton .doctor-features li.active.agenda::before {
+  color: #3A688A;
+}
+section#doctor-skeleton .doctor-features li.active.ratings::before {
+  color: #3A688A;
+}
+section#doctor-skeleton .doctor-features li.active.payments::before {
+  color: #3A688A;
 }
 section#doctor-skeleton .doctor-features li:not(:last-of-type) {
   margin-bottom: 10px;
@@ -272,19 +283,16 @@ section#doctor-skeleton .doctor-features li.agenda::before {
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
   content: "\F274";
-  color: #3A688A;
 }
 section#doctor-skeleton .doctor-features li.ratings::before {
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
   content: "\F005";
-  color: #3A688A;
 }
 section#doctor-skeleton .doctor-features li.payments::before {
   font-family: "Font Awesome 5 Pro";
   font-weight: 900;
   content: "\F09D";
-  color: #3A688A;
 }
 section#doctor-skeleton .doctor-features li:hover {
   cursor: pointer;

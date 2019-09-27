@@ -282,13 +282,32 @@ section#doctor-skeleton {
         li {
             padding: 15px;
             font-size: 20px;
-            border-left: 6px solid $main-color;
             box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
             border-radius: 5px;
             display: flex;
             align-items: center;
-            background: white;
-            color: black;
+
+            &.active {
+                border-left: 6px solid $main-color;
+                background: white;
+                color: black;
+                &.agenda {
+                    &::before {
+                        color: $main-color-dark;
+                    }
+                }
+                &.ratings {
+                    &::before {
+                        color: $main-color-dark;
+                    }
+                }
+                &.payments {
+                    &::before {
+                        color: $main-color-dark;
+                    }
+                }
+            }
+
             &:not(:last-of-type) {
                 margin-bottom: 10px;
             }
@@ -300,19 +319,19 @@ section#doctor-skeleton {
             &.agenda {
                 &::before {
                     font-family: "Font Awesome 5 Pro"; font-weight: 900; content: "\f274";
-                    color: $main-color-dark;
+                    // color: $main-color-dark;
                 }
             }
             &.ratings {
                 &::before {
                     font-family: "Font Awesome 5 Pro"; font-weight: 900; content: "\f005";
-                    color: $main-color-dark;
+                    // color: $main-color-dark;
                 }
             }
             &.payments {
                 &::before {
                     font-family: "Font Awesome 5 Pro"; font-weight: 900; content: "\f09d";
-                    color: $main-color-dark;
+                    // color: $main-color-dark;
                 }
             }
 
