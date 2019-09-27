@@ -28,3 +28,6 @@ mix.scripts([
     'resources/lib/mdbootstrap/js/mdb.js',
     'resources/lib/mdbootstrap/js/datatables.js',
 ], 'public/js/mdbootstrap.js');
+
+// Arquivos JS
+mix.scripts('resources/js/home/medicos.js', 'public/js/home/medicos.js');

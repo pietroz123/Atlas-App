@@ -29,7 +29,7 @@
         <div class="container container-skeleton">
             
                 <div class="skeleton">
-                    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
+                    <div id="carousel-skeleton" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">
                         <div class="carousel-inner">
                             <div class="carousel-item active">
                                 <img class="d-block w-100" src="{{ asset('img/interface/1.png') }}" alt="First slide">
@@ -41,11 +41,11 @@
                                 <img class="d-block w-100" src="{{ asset('img/interface/3.png') }}" alt="Third slide">
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carousel-skeleton" role="button" data-slide="prev">
                             <i class="fas fa-chevron-left"></i>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carousel-skeleton" role="button" data-slide="next">
                             <i class="fas fa-chevron-right"></i>
                             <span class="sr-only">Next</span>
                         </a>
@@ -115,4 +115,8 @@
         </div>
     </section>
     
+@endsection
+
+@section('scripts')
+    <script src="{{ asset('js/home/medicos.js') }}"></script>
 @endsection
