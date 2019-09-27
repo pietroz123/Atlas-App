@@ -220,15 +220,13 @@ section#start {
   background: #3a688a;
 }
 
-section#doctor-skeleton .rectangle {
-  background: #3a688a;
-  width: 400px;
-  height: 540px;
-  position: absolute;
-  top: 800px;
+section#doctor-skeleton {
+  background: #5D90A5;
+  color: white;
 }
 section#doctor-skeleton .container-skeleton {
   display: flex;
+  position: relative;
 }
 section#doctor-skeleton .container-skeleton .skeleton {
   max-width: 66.66667%;
@@ -250,15 +248,19 @@ section#doctor-skeleton .doctor-features li {
   font-size: 20px;
   border-left: 6px solid #5EB1D0;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
   display: flex;
   align-items: center;
+  background: white;
+  color: black;
 }
 section#doctor-skeleton .doctor-features li:not(:last-of-type) {
   margin-bottom: 10px;
 }
 section#doctor-skeleton .doctor-features li::before {
   font-size: 1.75rem;
-  padding-right: 10px;
+  width: 35px;
+  text-align: center;
 }
 section#doctor-skeleton .doctor-features li.agenda::before {
   font-family: "Font Awesome 5 Pro";
