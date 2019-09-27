@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-md navbar-light" id="main-navbar">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            <img src="{{ asset('img/icons/atlas-heart.svg') }}" class="main-icon" alt="Ícone principal da página">
+            <img src="{{ secure_asset('img/icons/atlas-heart.svg') }}" class="main-icon" alt="Ícone principal da página">
             <span class="brand">atlas</span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
