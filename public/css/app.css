@@ -191,6 +191,9 @@ body {
 #customers-hero .medics-background {
   width: 100%;
 }
+#customers-hero .patients-background {
+  max-height: 80vh;
+}
 
 .features {
   display: flex;
