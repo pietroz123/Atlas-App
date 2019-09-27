@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Ícones -->
-        <link rel="shortcut icon" href="{{ secure_asset('img/icons/atlas-heart.png') }}" type="image/x-icon">
+        <link rel="shortcut icon" href="{{ asset('img/icons/atlas-heart.png') }}" type="image/x-icon">
 
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -15,14 +15,14 @@
         <title>@yield('title') • Atlas</title>
 
         <!-- Scripts -->
-        <script src="{{ secure_asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/app.js') }}"></script>
         
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         
         <!-- Styles -->
-        <link href="{{ secure_asset('css/mdbootstrap.css') }}" rel="stylesheet">
-        <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/mdbootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">      {{-- Font Awesome --}}
         @yield('styles')
         
@@ -41,7 +41,7 @@
         @include('includes.footer')
         
         <!-- Scripts -->
-        <script src="{{ secure_asset('js/mdbootstrap.js') }}"></script>            {{-- MDBootsrap --}}
+        <script src="{{ asset('js/mdbootstrap.js') }}"></script>            {{-- MDBootsrap --}}
         <script src="https://kit.fontawesome.com/5736e54317.js"></script>   {{-- Font Awesome --}}
         @yield('scripts')
     </body>
