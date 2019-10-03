@@ -15,6 +15,14 @@ Route::get('/', 'HomeController@index');
 Route::get('/clientes/pacientes', 'HomeController@pacientes');
 Route::get('/clientes/medicos', 'HomeController@medicos');
 
+// =======================================================
+// APPOINTMENTS ROUTES
+// =======================================================
+
+Route::get('/buscar', function() {
+    return view('appointments.buscar');
+});
+
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

@@ -2,5 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/mdbootstrap.css": "/css/mdbootstrap.css",
-    "/js/mdbootstrap.js": "/js/mdbootstrap.js"
+    "/js/mdbootstrap.js": "/js/mdbootstrap.js",
+    "/js/home/medicos.js": "/js/home/medicos.js"
 }

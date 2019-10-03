@@ -11,7 +11,7 @@
                 <div class="col-5">
                     <h2 class="mt-7rem">Todas as suas consultas na palma da sua mão.</h2>
                     <p class="f-18 mt-3">Com a nossa plataforma, marcar uma consulta vai ser ainda mais fácil.</p>
-                    <a class="cta-home mt-3">
+                    <a class="cta-home mt-3" href="/buscar">
                         <span class="content">Começar agora</span>
                         <span class="icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
                     </a>
@@ -73,7 +73,7 @@
                     <h2 class="mb-4">Começe a agendar suas consultas online <span class="underlined">hoje</span></h2>
                 </div>
             </div>
-            <a class="cta-home mt-3 mb-2">
+            <a class="cta-home mt-3 mb-2" href="/buscar">
                 <span class="content">Começar agora</span>
                 <span class="icon"><i class="fa fa-arrow-right" aria-hidden="true"></i></span>
             </a>

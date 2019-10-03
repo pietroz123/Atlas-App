@@ -307,6 +307,33 @@ section#doctor-skeleton .doctor-features li:hover {
   color: black !important;
 }
 
+/**
+ * Search Appointments
+ */
+#search-container {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+}
+
+#search-appointment .box {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+  padding: 40px;
+}
+#search-appointment .box .form-group {
+  margin-top: 15px;
+}
+#search-appointment .box .form-group:first-of-type {
+  margin-top: 20px;
+}
+#search-appointment .box button {
+  margin-top: 30px;
+}
+#search-appointment .box label {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
 .mt-2rem {
   margin-top: 2rem;
 }
@@ -329,6 +356,19 @@ section#doctor-skeleton .doctor-features li:hover {
 
 .f-38 {
   font-size: 38px !important;
+}
+
+.btn {
+  font-size: 1rem;
+  text-transform: none;
+  box-shadow: none !important;
+  padding: 0.375rem 0.75rem !important;
+  border-radius: 4px !important;
+  margin: 0;
+}
+
+button:hover, .btn:hover {
+  opacity: 0.8;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1198.98px) {

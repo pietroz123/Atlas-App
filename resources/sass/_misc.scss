@@ -26,3 +26,21 @@
 .f-38 {
     font-size: 38px !important;
 }
+
+// =======================================================
+// MDBootstrap
+// =======================================================
+
+.btn {
+    font-size: 1rem;
+    text-transform: none;
+    box-shadow: none !important;
+    padding: 0.375rem 0.75rem !important;
+    border-radius: 4px !important;
+    margin: 0;
+}
+button, .btn {
+    &:hover {
+        opacity: 0.8;
+    }
+}

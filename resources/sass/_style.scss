@@ -350,3 +350,46 @@ section#doctor-skeleton {
 .carousel-control-prev, .carousel-control-next {
     color: black !important;
 }
+
+
+// =======================================================
+// APPOINTMENTS
+// =======================================================
+
+/**
+ * Search Appointments
+ */
+
+#search-container {
+    
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+}
+
+#search-appointment {
+
+    .box {
+        box-shadow: 0 5px 11px 0 rgba(0,0,0,.18),0 4px 15px 0 rgba(0,0,0,.15);
+        padding: 40px;
+
+        .form-group {
+            margin-top: 15px;
+            &:first-of-type {
+                margin-top: 20px;
+            }
+        }
+
+        button {
+            margin-top: 30px;
+        }
+
+        label {
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+    }
+
+    
+
+}
