@@ -375,6 +375,12 @@ button:hover, .btn:hover {
   opacity: 0.8;
 }
 
+.form-control:focus, select:focus {
+  border-color: #3A688A !important;
+  box-shadow: 0 0 1px 1px #3A688A !important;
+  outline: 0 !important;
+}
+
 @media only screen and (min-width: 992px) and (max-width: 1198.98px) {
   #customers-hero .medics-background {
     padding-top: 50px;

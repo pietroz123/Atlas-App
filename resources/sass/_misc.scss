@@ -44,3 +44,8 @@ button, .btn {
         opacity: 0.8;
     }
 }
+.form-control:focus, select:focus {
+    border-color: $main-color-dark !important;
+    box-shadow: 0 0 1px 1px $main-color-dark !important;
+    outline: 0 !important;
+}
