@@ -338,6 +338,43 @@ section#doctor-skeleton .doctor-features li:hover {
   text-transform: uppercase;
 }
 
+/**
+ * Appointments Result
+ */
+#header-search {
+  display: flex;
+  align-items: center;
+}
+#header-search .header-logo {
+  padding: 24px;
+}
+#header-search .input-wrapper {
+  border: 0;
+  border-radius: 5px;
+  background: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 4px !important;
+  padding: 10px 20px;
+  display: flex;
+  width: 460px;
+}
+#header-search .input-icon {
+  padding-right: 10px;
+}
+#header-search .input-icon i {
+  color: #595959;
+  font-size: 20px;
+  vertical-align: middle;
+}
+#header-search .input-search {
+  border: 0;
+  width: 100%;
+  font-weight: 600;
+  color: #595959;
+}
+#header-search .input-search:focus {
+  outline: 0;
+}
+
 .mt-2rem {
   margin-top: 2rem;
 }

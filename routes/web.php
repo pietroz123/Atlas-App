@@ -21,7 +21,11 @@ Route::get('/clientes/medicos', 'HomeController@medicos');
 
 Route::get('/buscar', function() {
     return view('appointments.buscar');
-});
+})->name('appointments.search');
+
+Route::post('/resultado', function() {
+    return view('appointments.search-result');
+})->name('appointments.result');
 
 Auth::routes();
 
