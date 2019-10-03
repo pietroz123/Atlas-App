@@ -8,7 +8,7 @@
         <div class="container">
 
             <div class="row">
-                <div class="col">
+                <div class="col-5">
 
                     <!-- Search Appointments -->
                     <form id="search-appointment">
@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="col">
-
+                    <img src="{{ asset('img/back/family.jpg') }}" class="search-img" alt="Família feliz">
                 </div>
             </div>
 

@@ -361,16 +361,24 @@ section#doctor-skeleton {
  */
 
 #search-container {
-    
-    min-height: calc(100vh - 200px);
-    display: flex;
-    align-items: center;
+
+    .search-img {
+        width: 100%;
+    }
+
+    .row {
+        min-height: calc(100vh - 140px);
+        display: flex;
+        align-items: center;
+    }
+
 }
 
 #search-appointment {
 
     .box {
-        box-shadow: 0 5px 11px 0 rgba(0,0,0,.18),0 4px 15px 0 rgba(0,0,0,.15);
+        box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+        border-radius: 5px;
         padding: 40px;
 
         .form-group {
