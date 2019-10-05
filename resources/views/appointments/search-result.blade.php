@@ -68,5 +68,41 @@
 
 @section('content')
 
+    <div class="doctor-found">
+
+        <div class="container">
+            <div class="row">
+                <div class="col doctor-details">
+                    <div class="doctor-img-container">
+                        <img src="{{ asset('img/doctorr.jpg') }}" class="doctor-img" alt="Humberto Cenci Guimarães">
+                    </div>
+                    <div class="doctor-info">
+                        <p class="doctor-specialty">Oftalmologista</p>
+                        <p class="doctor-name">Dr. Humberto Cenci Guimarães</p>
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span>(18 avaliações)</span>
+                        </div>
+                        <p class="doctor-phone">
+                            <i class="fas fa-phone-alt"></i>
+                            (15) 3217-7283
+                        </p>
+                        <p class="doctor-address">
+                            <i class="fas fa-map-marker-alt"></i>
+                            Avenida Barão de Tatuí
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
     
 @endsection
