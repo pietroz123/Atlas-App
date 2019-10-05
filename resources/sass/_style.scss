@@ -406,12 +406,7 @@ section#doctor-skeleton {
 
 #header-search {
 
-    display: flex;
-    align-items: center;
-
-    .header-logo {
-        padding: 24px;
-    }
+    font-family: $font-exo;
 
     .input-wrapper {
         border: 0;

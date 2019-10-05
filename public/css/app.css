@@ -342,11 +342,7 @@ section#doctor-skeleton .doctor-features li:hover {
  * Appointments Result
  */
 #header-search {
-  display: flex;
-  align-items: center;
-}
-#header-search .header-logo {
-  padding: 24px;
+  font-family: "Exo", sans-serif;
 }
 #header-search .input-wrapper {
   border: 0;
