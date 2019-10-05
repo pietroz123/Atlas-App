@@ -4793,6 +4793,7 @@ section#doctor-skeleton .doctor-features li:hover {
 
 .doctor-found {
   border: 1px solid #D2D2D2;
+  padding: 5px;
 }
 .doctor-found p {
   margin: 0;
