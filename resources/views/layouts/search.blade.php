@@ -23,7 +23,6 @@
         <!-- Styles -->
         <link href="{{ asset('css/mdbootstrap.css') }}" rel="stylesheet">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" rel="stylesheet">      {{-- Font Awesome --}}
         @yield('styles')
         
     </head>
@@ -39,7 +38,6 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/mdbootstrap.js') }}"></script>            {{-- MDBootsrap --}}
-        <script src="https://kit.fontawesome.com/5736e54317.js"></script>   {{-- Font Awesome --}}
         @yield('scripts')
     </body>
 
