@@ -4847,9 +4847,10 @@ section#doctor-skeleton .doctor-features li:hover {
 }
 .doctor-found .calendar-schedule {
   display: flex;
+  width: 310px;
 }
 .doctor-found .calendar-schedule .calendar-day:not(:last-of-type) {
-  margin-right: 5px;
+  margin-right: 10px;
 }
 .doctor-found .calendar {
   position: relative;

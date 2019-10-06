@@ -17,3 +17,18 @@ $(document).on('click', '.btn-view-more', function() {
         btn.text('Ver menos');
 
 });
+
+$(document).ready(function() {
+
+    /**
+     * Init Slick
+     */
+    $('.calendar-schedule').slick({
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        prevArrow: $('.calendar-nav-prev'),
+        nextArrow: $('.calendar-nav-next'),
+    });
+
+});

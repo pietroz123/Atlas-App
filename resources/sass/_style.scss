@@ -510,9 +510,10 @@ section#doctor-skeleton {
 
     .calendar-schedule {
         display: flex;
+        width: 310px;
         .calendar-day {
             &:not(:last-of-type) {
-                margin-right: 5px;
+                margin-right: 10px;
             }
         }
     }

@@ -2,6 +2,10 @@
 
 @section('title', 'Resultado da Busca')
 
+@section('styles')
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+@endsection
+
 @section('header-bar')
     <header id="header-search">
         <nav class="navbar navbar-expand-md navbar-light w-100" id="search-navbar">
@@ -132,8 +136,8 @@
                                     </div>
                                     <div class="calendar-day">
                                         <div class="calendar-day-date">
-                                            <span class="day-name">Hoje</span>
-                                            <span class="day-date">13 Set</span>
+                                            <span class="day-name">Seg.</span>
+                                            <span class="day-date">14 Set</span>
                                         </div>
                                         <div class="calendar-day-slots d-flex flex-column">
                                             <a href="#!" class="calendar-slot available">13:00</a>
@@ -152,8 +156,8 @@
                                     </div>
                                     <div class="calendar-day">
                                         <div class="calendar-day-date">
-                                            <span class="day-name">Hoje</span>
-                                            <span class="day-date">13 Set</span>
+                                            <span class="day-name">Ter.</span>
+                                            <span class="day-date">15 Set</span>
                                         </div>
                                         <div class="calendar-day-slots d-flex flex-column">
                                             <a href="#!" class="calendar-slot available">13:00</a>
@@ -172,8 +176,8 @@
                                     </div>
                                     <div class="calendar-day">
                                         <div class="calendar-day-date">
-                                            <span class="day-name">Hoje</span>
-                                            <span class="day-date">13 Set</span>
+                                            <span class="day-name">Qua.</span>
+                                            <span class="day-date">16 Set</span>
                                         </div>
                                         <div class="calendar-day-slots d-flex flex-column">
                                             <a href="#!" class="calendar-slot available">13:00</a>
@@ -192,8 +196,128 @@
                                     </div>
                                     <div class="calendar-day">
                                         <div class="calendar-day-date">
-                                            <span class="day-name">Hoje</span>
-                                            <span class="day-date">13 Set</span>
+                                            <span class="day-name">Qui.</span>
+                                            <span class="day-date">17 Set</span>
+                                        </div>
+                                        <div class="calendar-day-slots d-flex flex-column">
+                                            <a href="#!" class="calendar-slot available">13:00</a>
+                                            <a href="#!" class="calendar-slot available">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">15:30</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot available">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot available">15:30</a>
+                                        </div>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <div class="calendar-day-date">
+                                            <span class="day-name">Sex.</span>
+                                            <span class="day-date">18 Set</span>
+                                        </div>
+                                        <div class="calendar-day-slots d-flex flex-column">
+                                            <a href="#!" class="calendar-slot available">13:00</a>
+                                            <a href="#!" class="calendar-slot available">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">15:30</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot available">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot available">15:30</a>
+                                        </div>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <div class="calendar-day-date">
+                                            <span class="day-name">Sáb.</span>
+                                            <span class="day-date">17 Set</span>
+                                        </div>
+                                        <div class="calendar-day-slots d-flex flex-column">
+                                            <a href="#!" class="calendar-slot available">13:00</a>
+                                            <a href="#!" class="calendar-slot available">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">15:30</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot available">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot available">15:30</a>
+                                        </div>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <div class="calendar-day-date">
+                                            <span class="day-name">Dom.</span>
+                                            <span class="day-date">17 Set</span>
+                                        </div>
+                                        <div class="calendar-day-slots d-flex flex-column">
+                                            <a href="#!" class="calendar-slot available">13:00</a>
+                                            <a href="#!" class="calendar-slot available">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">15:30</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot available">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot available">15:30</a>
+                                        </div>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <div class="calendar-day-date">
+                                            <span class="day-name">Seg.</span>
+                                            <span class="day-date">17 Set</span>
+                                        </div>
+                                        <div class="calendar-day-slots d-flex flex-column">
+                                            <a href="#!" class="calendar-slot available">13:00</a>
+                                            <a href="#!" class="calendar-slot available">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">15:30</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot available">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot available">15:30</a>
+                                        </div>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <div class="calendar-day-date">
+                                            <span class="day-name">Ter.</span>
+                                            <span class="day-date">17 Set</span>
+                                        </div>
+                                        <div class="calendar-day-slots d-flex flex-column">
+                                            <a href="#!" class="calendar-slot available">13:00</a>
+                                            <a href="#!" class="calendar-slot available">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">15:30</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:00</a>
+                                            <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:30</a>
+                                            <a href="#!" class="calendar-slot available">14:00</a>
+                                            <a href="#!" class="calendar-slot available">14:30</a>
+                                            <a href="#!" class="calendar-slot available">15:00</a>
+                                            <a href="#!" class="calendar-slot available">15:30</a>
+                                        </div>
+                                    </div>
+                                    <div class="calendar-day">
+                                        <div class="calendar-day-date">
+                                            <span class="day-name">Qua.</span>
+                                            <span class="day-date">17 Set</span>
                                         </div>
                                         <div class="calendar-day-slots d-flex flex-column">
                                             <a href="#!" class="calendar-slot available">13:00</a>
@@ -241,4 +365,5 @@
 
 @section('scripts')
     <script src="{{ asset('js/appointments/search-result.js') }}"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
 @endsection
