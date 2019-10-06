@@ -238,3 +238,7 @@
     </div>
     
 @endsection
+
+@section('scripts')
+    <script src="{{ asset('js/appointments/search-result.js') }}"></script>
+@endsection

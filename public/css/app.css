@@ -4862,13 +4862,13 @@ section#doctor-skeleton .doctor-features li:hover {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 16%, #fff 100%);
   display: block;
   bottom: 25px;
-  height: 100px;
+  height: 30px;
   left: 0;
   right: 0;
   position: absolute;
 }
 .doctor-found .calendar .lock-area {
-  max-height: 179px;
+  max-height: 185px;
   overflow: hidden;
 }
 .doctor-found .calendar .lock-area.unlocked {
@@ -4925,6 +4925,8 @@ section#doctor-skeleton .doctor-features li:hover {
 }
 .doctor-found .calendar-nav.calendar-nav-prev {
   margin-right: 20px;
+}
+.doctor-found .calendar-nav.calendar-nav-prev i {
   left: 11px;
 }
 .doctor-found .calendar-nav.calendar-nav-next {
@@ -4945,18 +4947,22 @@ section#doctor-skeleton .doctor-features li:hover {
 }
 .doctor-found .calendar-slot {
   margin-top: 10px;
-  background: #5eb1d0a3;
-  color: white;
+  background: #ecf6ff;
+  color: #5eb1d0;
+  border: 1px solid #65b2cf40;
   padding: 2px 5px;
   border-radius: 4px;
 }
 .doctor-found .calendar-slot.available:hover {
   opacity: 0.8;
+  background: #5EB1D0;
+  color: white;
 }
 .doctor-found .calendar-slot.not-available {
-  background: #D2D2D2;
-  color: grey;
   cursor: not-allowed;
+  background: #ededed;
+  color: grey;
+  border: 1px solid #dddddd;
 }
 
 .mt-2rem {
