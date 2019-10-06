@@ -69,7 +69,7 @@
 @section('content')
 
     <div class="doctors-found">
-        <div class="container">
+        <div class="p-3">
 
             <div class="row doctor-found">
                 <div class="col doctor-details">
@@ -114,8 +114,19 @@
                                         <span class="day-name">Hoje</span>
                                         <span class="day-date">13 Set</span>
                                     </div>
-                                    <div class="calendar-day-slots">
-
+                                    <div class="calendar-day-slots d-flex flex-column">
+                                        <a href="#!" class="calendar-slot available">13:00</a>
+                                        <a href="#!" class="calendar-slot available">13:30</a>
+                                        <a href="#!" class="calendar-slot available">14:00</a>
+                                        <a href="#!" class="calendar-slot not-available" title="Horário indisponível">14:30</a>
+                                        <a href="#!" class="calendar-slot available">15:00</a>
+                                        <a href="#!" class="calendar-slot not-available" title="Horário indisponível">15:30</a>
+                                        <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:00</a>
+                                        <a href="#!" class="calendar-slot not-available" title="Horário indisponível">13:30</a>
+                                        <a href="#!" class="calendar-slot available">14:00</a>
+                                        <a href="#!" class="calendar-slot available">14:30</a>
+                                        <a href="#!" class="calendar-slot available">15:00</a>
+                                        <a href="#!" class="calendar-slot available">15:30</a>
                                     </div>
                                 </div>
                                 {{-- Essa div repete --}}

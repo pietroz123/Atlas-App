@@ -513,11 +513,27 @@ section#doctor-skeleton {
 
     .calendar-nav {
         height: 30px;
+        border-radius: 50%;
+        border: 0;
+        background: #5eb1d057;
+        color: #5eb1d0;
+        width: 31px;
+        position: relative;
+        i {
+            position: absolute;
+            top: 9px;
+            left: 12px;
+            font-size: 13px;
+        }
         &.calendar-nav-prev {
             margin-right: 20px;
+            left: 11px;
         }
         &.calendar-nav-next {
             margin-left: 20px;
+        }
+        &:focus {
+            outline: 0;
         }
     }
 
@@ -531,6 +547,24 @@ section#doctor-skeleton {
         }
         .day-date {
             font-size: 12px;
+        }
+    }
+
+    .calendar-slot {
+        margin-top: 10px;
+        background: #5eb1d0a3;
+        color: white;
+        padding: 2px 5px;
+        border-radius: 4px;
+        &.available {
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+        &.not-available {
+            background: #D2D2D2;
+            color: grey;
+            cursor: not-allowed;
         }
     }
 
