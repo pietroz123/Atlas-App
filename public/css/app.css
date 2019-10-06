@@ -4791,9 +4791,23 @@ section#doctor-skeleton .doctor-features li:hover {
   outline: 0;
 }
 
+/**
+ * DOCTORS
+ */
+.doctors-found {
+  padding: 10px;
+}
+
 .doctor-found {
   border: 1px solid #D2D2D2;
+  border-radius: 4px;
   padding: 5px;
+  /**
+   * DOCTOR INFORMATION
+   */
+  /**
+   * DOCTOR CALENDAR
+   */
 }
 .doctor-found p {
   margin: 0;
@@ -4806,8 +4820,9 @@ section#doctor-skeleton .doctor-features li:hover {
   width: 150px;
   border-radius: 50%;
 }
-.doctor-found .doctor-info {
-  padding-left: 45px;
+.doctor-found .doctor-img-container {
+  padding-right: 45px;
+  padding-left: 40px;
 }
 .doctor-found .doctor-specialty {
   text-transform: uppercase;
@@ -4815,7 +4830,7 @@ section#doctor-skeleton .doctor-features li:hover {
   font-weight: 600;
 }
 .doctor-found .star-rating {
-  padding: 10px 0;
+  padding: 15px 0;
 }
 .doctor-found .star-rating i:last-of-type {
   padding-right: 8px;
@@ -4825,6 +4840,29 @@ section#doctor-skeleton .doctor-features li:hover {
 }
 .doctor-found .doctor-phone i, .doctor-found .doctor-address i {
   padding-right: 7px;
+}
+.doctor-found .doctor-calendar {
+  padding-left: 45px;
+  display: flex;
+}
+.doctor-found .calendar-nav {
+  height: 30px;
+}
+.doctor-found .calendar-nav.calendar-nav-prev {
+  margin-right: 20px;
+}
+.doctor-found .calendar-nav.calendar-nav-next {
+  margin-left: 20px;
+}
+.doctor-found .calendar-day-date .day-name, .doctor-found .calendar-day-date .day-date {
+  display: block;
+  text-align: center;
+}
+.doctor-found .calendar-day-date .day-name {
+  font-size: 15px;
+}
+.doctor-found .calendar-day-date .day-date {
+  font-size: 12px;
 }
 
 .mt-2rem {

@@ -446,14 +446,26 @@ section#doctor-skeleton {
     }
 }
 
+/**
+ * DOCTORS
+ */
+
+.doctors-found {
+    padding: 10px;
+}
+
 .doctor-found {
 
     border: 1px solid #D2D2D2;
+    border-radius: 4px;
     padding: 5px;
     p {
         margin: 0;
     }
 
+    /**
+     * DOCTOR INFORMATION
+     */
     .doctor-details {
         display: flex;
         padding: 20px;
@@ -464,8 +476,9 @@ section#doctor-skeleton {
         border-radius: 50%;
     }
 
-    .doctor-info {
-        padding-left: 45px;
+    .doctor-img-container {
+        padding-right: 45px;
+        padding-left: 40px;
     }
 
     .doctor-specialty {
@@ -475,7 +488,7 @@ section#doctor-skeleton {
     }
     
     .star-rating {
-        padding: 10px 0;
+        padding: 15px 0;
         i {
             &:last-of-type {
                 padding-right: 8px;
@@ -487,6 +500,37 @@ section#doctor-skeleton {
         padding: 5px 0;
         i {
             padding-right: 7px;
+        }
+    }
+
+    /**
+     * DOCTOR CALENDAR
+     */
+    .doctor-calendar {
+        padding-left: 45px;
+        display: flex;
+    }
+
+    .calendar-nav {
+        height: 30px;
+        &.calendar-nav-prev {
+            margin-right: 20px;
+        }
+        &.calendar-nav-next {
+            margin-left: 20px;
+        }
+    }
+
+    .calendar-day-date {
+        .day-name, .day-date {
+            display: block;
+            text-align: center;
+        }
+        .day-name {
+            font-size: 15px;
+        }
+        .day-date {
+            font-size: 12px;
         }
     }
 
