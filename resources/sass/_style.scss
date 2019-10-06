@@ -330,20 +330,17 @@ section#doctor-skeleton {
             }
             &.agenda {
                 &::before {
-                    font-family: "Font Awesome 5 Pro"; font-weight: 900; content: "\f274";
-                    // color: $main-color-dark;
+                    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f274";
                 }
             }
             &.ratings {
                 &::before {
-                    font-family: "Font Awesome 5 Pro"; font-weight: 900; content: "\f005";
-                    // color: $main-color-dark;
+                    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f005";
                 }
             }
             &.payments {
                 &::before {
-                    font-family: "Font Awesome 5 Pro"; font-weight: 900; content: "\f09d";
-                    // color: $main-color-dark;
+                    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f09d";
                 }
             }
 
@@ -511,11 +508,78 @@ section#doctor-skeleton {
         display: flex;
     }
 
+    .calendar-schedule {
+        display: flex;
+        .calendar-day {
+            &:not(:last-of-type) {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .calendar {
+        
+        position: relative;
+
+        &.locked {
+            padding-bottom: 25px;
+            &::after {
+                content: '';
+                background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 16%, #fff 100%);
+                display: block;
+                bottom: 25px;
+                height: 100px;
+                left: 0;
+                right: 0;
+                position: absolute;
+            }
+        }
+        .lock-area {
+            max-height: 179px;
+            overflow: hidden;
+            &.unlocked {
+                max-height: 100%;
+            }
+        }
+        .btn-view-more {
+            color: $main-color-dark;
+            display: block;
+            font-size: 14px;
+            position: absolute;
+            bottom: -10px;
+            z-index: 100;
+            border: 0;
+            background: white;
+            border-top: 1px solid $main-color-dark;
+            width: 100%;
+            &.closed {
+                &::after {
+                    padding-left: 5px;
+                    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f078";
+                    color: $main-color-dark;
+                    padding-right: 3px;
+                }
+            }
+            &.opened {
+                bottom: -25px;
+                &::after {
+                    padding-left: 5px;
+                    font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f077";
+                    color: $main-color-dark;
+                    padding-right: 3px;
+                }
+            }
+            &:focus {
+                outline: 0;
+            }
+        }
+    }
+
     .calendar-nav {
         height: 30px;
         border-radius: 50%;
         border: 0;
-        background: #5eb1d057;
+        background: aliceblue;
         color: #5eb1d0;
         width: 31px;
         position: relative;

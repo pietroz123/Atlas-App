@@ -4704,17 +4704,17 @@ section#doctor-skeleton .doctor-features li::before {
   text-align: center;
 }
 section#doctor-skeleton .doctor-features li.agenda::before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\F274";
 }
 section#doctor-skeleton .doctor-features li.ratings::before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\F005";
 }
 section#doctor-skeleton .doctor-features li.payments::before {
-  font-family: "Font Awesome 5 Pro";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\F09D";
 }
@@ -4845,11 +4845,74 @@ section#doctor-skeleton .doctor-features li:hover {
   padding-left: 45px;
   display: flex;
 }
+.doctor-found .calendar-schedule {
+  display: flex;
+}
+.doctor-found .calendar-schedule .calendar-day:not(:last-of-type) {
+  margin-right: 5px;
+}
+.doctor-found .calendar {
+  position: relative;
+}
+.doctor-found .calendar.locked {
+  padding-bottom: 25px;
+}
+.doctor-found .calendar.locked::after {
+  content: "";
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 16%, #fff 100%);
+  display: block;
+  bottom: 25px;
+  height: 100px;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+.doctor-found .calendar .lock-area {
+  max-height: 179px;
+  overflow: hidden;
+}
+.doctor-found .calendar .lock-area.unlocked {
+  max-height: 100%;
+}
+.doctor-found .calendar .btn-view-more {
+  color: #3A688A;
+  display: block;
+  font-size: 14px;
+  position: absolute;
+  bottom: -10px;
+  z-index: 100;
+  border: 0;
+  background: white;
+  border-top: 1px solid #3A688A;
+  width: 100%;
+}
+.doctor-found .calendar .btn-view-more.closed::after {
+  padding-left: 5px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F078";
+  color: #3A688A;
+  padding-right: 3px;
+}
+.doctor-found .calendar .btn-view-more.opened {
+  bottom: -25px;
+}
+.doctor-found .calendar .btn-view-more.opened::after {
+  padding-left: 5px;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\F077";
+  color: #3A688A;
+  padding-right: 3px;
+}
+.doctor-found .calendar .btn-view-more:focus {
+  outline: 0;
+}
 .doctor-found .calendar-nav {
   height: 30px;
   border-radius: 50%;
   border: 0;
-  background: #5eb1d057;
+  background: aliceblue;
   color: #5eb1d0;
   width: 31px;
   position: relative;
