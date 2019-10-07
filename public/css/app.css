@@ -4791,6 +4791,11 @@ section#doctor-skeleton .doctor-features li:hover {
   outline: 0;
 }
 
+#search-navbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
 /**
  * DOCTORS
  */
@@ -4947,6 +4952,9 @@ section#doctor-skeleton .doctor-features li:hover {
   font-size: 12px;
 }
 .doctor-found .calendar-slot {
+  text-align: center;
+}
+.doctor-found .calendar-slot:not(.empty) {
   margin-top: 10px;
   background: #ecf6ff;
   color: #5eb1d0;
@@ -4954,16 +4962,19 @@ section#doctor-skeleton .doctor-features li:hover {
   padding: 2px 5px;
   border-radius: 4px;
 }
-.doctor-found .calendar-slot.available:hover {
+.doctor-found .calendar-slot:not(.empty).available:hover {
   opacity: 0.8;
   background: #5EB1D0;
   color: white;
 }
-.doctor-found .calendar-slot.not-available {
+.doctor-found .calendar-slot:not(.empty).not-available {
   cursor: not-allowed;
   background: #ededed;
   color: grey;
   border: 1px solid #dddddd;
+}
+.doctor-found .calendar-slot:focus {
+  outline: 0;
 }
 
 .mt-2rem {

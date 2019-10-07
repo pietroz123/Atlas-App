@@ -443,6 +443,11 @@ section#doctor-skeleton {
     }
 }
 
+#search-navbar {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
 /**
  * DOCTORS
  */
@@ -618,24 +623,30 @@ section#doctor-skeleton {
     }
 
     .calendar-slot {
-        margin-top: 10px;
-        background: #ecf6ff;
-        color: #5eb1d0;
-        border: 1px solid #65b2cf40;
-        padding: 2px 5px;
-        border-radius: 4px;
-        &.available {
-            &:hover {
-                opacity: 0.8;
-                background: $main-color;
-                color: white;
+        text-align: center;
+        &:not(.empty) {
+            margin-top: 10px;
+            background: #ecf6ff;
+            color: #5eb1d0;
+            border: 1px solid #65b2cf40;
+            padding: 2px 5px;
+            border-radius: 4px;
+            &.available {
+                &:hover {
+                    opacity: 0.8;
+                    background: $main-color;
+                    color: white;
+                }
+            }
+            &.not-available {
+                cursor: not-allowed;
+                background: #ededed;
+                color: grey;
+                border: 1px solid #dddddd;
             }
         }
-        &.not-available {
-            cursor: not-allowed;
-            background: #ededed;
-            color: grey;
-            border: 1px solid #dddddd;
+        &:focus {
+            outline: 0;
         }
     }
 
