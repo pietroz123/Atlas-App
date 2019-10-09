@@ -5040,6 +5040,7 @@ section#doctor-skeleton .doctor-features li:hover {
   background: #F7F7F7;
   color: black;
   margin-right: 2px;
+  font-size: 15px;
 }
 .doctor-information .nav-link:not(:first-of-type) {
   margin-left: 2px;
