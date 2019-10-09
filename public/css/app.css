@@ -4432,6 +4432,10 @@ body {
   min-height: 100vh;
 }
 
+p {
+  margin: 0;
+}
+
 .circle {
   border-radius: 50%;
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -4801,6 +4805,7 @@ section#doctor-skeleton .doctor-features li:hover {
  */
 .doctors-found {
   padding: 10px;
+  font-size: 15px;
 }
 
 .doctor-found {
@@ -4821,6 +4826,12 @@ section#doctor-skeleton .doctor-features li:hover {
   display: flex;
   padding: 20px;
 }
+.doctor-found .doctor-name a {
+  color: #5EB1D0;
+}
+.doctor-found .doctor-name:hover {
+  opacity: 0.8;
+}
 .doctor-found .doctor-img {
   width: 150px;
   border-radius: 50%;
@@ -4833,12 +4844,6 @@ section#doctor-skeleton .doctor-features li:hover {
   text-transform: uppercase;
   font-size: 0.9rem;
   font-weight: 600;
-}
-.doctor-found .star-rating {
-  padding: 15px 0;
-}
-.doctor-found .star-rating i:last-of-type {
-  padding-right: 8px;
 }
 .doctor-found .doctor-phone, .doctor-found .doctor-address {
   padding: 5px 0;
@@ -4975,6 +4980,60 @@ section#doctor-skeleton .doctor-features li:hover {
 }
 .doctor-found .calendar-slot:focus {
   outline: 0;
+}
+
+.star-rating {
+  padding: 15px 0;
+}
+.star-rating i:last-of-type {
+  padding-right: 8px;
+}
+
+/**
+ * DOCTOR PROFILE
+ */
+.doctor-profile {
+  display: flex;
+}
+.doctor-profile .doctor-aside {
+  width: 25%;
+}
+.doctor-profile .doctor-information {
+  width: 75%;
+}
+
+.doctor-aside .doctor-img {
+  width: 200px;
+  border-radius: 50%;
+}
+.doctor-aside .doctor-info p {
+  font-size: 15px;
+}
+.doctor-aside .doctor-info-header {
+  margin: 25px 0 15px 0;
+  font-size: 18px;
+  color: #9E9E9E;
+  text-transform: uppercase;
+  position: relative;
+}
+.doctor-aside .doctor-info-header span {
+  background-color: white;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+.doctor-aside .doctor-info-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.5em;
+  border-top: 1px solid #9E9E9E;
+  z-index: -1;
+}
+
+.doctor-information .doctor-crm, .doctor-information .doctor-type {
+  color: #9E9E9E;
 }
 
 .mt-2rem {

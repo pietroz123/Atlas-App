@@ -82,7 +82,11 @@
                     </div>
                     <div class="doctor-info">
                         <p class="doctor-specialty">Oftalmologista</p>
-                        <p class="doctor-name">Dr. Humberto Cenci Guimarães</p>
+                        <p class="doctor-name">
+                            <a href="{{ route('doctor-profile') }}">
+                                Dr. Humberto Cenci Guimarães
+                            </a>
+                        </p>
                         <div class="star-rating">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>

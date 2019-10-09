@@ -27,6 +27,9 @@ body {
 // MISC
 // =======================================================
 
+p {
+    margin: 0;
+}
 .circle {
     border-radius: 50%;
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.16),0 2px 10px 0 rgba(0,0,0,.12);
@@ -454,6 +457,7 @@ section#doctor-skeleton {
 
 .doctors-found {
     padding: 10px;
+    font-size: 15px;
 }
 
 .doctor-found {
@@ -473,6 +477,15 @@ section#doctor-skeleton {
         padding: 20px;
     }
 
+    .doctor-name {
+        a {
+            color: $main-color;
+        }
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
     .doctor-img {
         width: 150px;
         border-radius: 50%;
@@ -489,15 +502,6 @@ section#doctor-skeleton {
         font-weight: 600;
     }
     
-    .star-rating {
-        padding: 15px 0;
-        i {
-            &:last-of-type {
-                padding-right: 8px;
-            }
-        }
-    }
-
     .doctor-phone, .doctor-address {
         padding: 5px 0;
         i {
@@ -648,6 +652,78 @@ section#doctor-skeleton {
         &:focus {
             outline: 0;
         }
+    }
+
+}
+
+.star-rating {
+    padding: 15px 0;
+    i {
+        &:last-of-type {
+            padding-right: 8px;
+        }
+    }
+}
+
+/**
+ * DOCTOR PROFILE
+ */
+
+.doctor-profile {
+
+    display: flex;
+
+    .doctor-aside {
+        width: 25%;
+    }
+
+    .doctor-information {
+        width: 75%;
+    }
+}
+
+.doctor-aside {
+
+    .doctor-img {
+        width: 200px;
+        border-radius: 50%;
+    }
+
+    .doctor-info {
+        p {
+            font-size: 15px;
+        }
+    }
+
+    .doctor-info-header {
+        margin: 25px 0 15px 0;
+        font-size: 18px;
+        color: #9E9E9E;
+        text-transform: uppercase;
+        position: relative;
+        span {
+            background-color: white;
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        &::after {
+            content:"";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 0.5em;
+            border-top: 1px solid #9E9E9E;
+            z-index: -1;
+        }
+    }
+
+}
+
+.doctor-information {
+
+    .doctor-crm, .doctor-type {
+        color: #9E9E9E;
     }
 
 }

@@ -27,6 +27,10 @@ Route::post('/resultado', function() {
     return view('appointments.search-result');
 })->name('appointments.result');
 
+Route::get('/medico', function() {
+    return view('doctor-profile');
+})->name('doctor-profile');
+
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
