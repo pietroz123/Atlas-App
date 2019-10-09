@@ -778,4 +778,20 @@ section#doctor-skeleton {
         }
     }
 
+    .comment-wrapper {
+        background: #F1F0F0;
+        padding: 15px 20px;
+        .author {
+            .time {
+                color: #9e9e9e;
+            }
+        }
+        .rating {
+            font-size: 12px;
+        }
+        .comment {
+            padding-top: 10px;
+        }
+    }
+
 }

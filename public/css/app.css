@@ -5084,6 +5084,19 @@ section#doctor-skeleton .doctor-features li:hover {
   font-size: 18px;
   color: #9E9E9E;
 }
+.doctor-information .comment-wrapper {
+  background: #F1F0F0;
+  padding: 15px 20px;
+}
+.doctor-information .comment-wrapper .author .time {
+  color: #9e9e9e;
+}
+.doctor-information .comment-wrapper .rating {
+  font-size: 12px;
+}
+.doctor-information .comment-wrapper .comment {
+  padding-top: 10px;
+}
 
 .mt-2rem {
   margin-top: 2rem;
