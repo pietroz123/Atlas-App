@@ -46,7 +46,7 @@
 
                 <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
                     <li class="nav-item">
-                        <a class="nav-link sobre active" id="sobre-tab" data-toggle="tab" href="#sobre" role="tab" aria-controls="sobre"
+                        <a class="nav-link about active" id="about-tab" data-toggle="tab" href="#about" role="tab" aria-controls="about"
                             aria-selected="true">Sobre</a>
                     </li>
                     <li class="nav-item">
@@ -59,13 +59,20 @@
                     </li>
                 </ul>
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active" id="sobre" role="tabpanel" aria-labelledby="sobre-tab">
-                        Raw denim you
-                        probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
-                        cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro
-                        keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip
-                        placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi
-                        qui.
+                    <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
+                        <div class="d-flex">
+                            <div class="doctor-about-address">
+                                <h4 class="doctor-about-header">Endereço</h4>
+                                <p>Avenida Barão de Tatuí, 925</p>
+                                <p>Sala 1 | Jardim Vergueiro</p>
+                                <p>18030-000</p>
+                                <p>Sorocaba - SP</p>
+                            </div>
+                            <div class="doctor-about-contact ml-5">
+                                <h4 class="doctor-about-header">Informações de Contato</h4>
+                                <p>(15) 32177283</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="tab-pane fade" id="agenda" role="tabpanel" aria-labelledby="agenda-tab">
                         Food truck fixie
