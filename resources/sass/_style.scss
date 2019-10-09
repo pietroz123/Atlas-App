@@ -679,6 +679,7 @@ section#doctor-skeleton {
 
     .doctor-information {
         width: 75%;
+        padding-left: 2rem !important;
     }
 }
 
@@ -724,6 +725,51 @@ section#doctor-skeleton {
 
     .doctor-crm, .doctor-type {
         color: #9E9E9E;
+    }
+
+    .nav-link {
+        background: #F7F7F7;
+        color: black;
+        margin-right: 2px;
+        &:not(:first-of-type) {
+            margin-left: 2px;
+        }
+        &.active {
+            background: #E2E0E0;
+        }
+        &.sobre {
+            &::before {
+                font-family: "Font Awesome 5 Free"; font-weight: 500; content: "\F007";
+                font-size: 15px;
+                padding-right: 5px;
+                display: inline-block;
+            }
+        }
+        &.agenda {
+            &::before {
+                font-family: "Font Awesome 5 Free"; font-weight: 500; content: "\f133";
+                font-size: 15px;
+                padding-right: 5px;
+                display: inline-block;
+            }
+        }
+        &.avaliacoes {
+            &::before {
+                font-family: "Font Awesome 5 Free"; font-weight: 500; content: "\f27a";
+                font-size: 15px;
+                padding-right: 5px;
+                display: inline-block;
+            }
+        }
+    }
+
+    .tab-pane {
+        border-right: 1px solid #dee2e6;
+        border-left: 1px solid #dee2e6;
+        border-bottom: 1px solid #dee2e6;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        padding: 1rem;
     }
 
 }
