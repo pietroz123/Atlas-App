@@ -5336,8 +5336,9 @@ section#doctor-skeleton .doctor-features li:hover {
   padding-right: 7px;
 }
 .doctor-found .doctor-calendar {
-  padding-left: 45px;
   display: flex;
+  margin-left: auto;
+  padding-right: 40px;
 }
 .doctor-found .calendar-schedule {
   display: flex;
