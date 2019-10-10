@@ -23,6 +23,9 @@ class CreateDoctorsTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->string('address');
+            $table->string('phone_number', 15);
         });
     }
 

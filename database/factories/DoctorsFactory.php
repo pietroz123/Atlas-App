@@ -21,5 +21,8 @@ $factory->define(App\Doctor::class, function () use ($faker) {
         'practicing_from' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'password' => bcrypt(str_random(10)),
         'remember_token' => str_random(10),
+        
+        'address' => $faker->streetAddress,
+        'phone_number' => $faker->phoneNumber,
     ];
 });
