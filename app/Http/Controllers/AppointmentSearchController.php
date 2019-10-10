@@ -19,4 +19,13 @@ class AppointmentSearchController extends Controller
             'specialties' => $specialties
         ]);
     }
+
+    /**
+     * Page for the search results
+     */
+    public function results()
+    {
+        return view('appointments.search-result');   
+    }
+
 }
