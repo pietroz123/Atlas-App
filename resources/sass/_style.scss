@@ -681,6 +681,7 @@ section#doctor-skeleton {
         width: 75%;
         padding-left: 2rem !important;
     }
+
 }
 
 .doctor-aside {
@@ -693,10 +694,12 @@ section#doctor-skeleton {
     .doctor-info {
         p {
             font-size: 15px;
+            padding: 10px 5px;
         }
     }
 
     .doctor-info-header {
+
         margin: 25px 0 15px 0;
         font-size: 18px;
         color: #9E9E9E;
@@ -717,6 +720,7 @@ section#doctor-skeleton {
             border-top: 1px solid #9E9E9E;
             z-index: -1;
         }
+
     }
 
 }
@@ -770,14 +774,28 @@ section#doctor-skeleton {
         border-bottom: 1px solid #dee2e6;
         border-bottom-left-radius: 4px;
         border-bottom-right-radius: 4px;
-        padding: 1rem;
+        padding: 30px 40px;
         font-size: 15px;
 
         .doctor-about-header {
             font-size: 18px;
             color: #9E9E9E;
+            padding: 0 5px;
+        }
+
+        .doctor-about-address {
+            p {
+                padding: 5px;
+            }
+        }
+
+        .doctor-about-contact {
+            p {
+                padding: 5px;
+            }
         }
     }
+
 
     .comment-wrapper {
         background: #F1F0F0;
