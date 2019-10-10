@@ -5286,11 +5286,16 @@ section#doctor-skeleton .doctor-features li:hover {
   padding: 10px;
   font-size: 15px;
 }
+.doctors-found .pagination {
+  justify-content: flex-end;
+  margin-top: 30px;
+}
 
 .doctor-found {
   border: 1px solid #D2D2D2;
   border-radius: 4px;
   padding: 5px;
+  margin-bottom: 10px;
   /**
    * DOCTOR INFORMATION
    */

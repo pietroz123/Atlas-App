@@ -458,6 +458,10 @@ section#doctor-skeleton {
 .doctors-found {
     padding: 10px;
     font-size: 15px;
+    .pagination {
+        justify-content: flex-end;
+        margin-top: 30px;
+    }
 }
 
 .doctor-found {
@@ -465,6 +469,7 @@ section#doctor-skeleton {
     border: 1px solid #D2D2D2;
     border-radius: 4px;
     padding: 5px;
+    margin-bottom: 10px;
     p {
         margin: 0;
     }

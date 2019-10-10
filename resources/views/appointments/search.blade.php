@@ -11,7 +11,7 @@
                 <div class="col-5">
 
                     <!-- Search Appointments -->
-                    <form id="search-appointment" action="{{ route('appointments.result') }}" method="POST">
+                    <form id="search-appointment" action="{{ route('appointments.result') }}" method="GET">
                         @csrf
                         <div class="box">
                             <h3>Encontre seu Agendamento</h3>

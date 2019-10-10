@@ -21,7 +21,7 @@ Route::get('/clientes/medicos', 'HomeController@medicos');
  */
 
 Route::get('/agendamentos/buscar', 'AppointmentSearchController@search')->name('appointments.search');
-Route::post('/agendamentos/resultado', 'AppointmentSearchController@results')->name('appointments.result');
+Route::get('/agendamentos/resultado', 'AppointmentSearchController@results')->name('appointments.result');
 
 Route::get('/medico', function() {
     return view('doctor-profile');

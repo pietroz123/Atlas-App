@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Specialty;
+use App\Doctor;
 
 class AppointmentSearchController extends Controller
 {
@@ -25,7 +27,12 @@ class AppointmentSearchController extends Controller
      */
     public function results()
     {
-        return view('appointments.search-result');   
+        // Retrieve all doctors
+        $doctors = DB::table('doctors')->paginate(10);
+
+        return view('appointments.search-result', [
+            'doctors' => $doctors
+        ]);   
     }
 
 }
