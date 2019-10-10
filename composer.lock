@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94d4bf9ac7f4a933030e46a346ee2917",
+    "content-hash": "d58612e81f805323e423c035396b0e4e",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -377,6 +377,50 @@
                 "trusted proxy"
             ],
             "time": "2019-07-29T16:49:45+00:00"
+        },
+        {
+            "name": "halaxa/json-machine",
+            "version": "0.3.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/halaxa/json-machine.git",
+                "reference": "8e3555b270540130bd3626ab76bf1f1e394485f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/halaxa/json-machine/zipball/8e3555b270540130bd3626ab76bf1f1e394485f1",
+                "reference": "8e3555b270540130bd3626ab76bf1f1e394485f1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": ">=5.6"
+            },
+            "require-dev": {
+                "guzzlehttp/guzzle": "^6",
+                "phpunit/phpunit": "*"
+            },
+            "suggest": {
+                "guzzlehttp/guzzle": "To run scripts in src/examples."
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "JsonMachine\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Filip Halaxa",
+                    "email": "filip@halaxa.cz"
+                }
+            ],
+            "description": "Fast, efficient and easy-to-use JSON stream parser developed for unpredictably long JSON streams or documents.",
+            "time": "2019-03-20T19:33:36+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
