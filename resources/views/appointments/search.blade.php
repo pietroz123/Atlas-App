@@ -23,7 +23,9 @@
                                 <label for="specialty">Especialidade</label>
                                 <select class="browser-default custom-select" id="specialty" name="specialty">
                                     <option selected>Selecione a especialidade</option>
-                                    <option value="1">Oftalmologista</option>
+                                    @foreach ($specialties as $specialty)
+                                        <option value="{{ $specialty->id }}">{{ $specialty->name }}</option>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="form-group">

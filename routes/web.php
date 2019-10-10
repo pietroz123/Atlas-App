@@ -15,13 +15,12 @@ Route::get('/', 'HomeController@index');
 Route::get('/clientes/pacientes', 'HomeController@pacientes');
 Route::get('/clientes/medicos', 'HomeController@medicos');
 
-// =======================================================
-// APPOINTMENTS ROUTES
-// =======================================================
 
-Route::get('/buscar', function() {
-    return view('appointments.buscar');
-})->name('appointments.search');
+/**
+ * APPOINTMENTS ROUTES
+ */
+
+Route::get('/agendamentos/buscar', 'AppointmentSearchController@search')->name('appointments.search');
 
 Route::post('/resultado', function() {
     return view('appointments.search-result');
