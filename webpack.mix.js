@@ -31,4 +31,6 @@ mix.scripts([
 
 // Arquivos JS
 mix.scripts('resources/js/home/medicos.js', 'public/js/home/medicos.js');
+
 mix.scripts('resources/js/appointments/search-result.js', 'public/js/appointments/search-result.js');
+mix.scripts('resources/js/appointments/search-index.js', 'public/js/appointments/search-index.js');

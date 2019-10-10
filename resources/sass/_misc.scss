@@ -49,3 +49,37 @@ button, .btn {
     box-shadow: 0 0 1px 1px $main-color-dark !important;
     outline: 0 !important;
 }
+
+// =======================================================
+// SELECT2
+// =======================================================
+
+.select2-selection {
+	height: 40px !important;
+    border: 1px solid #ced4da !important;
+}
+.select2-selection--single {
+    &:focus {
+        border-color: $main-color-dark !important;
+        box-shadow: 0 0 1px 1px $main-color-dark !important;
+        outline: 0;
+    }
+}
+.select2-selection__placeholder {
+	color: #6c757d !important;
+}
+.select2-selection__rendered {
+    padding-top: 6px;
+    color: #6c757d !important;
+}
+.select2-search__field {
+    border-radius: 0.25rem;
+    &:focus {
+        border-color: $main-color-dark !important;
+        box-shadow: 0 0 1px 1px $main-color-dark !important;
+        outline: 0;
+    }
+}
+.select2-container--default .select2-selection--multiple {
+    height: 100% !important;
+}
