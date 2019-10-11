@@ -23,10 +23,14 @@ Route::get('/clientes/medicos', 'HomeController@medicos');
 Route::get('/agendamentos/buscar', 'AppointmentSearchController@search')->name('appointments.search');
 Route::get('/agendamentos/resultado', 'AppointmentSearchController@results')->name('appointments.result');
 
-Route::get('/medico', function() {
-    return view('doctor-profile');
-})->name('doctor-profile');
+/**
+ * DOCTOR ROUTES
+ */
+Route::resource('doctors', 'DoctorController');
 
+/**
+ * AUTHENTICATION ROUTES
+ */
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

@@ -6,7 +6,7 @@
         <div class="doctor-info">
             <p class="doctor-specialty">{{ $doctor->specialties()->get()->pluck('name')->first() }}</p>
             <p class="doctor-name">
-                <a href="{{ route('doctor-profile') }}">
+                <a href="{{ route('doctors.show', $doctor->id) }}">
                     {{ $doctor->full_name }}
                 </a>
             </p>

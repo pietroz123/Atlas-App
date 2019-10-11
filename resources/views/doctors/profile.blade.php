@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Médico • Dr. Humberto Cenci Guimarães')
+@section('title', 'Médico • '.$doctor->full_name)
 
 @section('content')
 
@@ -19,7 +19,7 @@
                     <h4 class="doctor-info-header">
                         <span>Especialidade</span>
                     </h4>
-                    <p>Oftalmologia</p>
+                    <p>{{ $doctor->specialties()->get()->pluck('name')->first() }}</p>
                     <h4 class="doctor-info-header">
                         <span>Formação</span>
                     </h4>
@@ -32,7 +32,7 @@
             {{-- BEGIN DOCTOR INFORMATION --}}
             <section class="doctor-information p-3">
 
-                <h4 class="doctor-name">Humberto Cenci Guimarães</h4>
+                <h4 class="doctor-name">{{ $doctor->full_name }}</h4>
                 <p class="doctor-crm">CRM SP95874</p>
                 <p class="doctor-type">Médico</p>
                 <div class="star-rating">
@@ -63,14 +63,12 @@
                         <div class="d-flex">
                             <div class="doctor-about-address">
                                 <h4 class="doctor-about-header">Endereço</h4>
-                                <p>Avenida Barão de Tatuí, 925</p>
-                                <p>Sala 1 | Jardim Vergueiro</p>
-                                <p>18030-000</p>
+                                <p>{{ $doctor->address }}</p>
                                 <p>Sorocaba - SP</p>
                             </div>
                             <div class="doctor-about-contact ml-5">
                                 <h4 class="doctor-about-header">Informações de Contato</h4>
-                                <p>(15) 32177283</p>
+                                <p>{{ $doctor->phone_number }}</p>
                             </div>
                         </div>
                     </div>
