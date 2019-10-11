@@ -29,14 +29,15 @@ class AppointmentSearchController extends Controller
         /**
          * Retrive data from request
          */
-        $specialty = request('specialty');
+        $specialty  = request('specialty');
+        $name       = request('name');
 
         /**
          * Filter doctors with given specialty
          */
         if ($specialty != -1) {
 
-            $doctors = Doctor::whereHas('specialties', function($s) use ($specialty) {
+            $doctors = Doctor::where('full_name', 'LIKE', '%'.$name.'%')->whereHas('specialties', function($s) use ($specialty) {
                 $s->where('id', $specialty);
             })->paginate(10);
 
@@ -45,7 +46,9 @@ class AppointmentSearchController extends Controller
         }
         else {
             // Retrieve all doctors
-            $doctors = Doctor::paginate(10);
+            $doctors = Doctor::where('full_name', 'LIKE', '%'.$name.'%')->paginate(10);
+
+            $doctors->appends(request()->query());
         }
 
 
