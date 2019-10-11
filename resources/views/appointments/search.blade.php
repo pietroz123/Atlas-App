@@ -22,7 +22,7 @@
                             <div class="form-group">
                                 <label for="specialty">Especialidade</label>
                                 <select class="browser-default custom-select" id="specialty" name="specialty">
-                                    <option selected>Selecione a especialidade</option>
+                                    <option selected value="-1">Selecione a especialidade</option>
                                     @foreach ($specialties as $specialty)
                                         <option value="{{ $specialty->id }}">{{ $specialty->name }}</option>
                                     @endforeach

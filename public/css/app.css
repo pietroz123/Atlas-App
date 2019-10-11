@@ -5286,10 +5286,6 @@ section#doctor-skeleton .doctor-features li:hover {
   padding: 10px;
   font-size: 15px;
 }
-.doctors-found .pagination {
-  justify-content: flex-end;
-  margin-top: 30px;
-}
 
 .doctor-found {
   border: 1px solid #D2D2D2;
@@ -5338,7 +5334,7 @@ section#doctor-skeleton .doctor-features li:hover {
 .doctor-found .doctor-calendar {
   display: flex;
   margin-left: auto;
-  padding-right: 40px;
+  padding-right: 20px;
 }
 .doctor-found .calendar-schedule {
   display: flex;
@@ -5633,6 +5629,21 @@ button:hover, .btn:hover {
   border-color: #3A688A !important;
   box-shadow: 0 0 1px 1px #3A688A !important;
   outline: 0 !important;
+}
+
+.pagination {
+  margin-top: 30px;
+}
+
+.page-item.active .page-link {
+  border-radius: 50% !important;
+}
+
+.pagination .page-item {
+  padding: 0 5px;
+}
+.pagination .page-item .page-link:hover {
+  border-radius: 50% !important;
 }
 
 .select2-selection {

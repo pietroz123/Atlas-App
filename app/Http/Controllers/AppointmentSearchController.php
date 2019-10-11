@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use App\Specialty;
 use App\Doctor;
 
@@ -27,8 +26,28 @@ class AppointmentSearchController extends Controller
      */
     public function results()
     {
-        // Retrieve all doctors
-        $doctors = DB::table('doctors')->paginate(10);
+        /**
+         * Retrive data from request
+         */
+        $specialty = request('specialty');
+
+        /**
+         * Filter doctors with given specialty
+         */
+        if ($specialty != -1) {
+
+            $doctors = Doctor::whereHas('specialties', function($s) use ($specialty) {
+                $s->where('id', $specialty);
+            })->paginate(10);
+
+            // Append doctors on request
+            $doctors->appends(request()->query());
+        }
+        else {
+            // Retrieve all doctors
+            $doctors = Doctor::paginate(10);
+        }
+
 
         return view('appointments.search-result', [
             'doctors' => $doctors

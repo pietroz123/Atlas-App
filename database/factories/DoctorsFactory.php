@@ -16,7 +16,7 @@ $faker = \Faker\Factory::create('pt_BR');
 $factory->define(App\Doctor::class, function () use ($faker) {
     return [
         'full_name' => $faker->name($gender = 'male'|'female'),
-        'email' => $faker->freeEmail,
+        'email' => str_random(5) . $faker->freeEmail,
         'professional_statement' => $faker->sentence($nbWords = 50, $variableNbWords = true),
         'practicing_from' => $faker->date($format = 'Y-m-d', $max = 'now'),
         'password' => bcrypt(str_random(10)),

@@ -4,7 +4,7 @@
             <img src="{{ asset('img/doctorr.jpg') }}" class="doctor-img" alt="Humberto Cenci Guimarães">
         </div>
         <div class="doctor-info">
-            <p class="doctor-specialty">Oftalmologista</p>
+            <p class="doctor-specialty">{{ $doctor->specialties()->get()->pluck('name')->first() }}</p>
             <p class="doctor-name">
                 <a href="{{ route('doctor-profile') }}">
                     {{ $doctor->full_name }}
