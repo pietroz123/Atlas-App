@@ -32,3 +32,12 @@ $(document).ready(function() {
     });
 
 });
+
+/**
+ * Display success message on appointment
+ */
+$(document).on('click', '.calendar-slot.available', function() {
+    swal("Sucesso!", "Seu agendamento foi realizado com sucesso!", "success");
+    $(this).removeClass('available');
+    $(this).addClass('not-available');
+});
