@@ -5302,6 +5302,9 @@ section#doctor-skeleton .doctor-features li:hover {
 .doctor-found p {
   margin: 0;
 }
+.doctor-found:hover {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 12px;
+}
 .doctor-found .doctor-details {
   display: flex;
   padding: 20px;
