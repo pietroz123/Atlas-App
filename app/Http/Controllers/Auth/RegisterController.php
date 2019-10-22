@@ -3,10 +3,13 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Doctor;
+use App\Patient;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -38,6 +41,8 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $this->middleware('guest:doctor');
+        $this->middleware('guest:patient');
     }
 
     /**
@@ -51,6 +56,28 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+    }
+    protected function validatorDoctor(array $data)
+    {
+        return Validator::make($data, [
+            'full_name' => ['required', 'string', 'max:255'],
+            'professional_statement' => ['required', 'string', 'max:4096'],
+            'practicing_from' => ['required', 'date'],
+            'address' => ['required', 'string'],
+            'phone_number' => ['required', 'string', 'min:10', 'max:10'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:doctors'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+    }
+    protected function validatorPatient(array $data)
+    {
+        return Validator::make($data, [
+            'full_name' => ['required', 'string', 'max:255'],
+            'username' => ['required', 'string', 'max:40'],
+            'phone_number' => ['required', 'string', 'min:10', 'max:10'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:patients'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -69,4 +96,66 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+
+    // =======================================================
+    // DOCTOR
+    // =======================================================
+
+    /**
+     * Show Doctor registration form
+     */
+    public function showDoctorRegisterForm()
+    {
+        return view('auth.register-doctor');
+    }
+
+    /**
+     * Method to create a Doctor
+     */
+    protected function createDoctor(Request $request)
+    {
+        $this->validatorDoctor($request->all())->validate();
+        $doctor = Doctor::create([
+            'full_name' => $request['full_name'],
+            'email' => $request['email'],
+            'professional_statement' => $request['professional_statement'],
+            'practicing_from' => $request['practicing_from'],
+            'password' => $request['password'],
+            'address' => $request['address'],
+            'phone_number' => $request['phone_number'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect()->intended('login/medico');
+    }
+
+    // =======================================================
+    // PATIENT
+    // =======================================================
+    
+    /**
+     * Show Patient registration form
+     */
+    public function showPatientRegisterForm()
+    {
+        return view('auth.register-patient');
+    }
+
+    /**
+     * Method to create a Patient
+     */
+    protected function createPatient(Request $request)
+    {
+        $this->validatorPatient($request->all())->validate();
+        $patient = Patient::create([
+            'full_name' => $request['full_name'],
+            'phone' => $request['phone_number'],
+            'username' => $request['username'],
+            'email' => $request['email'],
+            'password' => Hash::make($request['password']),
+        ]);
+        return redirect()->intended('login/paciente');
+    }
+
 }

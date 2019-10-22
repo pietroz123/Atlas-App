@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -11,7 +12,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home.home');
+        if (Auth::guard('doctor')->check() OR Auth::guard('patient')->check()) {
+            return redirect('dashboard');
+        }
+        else
+            return view('home.home');
     }
 
     /**
@@ -19,7 +24,11 @@ class HomeController extends Controller
      */
     public function pacientes()
     {
-        return view('home.pacientes');
+        if (Auth::guard('doctor')->check() OR Auth::guard('patient')->check()) {
+            return redirect('dashboard');
+        }
+        else
+            return view('home.pacientes');
     }
 
     /**
@@ -27,6 +36,10 @@ class HomeController extends Controller
      */
     public function medicos()
     {
-        return view('home.medicos');
+        if (Auth::guard('doctor')->check() OR Auth::guard('patient')->check()) {
+            return redirect('dashboard');
+        }
+        else
+            return view('home.medicos');
     }
 }

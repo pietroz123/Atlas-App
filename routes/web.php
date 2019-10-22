@@ -26,7 +26,13 @@ Route::get('/agendamentos/resultado', 'AppointmentSearchController@results')->na
 /**
  * DOCTOR ROUTES
  */
-Route::resource('doctors', 'DoctorController');
+Route::get('/doctors', 'DoctorController@index')->name('doctors.index');
+Route::post('/doctors', 'DoctorController@store')->name('doctors.store');
+Route::get('/doctors/create', 'DoctorController@create')->name('doctors.create');
+Route::put('/doctors/{doctor}', 'DoctorController@update')->name('doctors.update');
+Route::delete('/doctors/{doctor}', 'DoctorController@destroy')->name('doctors.destroy');
+Route::get('/doctors/{doctor}', 'DoctorController@show')->name('doctors.show');
+Route::get('/doctors/{doctor}/edit', 'DoctorController@edit')->name('doctors.edit');
 
 /**
  * AUTHENTICATION ROUTES
@@ -34,3 +40,16 @@ Route::resource('doctors', 'DoctorController');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+
+Route::get('/login/medico', 'Auth\LoginController@showDoctorLoginForm')->name('login.doctor');
+Route::get('/login/paciente', 'Auth\LoginController@showPatientLoginForm')->name('login.patient');
+Route::get('/cadastro/medico', 'Auth\RegisterController@showDoctorRegisterForm');
+Route::get('/cadastro/paciente', 'Auth\RegisterController@showPatientRegisterForm');
+
+Route::post('/login/doctor', 'Auth\LoginController@doctorLogin');
+Route::post('/login/patient', 'Auth\LoginController@patientLogin');
+Route::post('/register/doctor', 'Auth\RegisterController@createDoctor')->name('register.doctor');
+Route::post('/register/patient', 'Auth\RegisterController@createPatient')->name('register.patient');
+
+Route::view('/dashboard/medico', 'doctors.dashboard');
+Route::view('/dashboard/paciente', 'patients.dashboard');

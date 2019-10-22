@@ -5,10 +5,14 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+                <div class="card-header">{{ isset($url) ? ucwords($url) : ""}} {{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    @isset($url)
+                    <form method="POST" action='{{ url("login/$url") }}' aria-label="{{ __('Login') }}">
+                    @else
+                    <form method="POST" action="{{ route('login') }}" aria-label="{{ __('Login') }}">
+                    @endisset
                         @csrf
 
                         <div class="form-group row">
@@ -65,6 +69,23 @@
                             </div>
                         </div>
                     </form>
+                </div>
+
+                <div class="card-footer">
+                    @if (isset($url) && $url == 'doctor')
+                        <p>
+                            <a href="{{ url('/cadastro/medico') }}">
+                                Se registrar como médico.
+                            </a>
+                        </p>
+                    @endif
+                    @if (isset($url) && $url == 'patient')
+                        <p>
+                            <a href="{{ url('/cadastro/paciente') }}">
+                                Se registrar como paciente.
+                            </a>
+                        </p>
+                    @endif
                 </div>
             </div>
         </div>
