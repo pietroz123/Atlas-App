@@ -4976,6 +4976,10 @@ p {
   font-size: 13px !important;
 }
 
+.form-register {
+  max-width: 500px;
+}
+
 #user-selection {
   min-height: calc(100vh - 80px);
 }
