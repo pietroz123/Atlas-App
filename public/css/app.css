@@ -4978,6 +4978,52 @@ p {
 
 .form-register {
   max-width: 500px;
+  flex: 1 0 auto;
+}
+
+.col-register-form {
+  display: flex;
+  border-right: 2px solid #ececec;
+  padding-right: 60px;
+}
+
+.col-register-social {
+  padding-left: 60px;
+}
+.col-register-social .social-icon {
+  width: 45px;
+}
+.col-register-social .social-icon:not(:last-of-type) {
+  margin-right: 15px;
+}
+
+.btn-fb {
+  background-color: #475993;
+  color: white;
+}
+.btn-fb::after {
+  font-family: "Font Awesome 5 Brands";
+  content: "\F39E";
+  float: right;
+  padding-right: 3px;
+}
+
+.btn-gplus {
+  background-color: #f14336;
+  color: white;
+}
+.btn-gplus::after {
+  font-family: "Font Awesome 5 Brands";
+  content: "\F1A0";
+  float: right;
+}
+
+.btn-fb, .btn-gplus {
+  text-align: left;
+  max-width: 200px;
+}
+.btn-fb:hover, .btn-gplus:hover {
+  color: white;
 }
 
 #user-selection {
@@ -5630,6 +5676,10 @@ section#doctor-skeleton .doctor-features li:hover {
 
 button:hover, .btn:hover {
   opacity: 0.8;
+}
+
+a:hover {
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .form-control:focus, select:focus {

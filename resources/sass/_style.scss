@@ -105,6 +105,45 @@ p {
 
 .form-register {
     max-width: 500px;
+    flex: 1 0 auto;
+}
+.col-register-form {
+    display: flex;
+    border-right: 2px solid #ececec;
+    padding-right: 60px;
+}
+.col-register-social {
+    padding-left: 60px;
+    .social-icon {
+        width: 45px;
+        &:not(:last-of-type) {
+            margin-right: 15px;
+        }
+    }
+}
+.btn-fb {
+    background-color: #475993;
+    color: white;
+    &::after {
+        font-family: "Font Awesome 5 Brands"; content: "\f39e";
+        float: right;
+        padding-right: 3px;
+    }
+}
+.btn-gplus {
+    background-color: #f14336;
+    color: white;
+    &::after {
+        font-family: "Font Awesome 5 Brands"; content: "\f1a0";
+        float: right;
+    }
+}
+.btn-fb, .btn-gplus {
+    text-align: left;
+    max-width: 200px;
+    &:hover {
+        color: white;
+    }
 }
 
 
