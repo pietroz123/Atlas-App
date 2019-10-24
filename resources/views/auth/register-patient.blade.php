@@ -3,7 +3,9 @@
 @section('content')
 <div class="container">
 
-    <form method="POST" action="{{ route('register.patient') }}" aria-label="{{ __('Register') }}">
+    <h4 class="mt-4">Se cadastrar gratuitamente como paciente.</h4>
+
+    <form method="POST" class="mt-4 form-register" action="{{ route('register.patient') }}" aria-label="{{ __('Register') }}">
         @csrf
         <div class="form-group">
             <label for="full_name">Nome Completo</label>
