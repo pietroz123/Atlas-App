@@ -90,12 +90,13 @@
             
             <p class="mb-4">Ou faça o cadastro com sua rede social preferida:</p>
             
-            {{-- <img src="{{ asset('img/icons/social/facebook.png') }}" class="social-icon" alt="Ícone Facebook">
-            <img src="{{ asset('img/icons/social/google.png') }}" class="social-icon" alt="Ícone Google"> --}}
-            
-            <div class="d-flex flex-column">
-                <a href="#!" class="btn btn-fb mb-1">Facebook</a>
-                <a href="#!" class="btn btn-gplus">Google +</a>
+            <div class="mt-4 mb-4">
+                <a href="#!">
+                    <img src="{{ asset('img/icons/social/facebook.png') }}" class="social-icon" alt="Ícone Facebook">
+                </a>
+                <a href="#!">
+                    <img src="{{ asset('img/icons/social/google.png') }}" class="social-icon" alt="Ícone Google">
+                </a>
             </div>
 
         </div>
