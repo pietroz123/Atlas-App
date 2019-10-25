@@ -91,7 +91,7 @@
             <p class="mb-4">Ou faça o cadastro com sua rede social preferida:</p>
             
             <div class="mt-4 mb-4">
-                <a href="#!">
+                <a href="{{ url('/redirect/facebook') }}">
                     <img src="{{ asset('img/icons/social/facebook.png') }}" class="social-icon" alt="Ícone Facebook">
                 </a>
                 <a href="#!">

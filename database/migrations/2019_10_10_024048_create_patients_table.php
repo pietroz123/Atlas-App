@@ -17,7 +17,7 @@ class CreatePatientsTable extends Migration
             $table->bigIncrements('id');
             $table->string('full_name');
             $table->string('username');
-            $table->string('phone');
+            $table->string('phone')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

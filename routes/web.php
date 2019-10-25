@@ -39,6 +39,11 @@ Route::get('/doctors/{doctor}/edit', 'DoctorController@edit')->name('doctors.edi
  */
 Auth::routes();
 
+// Facebook
+Route::get('/redirect/facebook', 'Social\SocialAuthFacebookController@redirect');
+Route::get('/callback/facebook', 'Social\SocialAuthFacebookController@callback');
+
+
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::get('/login/medico', 'Auth\LoginController@showDoctorLoginForm')->name('login.doctor');
