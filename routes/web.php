@@ -42,6 +42,9 @@ Auth::routes();
 // Facebook
 Route::get('/redirect/facebook', 'Social\SocialAuthFacebookController@redirect');
 Route::get('/callback/facebook', 'Social\SocialAuthFacebookController@callback');
+// Google
+Route::get('/redirect/google', 'Social\SocialAuthGoogleController@redirect');
+Route::get('/callback/google', 'Social\SocialAuthGoogleController@callback');
 
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');

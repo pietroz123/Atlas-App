@@ -94,7 +94,7 @@
                 <a href="{{ url('/redirect/facebook') }}">
                     <img src="{{ asset('img/icons/social/facebook.png') }}" class="social-icon" alt="Ícone Facebook">
                 </a>
-                <a href="#!">
+                <a href="{{ url('/redirect/google') }}">
                     <img src="{{ asset('img/icons/social/google.png') }}" class="social-icon" alt="Ícone Google">
                 </a>
             </div>
