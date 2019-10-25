@@ -108,7 +108,6 @@ p {
     flex: 1 0 auto;
 }
 .col-register-form {
-    display: flex;
     border-right: 2px solid #ececec;
     padding-right: 60px;
 }
@@ -119,6 +118,7 @@ p {
         &:not(:last-of-type) {
             margin-right: 15px;
         }
+        margin-right: 10px;
     }
 }
 .btn-fb {
@@ -144,6 +144,19 @@ p {
     &:hover {
         color: white;
     }
+}
+
+
+// =======================================================
+// LOGIN AND REGISTER
+// =======================================================
+
+.col-login-form {
+    border-right: 1px solid #dfdfdf;
+    padding-right: 40px;
+}
+.col-login-social {
+    padding-left: 40px;
 }
 
 

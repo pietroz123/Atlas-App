@@ -4982,7 +4982,6 @@ p {
 }
 
 .col-register-form {
-  display: flex;
   border-right: 2px solid #ececec;
   padding-right: 60px;
 }
@@ -4992,6 +4991,7 @@ p {
 }
 .col-register-social .social-icon {
   width: 45px;
+  margin-right: 10px;
 }
 .col-register-social .social-icon:not(:last-of-type) {
   margin-right: 15px;
@@ -5024,6 +5024,15 @@ p {
 }
 .btn-fb:hover, .btn-gplus:hover {
   color: white;
+}
+
+.col-login-form {
+  border-right: 1px solid #dfdfdf;
+  padding-right: 40px;
+}
+
+.col-login-social {
+  padding-left: 40px;
 }
 
 #user-selection {
@@ -5663,6 +5672,13 @@ section#doctor-skeleton .doctor-features li:hover {
 
 .f-38 {
   font-size: 38px !important;
+}
+
+a {
+  color: #5EB1D0;
+}
+a:hover {
+  opacity: 0.8;
 }
 
 .btn {
