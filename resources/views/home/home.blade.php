@@ -17,11 +17,11 @@
             <div class="choices">
                 <a href="/clientes/pacientes" class="choice">
                     <div class="circle patients"></div>
-                    <p>Sou um paciente</p>
+                    <p>Sou paciente</p>
                 </a>
                 <a href="/clientes/medicos" class="choice">
                     <div class="circle doctors"></div>
-                    <p>Sou um médico</p>
+                    <p>Sou médico</p>
                 </a>
             </div>
 

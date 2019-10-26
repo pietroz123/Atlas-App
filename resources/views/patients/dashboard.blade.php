@@ -40,6 +40,12 @@
                             Avaliações
                         </a>
                     </li>
+                    <li class="dashboard-sidebar-item">
+                        <a href="{{ route('appointments.search') }}">
+                            <i class="far fa-calendar-check"></i>
+                            Buscar Agendamentos
+                        </a>
+                    </li>
                 </ul>
 
                 <span class="dashboard-sidebar-divider">Dados Gerais</span>

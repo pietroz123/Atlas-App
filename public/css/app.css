@@ -4965,6 +4965,14 @@ p {
   padding-top: 5px;
 }
 
+.dropdown-navbar {
+  width: 100%;
+  padding: 0;
+}
+.dropdown-navbar .dropdown-item {
+  padding: 10px 10px !important;
+}
+
 #main-footer {
   background-color: #3A688A;
   font-size: 0.8rem;
