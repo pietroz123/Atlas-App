@@ -4946,13 +4946,6 @@ p {
   font-family: "Exo", sans-serif;
   min-height: 80px;
 }
-#main-navbar .navbar-brand .brand {
-  display: inline-block;
-  font-size: 1.5rem;
-  font-family: "Exo", sans-serif;
-  vertical-align: middle;
-  padding-top: 5px;
-}
 #main-navbar .nav-link {
   border-bottom: 3px solid transparent;
   padding-right: 0;
@@ -4962,6 +4955,14 @@ p {
 }
 #main-navbar .nav-link:hover {
   border-bottom: 3px solid #5EB1D0;
+}
+
+.navbar-brand .brand {
+  display: inline-block;
+  font-size: 1.5rem;
+  font-family: "Exo", sans-serif;
+  vertical-align: middle;
+  padding-top: 5px;
 }
 
 #main-footer {
@@ -5763,4 +5764,74 @@ a:hover {
   #customers-hero .medics-background {
     padding-top: 50px;
   }
+}
+.dashboard-wrapper {
+  display: flex;
+}
+
+.dashboard-sidebar {
+  width: 400px;
+  min-height: 100vh;
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  box-shadow: 3px 0px 4px 0px rgba(0, 0, 0, 0.4);
+}
+.dashboard-sidebar .user-image {
+  width: 70px;
+  background-color: white;
+}
+
+.dashboard-content {
+  width: 100%;
+  padding: 100px 150px;
+}
+
+/**
+ * Sidebar
+ */
+.dashboard-logo {
+  padding: 10px 20px 3px;
+}
+.dashboard-logo a {
+  color: inherit;
+}
+
+.dashboard-sidebar-divider {
+  padding: 10px 20px;
+  display: block;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.dashboard-sidebar-items {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dashboard-sidebar-item a {
+  color: black;
+  padding: 10px 20px;
+  display: block;
+  position: relative;
+}
+.dashboard-sidebar-item a i {
+  text-align: center;
+  margin-right: 14px;
+  min-width: 20px;
+}
+.dashboard-sidebar-item a::after {
+  width: 0%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #fff;
+}
+.dashboard-sidebar-item a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s;
+}
+.dashboard-sidebar-item a:hover::after {
+  width: 100%;
 }

@@ -10,8 +10,11 @@ class SocialGoogleAccount extends Model
         'user_id', 'provider_user_id', 'provider'
     ];
 
+    /**
+     * Retrieve associated Patient to Facebook account
+     */
     public function user()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Patient::class);
     }
 }
