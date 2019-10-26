@@ -30,8 +30,15 @@
     <body>
         <div id="app">
             <main class="@yield('main-class')">
-                @include('includes.alerts')
-                @yield('content')
+                <div class="dashboard-wrapper">
+                    <aside class="dashboard-sidebar">
+                        @yield('dashboard-sidebar')
+                    </aside>
+                    <section class="dashboard-content">
+                        @include('includes.alerts')
+                        @yield('dashboard-content')
+                    </section>
+                </div>
             </main>
         </div>
         
