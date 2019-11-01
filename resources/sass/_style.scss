@@ -674,6 +674,11 @@ section#doctor-skeleton {
             left: 12px;
             font-size: 13px;
         }
+        &.calendar-nav-prev, &.calendar-nav-next {
+            &:hover {
+                border: 1px solid #5eb1d0;
+            }
+        }
         &.calendar-nav-prev {
             margin-right: 20px;
             i {

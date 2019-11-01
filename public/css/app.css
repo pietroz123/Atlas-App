@@ -5486,6 +5486,9 @@ section#doctor-skeleton .doctor-features li:hover {
   left: 12px;
   font-size: 13px;
 }
+.doctor-found .calendar-nav.calendar-nav-prev:hover, .doctor-found .calendar-nav.calendar-nav-next:hover {
+  border: 1px solid #5eb1d0;
+}
 .doctor-found .calendar-nav.calendar-nav-prev {
   margin-right: 20px;
 }

@@ -23,12 +23,14 @@ $(document).ready(function() {
     /**
      * Init Slick
      */
-    $('.calendar-schedule').slick({
-        infinite: true,
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        prevArrow: $('.calendar-nav-prev'),
-        nextArrow: $('.calendar-nav-next'),
+    $('.calendar-schedule').each(function(i, item) {
+        $(this).slick({
+            infinite: true,
+            slidesToShow: 5,
+            slidesToScroll: 5,
+            prevArrow: $(this).parents('.doctor-calendar').find('.calendar-nav-prev'),
+            nextArrow: $(this).parents('.doctor-calendar').find('.calendar-nav-next'),
+        });
     });
 
 });
