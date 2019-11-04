@@ -54,8 +54,24 @@ class Doctor extends Authenticatable
     {
         return $this->belongsToMany('App\Specialty');
     }
+
     public function clinic()
     {
         return $this->belongsTo('App\Clinic');
+    }
+
+    public function availabilities()
+    {
+        return $this->hasMany('App\DoctorAvailability');
+    }
+
+    public function morningAvailability($doctor_id)
+    {
+        return DoctorAvailability::where('doctor_id', $doctor_id)->where('period', 'morning')->get()->first();
+    }
+
+    public function afternoonAvailability($doctor_id)
+    {
+        return DoctorAvailability::where('doctor_id', $doctor_id)->where('period', 'afternoon')->get()->first();
     }
 }
