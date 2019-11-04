@@ -48,10 +48,14 @@ class Doctor extends Authenticatable
     ];
 
     /**
-     * The specialties that belong to the doctor.
+     * Relationships
      */
     public function specialties()
     {
         return $this->belongsToMany('App\Specialty');
+    }
+    public function clinic()
+    {
+        return $this->belongsTo('App\Clinic');
     }
 }

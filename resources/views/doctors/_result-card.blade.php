@@ -20,11 +20,11 @@
             </div>
             <p class="doctor-phone">
                 <i class="fas fa-phone-alt"></i>
-                {{ $doctor->phone_number }}
+                {{ $doctor->clinic()->get()->first()->phone_number }}
             </p>
             <p class="doctor-address">
                 <i class="fas fa-map-marker-alt"></i>
-                {{ $doctor->address }}
+                {{ $doctor->clinic()->get()->first()->address }}
             </p>
         </div>
 
