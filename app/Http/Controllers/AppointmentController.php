@@ -9,9 +9,9 @@ use App\City;
 class AppointmentController extends Controller
 {
     /**
-     * Book an appointment
+     * Return Book an appointment page
      */
-    public function bookAppointment($doctor_id, $ap_date, $ap_time)
+    public function bookAppointmentPage($doctor_id, $ap_date, $ap_time)
     {
         $doctor = Doctor::find($doctor_id);
         $clinic = $doctor->clinic;
@@ -24,5 +24,13 @@ class AppointmentController extends Controller
             'ap_date',
             'ap_time',
         ));
+    }
+
+    /**
+     * Book an appointment
+     */
+    public function bookAppointment()
+    {
+        // TODO
     }
 }

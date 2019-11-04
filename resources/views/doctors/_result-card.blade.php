@@ -58,7 +58,7 @@
                                         $morningStart = date('H:i', strtotime($morning->start_time));
                                     @endphp
                                     @while (strtotime($morningStart) < strtotime($morning->end_time))
-                                        <a href="{{ route('appointments.book',  [
+                                        <a href="{{ route('appointments.bookpage',  [
                                             'doctor_id' => $doctor->id,
                                             'ap_date' => $date,
                                             'ap_time' => $morningStart
@@ -74,7 +74,7 @@
                                         $afternoonStart = date('H:i', strtotime($afternoon->start_time));
                                     @endphp
                                     @while (strtotime($afternoonStart) < strtotime($afternoon->end_time))
-                                        <a href="{{ route('appointments.book',  [
+                                        <a href="{{ route('appointments.bookpage',  [
                                             'doctor_id' => $doctor->id,
                                             'ap_date' => $date,
                                             'ap_time' => $afternoonStart

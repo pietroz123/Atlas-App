@@ -57,12 +57,4 @@ class AppointmentSearchController extends Controller
         ]);   
     }
 
-    public function banana()
-    {
-        $ap_time = request('ap-time');
-        $doctor_id = request('doctor-id');
-        
-        
-    }
-
 }
