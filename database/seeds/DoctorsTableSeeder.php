@@ -19,7 +19,7 @@ class DoctorsTableSeeder extends Seeder
         Doctor::truncate();
 
         // Generate random doctors
-        factory(App\Doctor::class, 1000)->create();
+        factory(App\Doctor::class, 50)->create();
 
         // Retrieve all specialties
         $specialties = Specialty::all();
