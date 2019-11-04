@@ -39,7 +39,30 @@ $(document).ready(function() {
  * Display success message on appointment
  */
 $(document).on('click', '.calendar-slot.available', function() {
-    swal("Sucesso!", "Seu agendamento foi realizado com sucesso!", "success");
-    $(this).removeClass('available');
-    $(this).addClass('not-available');
+
+    const apTime = $(this).text();
+    const doctorId = $(this).parents('.doctor-found').attr('data-doctor-id');
+    console.log($(this).text());
+    console.log(doctorId);
+
+    $.ajax({
+        url: '/agendamentos/criar',
+        method: 'GET',
+        data: {
+            
+        },
+        datatype: '',
+        success: function(retorno) {
+            console.log('Success');
+            console.log(retorno);
+        },
+        error: function(retorno) {
+            console.log('Error');
+            console.log(retorno);
+        }
+    });
+
+    // swal("Sucesso!", "Seu agendamento foi realizado com sucesso!", "success");
+    // $(this).removeClass('available');
+    // $(this).addClass('not-available');
 });

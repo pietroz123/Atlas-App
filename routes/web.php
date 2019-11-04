@@ -22,9 +22,7 @@ Route::get('/clientes/medicos', 'HomeController@medicos');
 
 Route::get('/agendamentos/buscar', 'AppointmentSearchController@search')->name('appointments.search');
 Route::get('/agendamentos/resultado', 'AppointmentSearchController@results')->name('appointments.result');
-Route::get('/agendamentos/criar', function() {
-    return view('appointments.create-appointment');
-});
+Route::get('/marcar-agendamento/{doctor_id}/{ap_date}/{ap_time}', 'AppointmentController@bookAppointment')->name('appointments.book');
 
 /**
  * DOCTOR ROUTES

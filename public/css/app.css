@@ -5348,6 +5348,21 @@ section#doctor-skeleton .doctor-features li:hover {
 }
 
 /**
+ *
+ */
+table.clinic-info {
+  width: 100%;
+}
+table.clinic-info td {
+  font-size: 1rem;
+  padding-bottom: 5px;
+}
+table.clinic-info td:first-of-type {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+/**
  * DOCTORS
  */
 .doctors-found {

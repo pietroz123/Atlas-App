@@ -1,4 +1,4 @@
-<div class="row doctor-found">
+<div class="row doctor-found" data-doctor-id="{{ $doctor->id }}">
     <div class="col doctor-details">
         <div class="doctor-img-container">
             <img src="{{ asset('img/doctorr.jpg') }}" class="doctor-img" alt="Humberto Cenci Guimarães">
@@ -58,7 +58,11 @@
                                         $morningStart = date('H:i', strtotime($morning->start_time));
                                     @endphp
                                     @while (strtotime($morningStart) < strtotime($morning->end_time))
-                                        <a href="#!" class="calendar-slot available">{{ $morningStart }}</a>
+                                        <a href="{{ route('appointments.book',  [
+                                            'doctor_id' => $doctor->id,
+                                            'ap_date' => $date,
+                                            'ap_time' => $morningStart
+                                        ]) }}" class="calendar-slot available">{{ $morningStart }}</a>
                                         @php
                                             $morningStart = date('H:i', strtotime("+15 minutes", strtotime($morningStart)) );
                                         @endphp
@@ -70,7 +74,11 @@
                                         $afternoonStart = date('H:i', strtotime($afternoon->start_time));
                                     @endphp
                                     @while (strtotime($afternoonStart) < strtotime($afternoon->end_time))
-                                        <a href="#!" class="calendar-slot available">{{ $afternoonStart }}</a>
+                                        <a href="{{ route('appointments.book',  [
+                                            'doctor_id' => $doctor->id,
+                                            'ap_date' => $date,
+                                            'ap_time' => $afternoonStart
+                                        ]) }}" class="calendar-slot available">{{ $afternoonStart }}</a>
                                         @php
                                             $afternoonStart = date('H:i', strtotime("+15 minutes", strtotime($afternoonStart)) );
                                         @endphp

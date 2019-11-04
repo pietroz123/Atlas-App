@@ -522,6 +522,21 @@ section#doctor-skeleton {
 }
 
 /**
+ *
+ */
+table.clinic-info {
+    width: 100%;
+    td {
+        font-size: 1rem;
+        padding-bottom: 5px;
+        &:first-of-type {
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+    }
+}
+
+/**
  * DOCTORS
  */
 
