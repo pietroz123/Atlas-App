@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/clientes/pacientes', 'HomeController@pacientes');
 Route::get('/clientes/medicos', 'HomeController@medicos');
 
@@ -22,7 +22,7 @@ Route::get('/clientes/medicos', 'HomeController@medicos');
 
 Route::get('/agendamentos/buscar', 'AppointmentSearchController@search')->name('appointments.search');
 Route::get('/agendamentos/resultado', 'AppointmentSearchController@results')->name('appointments.result');
-Route::get('/marcar-agendamento/{doctor_id}/{ap_date}/{ap_time}', 'AppointmentController@bookAppointmentPage')->name('appointments.bookpage');
+Route::get('/marcar-agendamento/{doctor_id}/{ap_date}/{ap_time}', 'AppointmentController@bookAppointmentPage')->name('appointments.bookpage')->middleware('auth.patient');
 Route::post('/marcar-agendamento', 'AppointmentController@bookAppointment')->name('appointments.book');
 
 /**
