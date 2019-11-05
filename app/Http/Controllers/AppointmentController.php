@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Doctor;
+use App\Appointment;
 use App\City;
 
 class AppointmentController extends Controller
@@ -31,6 +33,28 @@ class AppointmentController extends Controller
      */
     public function bookAppointment()
     {
-        // TODO
+        /**
+         * Get data from the request
+         */
+        $patient_id = Auth::guard('patient')->user()->id;
+        $doctor_id = request('ap-doctor-id');
+        $start_time = request('ap-time');
+        $end_time = 
+        $status = 'active';
+        $date = request('ap-date');
+
+        /**
+         * Create Appointment
+         */
+        Appointment::create([
+            'patient_id' => $patient_id,
+            'doctor_id' => $doctor_id,
+            'probable_start_time' => $start_time,
+            'status' => $status,
+            'appointment_date' => $date,
+        ]);
+
+        // Return to dashboard
+        return redirect('/')->with('success', 'Agendamento realizado com sucesso');
     }
 }

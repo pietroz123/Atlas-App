@@ -28,11 +28,13 @@
             </div>
             <div class="col-5 pl-5">
                 <div class="form-group">
-                    <label for="ap-doctor">Médico</label>
-                    <input type="text" class="form-control" name="ap-doctor" id="ap-doctor" value="{{ $doctor->full_name }}" readonly>
+                    <label for="ap-doctor-name">Médico</label>
+                    <input type="text" class="form-control" name="ap-doctor-name" id="ap-doctor-name" value="{{ $doctor->full_name }}" readonly>
+                    <input type="hidden" name="ap-doctor-id" id="ap-doctor-id" value="{{ $doctor->id }}" readonly>
                 </div>
                 <p class="font-weight-bold mt-4 mb-3">Informações sobre a clínica</p>
                 <table class="clinic-info">
+                    <input type="hidden" name="clinic-id" value="{{ $clinic->id }}">
                     <tbody>
                         <tr>
                             <td>Endereço</td>
