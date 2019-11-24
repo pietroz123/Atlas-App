@@ -54,7 +54,7 @@ class AppointmentController extends Controller
         ]);
 
         // Return to dashboard
-        return redirect()->route('patients.dashboard.appointments')->with('success', 'Agendamento realizado com sucesso');
+        return redirect()->route('patients.dashboard.appointments.index')->with('success', 'Agendamento realizado com sucesso');
     }
 
     /**
@@ -66,6 +66,6 @@ class AppointmentController extends Controller
         $appointment = Appointment::find($id);
         $appointment->delete();
 
-        return redirect()->route('patients.dashboard.appointments')->with('success', 'Agendamento cancelado com sucesso');
+        return redirect()->route('patients.dashboard.appointments.index')->with('success', 'Agendamento cancelado com sucesso');
     }
 }

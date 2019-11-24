@@ -73,6 +73,6 @@ Route::view('/dashboard/medico', 'doctors.dashboard');
 Route::namespace('Patient')->middleware('auth.patient')->group(function() {
 
     Route::get('/dashboard/paciente', 'DashboardController@index')->name('patients.dashboard.index');
-    Route::get('/consultas', 'DashboardController@appointments')->name('patients.dashboard.appointments');
+    Route::get('/consultas', 'DashboardController@appointments')->name('patients.dashboard.appointments.index');
 
 });

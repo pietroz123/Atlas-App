@@ -27,7 +27,11 @@
         <tbody>
             @foreach ($appointments as $ap)
                 <tr>
-                    <td>{{ $ap->doctor->full_name }}</td>
+                    <td>
+                        <a href="{{ route('doctors.show', $ap->doctor->id) }}" class="text-info">
+                            {{ $ap->doctor->full_name }}
+                        </a>
+                    </td>
                     <td>{{ date('d/m/Y', strtotime($ap->appointment_date)) }}</td>
                     <td>{{ date('H:i', strtotime($ap->probable_start_time)) }}</td>
                     <td>

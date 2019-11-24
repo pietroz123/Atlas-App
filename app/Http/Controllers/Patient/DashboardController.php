@@ -18,7 +18,7 @@ class DashboardController extends Controller
     {
         $appointments = Appointment::where('patient_id', Auth::guard('patient')->user()->id)->get();
 
-        return view('patients.appointments', [
+        return view('patients.appointments.index', [
             'appointments' => $appointments,
         ]);
     }
