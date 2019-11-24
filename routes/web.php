@@ -22,8 +22,10 @@ Route::get('/clientes/medicos', 'HomeController@medicos');
 
 Route::get('/agendamentos/buscar', 'AppointmentSearchController@search')->name('appointments.search');
 Route::get('/agendamentos/resultado', 'AppointmentSearchController@results')->name('appointments.result');
+
+Route::delete('agendamentos/cancelar/{id}', 'AppointmentController@cancel')->name('appointments.cancel')->middleware('auth.patient');
 Route::get('/marcar-agendamento/{doctor_id}/{ap_date}/{ap_time}', 'AppointmentController@bookAppointmentPage')->name('appointments.bookpage')->middleware('auth.patient');
-Route::post('/marcar-agendamento', 'AppointmentController@bookAppointment')->name('appointments.book');
+Route::post('/marcar-agendamento', 'AppointmentController@bookAppointment')->name('appointments.book')->middleware('auth.patient');
 
 /**
  * DOCTOR ROUTES

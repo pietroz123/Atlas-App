@@ -48,7 +48,11 @@
                     <td class="td-actions">
                         <button class="btn-action view"><i class="fas fa-eye"></i></button>
                         <a href="#!" class="btn-action"><i class="fas fa-pencil-alt"></i></a>
-                        <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
+                        <form method="POST" action="{{ route('appointments.cancel', $ap->id) }}" class="remove-form" onsubmit="return confirm('Você realmente quer cancelar este agendamento?');">
+                            @method('DELETE')
+                            @csrf
+                            <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
+                        </form>
                     </td>
                 </tr>
             @endforeach
