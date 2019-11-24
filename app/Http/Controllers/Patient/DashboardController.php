@@ -9,11 +9,17 @@ use App\Appointment;
 
 class DashboardController extends Controller
 {
+    /**
+     * Dashboard INDEX
+     */
     public function index()
     {
         return view('patients.dashboard');
     }
 
+    /**
+     * Appointments INDEX
+     */
     public function appointments()
     {
         $appointments = Appointment::where('patient_id', Auth::guard('patient')->user()->id)->get();

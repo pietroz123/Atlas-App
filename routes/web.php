@@ -26,6 +26,7 @@ Route::get('/agendamentos/resultado', 'AppointmentSearchController@results')->na
 Route::delete('agendamentos/cancelar/{id}', 'AppointmentController@cancel')->name('appointments.cancel')->middleware('auth.patient');
 Route::get('/marcar-agendamento/{doctor_id}/{ap_date}/{ap_time}', 'AppointmentController@bookAppointmentPage')->name('appointments.bookpage')->middleware('auth.patient');
 Route::post('/marcar-agendamento', 'AppointmentController@bookAppointment')->name('appointments.book')->middleware('auth.patient');
+Route::get('/consultas/editar/{id}', 'AppointmentController@edit')->name('appointments.edit');
 
 /**
  * DOCTOR ROUTES
