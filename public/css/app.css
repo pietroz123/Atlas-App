@@ -5278,6 +5278,36 @@ section#doctor-skeleton .doctor-features li:hover {
   color: black !important;
 }
 
+.table-list th {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  padding-bottom: 11px !important;
+}
+.table-list tr:hover {
+  background-color: #fafafac5;
+}
+.table-list td {
+  padding-top: 0.8rem !important;
+  padding-bottom: 0.6rem !important;
+}
+.table-list .td-actions {
+  padding-top: 0.8rem;
+  padding-bottom: 0.6rem;
+}
+.table-list .td-actions a {
+  color: inherit;
+}
+.table-list .btn-action {
+  border: 0;
+  background: #efefef;
+  padding: 4px 8px;
+  border-radius: 3px;
+}
+.table-list .remove-form {
+  display: contents;
+}
+
 /**
  * Search Appointments
  */

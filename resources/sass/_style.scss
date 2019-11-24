@@ -434,6 +434,40 @@ section#doctor-skeleton {
 // APPOINTMENTS
 // =======================================================
 
+.table-list {
+    th {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 14px;
+        padding-bottom: 11px !important;
+    }
+    tr {
+        &:hover {
+            background-color: #fafafac5;
+        }
+    }
+    td {
+        padding-top: 0.8rem !important;
+        padding-bottom: 0.6rem !important;
+    }
+    .td-actions {
+        padding-top: 0.8rem;
+        padding-bottom: 0.6rem;
+        a {
+            color: inherit;
+        }
+    }
+    .btn-action {
+        border: 0;
+        background: #efefef;
+        padding: 4px 8px;
+        border-radius: 3px;
+    }
+    .remove-form {
+        display: contents;
+    }
+}
+
 /**
  * Search Appointments
  */

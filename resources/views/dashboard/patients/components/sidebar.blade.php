@@ -19,7 +19,7 @@
     <span class="dashboard-sidebar-divider">Navegação</span>
     <ul class="dashboard-sidebar-items">
         <li class="dashboard-sidebar-item">
-            <a href="#!">
+            <a href="{{ route('patients.dashboard.appointments') }}">
                 <i class="far fa-calendar-alt"></i>
                 Consultas
             </a>

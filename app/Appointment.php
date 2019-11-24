@@ -12,4 +12,9 @@ class Appointment extends Model
      * @var array
      */
     protected $guarded = [];
+
+    // Relationships
+    public function doctor() {
+        return $this->belongsTo('App\Doctor');
+    }
 }
