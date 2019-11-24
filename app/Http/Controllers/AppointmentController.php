@@ -69,12 +69,22 @@ class AppointmentController extends Controller
         return redirect()->route('patients.dashboard.appointments.index')->with('success', 'Agendamento cancelado com sucesso');
     }
 
+    /**
+     * Edit an appointment
+     */
     public function edit($id)
     {
         $ap = Appointment::find($id);
+        $ap_date = $ap->appointment_date;
+
+        $doctor = Doctor::find($ap->doctor_id);
+
+        // Get doctor available times
+        $available_times = $doctor->available_times($ap_date);
 
         return view('patients.appointments.edit', [
             'ap' => $ap,
+            'available_times' => $available_times,
         ]);
     }
 }

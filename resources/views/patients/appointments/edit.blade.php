@@ -15,11 +15,17 @@
             <div class="col-5">
                 <div class="form-group">
                     <label for="ap-date">Data</label>
-                    <input type="date" class="form-control" name="ap-date" id="ap-date" value="{{ $ap->appointment_date }}" readonly>
+                    <input type="date" class="form-control" name="ap-date" id="ap-date" value="{{ $ap->appointment_date }}">
                 </div>
                 <div class="form-group">
                     <label for="ap-time">Horário</label>
-                    <input type="time" class="form-control" name="ap-time" id="ap-time" value="{{ $ap->probable_start_time }}" readonly>
+                    <select class="browser-default custom-select" name="ap-time" id="ap-time">
+                        @foreach ($available_times as $time => $available)
+                            @if ($available)
+                                <option value="{{ $time }}" {{ $time == date('H:i', strtotime($ap->probable_start_time)) ? 'selected' : '' }}>{{ $time }}</option>
+                            @endif
+                        @endforeach
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="ap-add-info">Informações adicionais</label>
