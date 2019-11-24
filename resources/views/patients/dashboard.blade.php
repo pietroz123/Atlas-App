@@ -10,6 +10,6 @@
 
 @section('dashboard-content')
     
-    <h1>Dashboard de {{ explode(' ', Auth::guard('patient')->user()->full_name)[0] }}</h1>
+    <h2>Dashboard de {{ explode(' ', Auth::guard('patient')->user()->full_name)[0] }}</h2>
 
 @endsection

@@ -62,4 +62,14 @@ Route::post('/register/doctor', 'Auth\RegisterController@createDoctor')->name('r
 Route::post('/register/patient', 'Auth\RegisterController@createPatient')->name('register.patient');
 
 Route::view('/dashboard/medico', 'doctors.dashboard');
-Route::view('/dashboard/paciente', 'patients.dashboard');
+
+/**
+ * DASHBOARD ROUTES
+ */
+
+// PATIENTS
+Route::namespace('Patient')->group(function() {
+
+    Route::get('/dashboard/paciente', 'DashboardController@index')->name('patients.dashboard.index');
+
+});

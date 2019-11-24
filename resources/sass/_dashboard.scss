@@ -11,7 +11,8 @@
     display: flex;
 }
 .dashboard-sidebar {
-    width: 400px;
+    position: fixed;
+    width: 300px;
     min-height: 100vh;
     @include sidebar-background();
     -webkit-box-shadow: 3px 0px 4px 0px rgba(0,0,0,0.4);
@@ -24,8 +25,9 @@
     }
 }
 .dashboard-content {
-    width: 100%;
-    padding: 100px 150px;
+    margin-left: 300px;
+    width: calc(100% - 300px);
+    padding: 60px 75px;
 }
 
 /**

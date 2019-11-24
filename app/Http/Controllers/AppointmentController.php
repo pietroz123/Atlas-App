@@ -39,7 +39,6 @@ class AppointmentController extends Controller
         $patient_id = Auth::guard('patient')->user()->id;
         $doctor_id = request('ap-doctor-id');
         $start_time = request('ap-time');
-        $end_time = 
         $status = 'active';
         $date = request('ap-date');
 
@@ -55,6 +54,6 @@ class AppointmentController extends Controller
         ]);
 
         // Return to dashboard
-        return redirect('/')->with('success', 'Agendamento realizado com sucesso');
+        return redirect()->route('patients.dashboard.index')->with('success', 'Agendamento realizado com sucesso');
     }
 }
