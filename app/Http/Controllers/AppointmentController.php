@@ -87,4 +87,19 @@ class AppointmentController extends Controller
             'available_times' => $available_times,
         ]);
     }
+
+    /**
+     * Update an appointment
+     */
+    public function update($id)
+    {
+        $ap = Appointment::find($id);
+        $ap->appointment_date = request('ap-date');
+        $ap->probable_start_time = request('ap-time');
+        // $ap-> = request('ap-add-info');
+
+        $ap->save();
+        
+        return redirect()->route('patients.dashboard.appointments.index')->with('success', 'Agendamento atualizado com sucesso'); 
+    } 
 }

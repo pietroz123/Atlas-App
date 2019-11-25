@@ -8,14 +8,15 @@
     <h5 class="mt-4">Alterar Agendamento</h5>
     <hr>
 
-    <form method="POST" action="">
+    <form method="POST" action="{{ route('appointments.update', $ap->id) }}">
+        @method('PUT')
         @csrf
 
         <div class="row mt-4">
             <div class="col-5">
                 <div class="form-group">
                     <label for="ap-date">Data</label>
-                    <input type="date" class="form-control" name="ap-date" id="ap-date" value="{{ $ap->appointment_date }}">
+                    <input type="date" class="form-control" name="ap-date" id="ap-date" value="{{ $ap->appointment_date }}" readonly>
                 </div>
                 <div class="form-group">
                     <label for="ap-time">Horário</label>
@@ -36,11 +37,9 @@
                 <div class="form-group">
                     <label for="ap-doctor-name">Médico</label>
                     <input type="text" class="form-control" name="ap-doctor-name" id="ap-doctor-name" value="{{ $ap->doctor->full_name }}" readonly>
-                    <input type="hidden" name="ap-doctor-id" id="ap-doctor-id" value="{{ $ap->doctor->id }}" readonly>
                 </div>
                 <p class="font-weight-bold mt-4 mb-3">Informações sobre a clínica</p>
                 <table class="clinic-info">
-                    <input type="hidden" name="clinic-id" value="{{ $ap->doctor->clinic->id }}">
                     <tbody>
                         <tr>
                             <td>Endereço</td>
@@ -60,8 +59,8 @@
         </div>
         
         <div class="mt-4">
-            <button class="btn btn-light mr-1">Cancelar</button>
-            <button class="btn bg-main-color-dark white-text">Pagamento</button>
+            <a class="btn btn-light mr-1" href="{{ url()->previous() }}">Cancelar</a>
+            <button class="btn bg-main-color-dark white-text" type="submit">Atualizar</button>
         </div>
     </form>
         
