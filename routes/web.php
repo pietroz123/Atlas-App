@@ -78,3 +78,10 @@ Route::namespace('Patient')->middleware('auth.patient')->group(function() {
     Route::get('/consultas', 'DashboardController@appointments')->name('patients.dashboard.appointments.index');
 
 });
+
+/**
+ * PAYMENT ROUTES
+ */
+
+
+Route::view('/pagamento', 'payments.appointment');

@@ -5,5 +5,6 @@
     "/js/mdbootstrap.js": "/js/mdbootstrap.js",
     "/js/home/medicos.js": "/js/home/medicos.js",
     "/js/appointments/search-result.js": "/js/appointments/search-result.js",
-    "/js/appointments/search-index.js": "/js/appointments/search-index.js"
+    "/js/appointments/search-index.js": "/js/appointments/search-index.js",
+    "/js/payments/pay-appointment.js": "/js/payments/pay-appointment.js"
 }
