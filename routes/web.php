@@ -84,4 +84,4 @@ Route::namespace('Patient')->middleware('auth.patient')->group(function() {
  */
 
 
-Route::view('/pagamento', 'payments.appointment');
+Route::view('/pagamento', 'payments.pay-appointment');
