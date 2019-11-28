@@ -5707,6 +5707,56 @@ table.clinic-info td:first-of-type {
   padding-top: 10px;
 }
 
+.card-wrapper {
+  margin-top: calc(6rem + 1.25em);
+}
+
+#form-card label {
+  font-size: 14px;
+}
+
+.card-review .card-review-header {
+  padding: 0.9rem 1rem;
+  border: 1px solid lightgrey;
+  border-radius: 4px 4px 0 0;
+}
+.card-review .card-review-header h5 {
+  margin: 0;
+  font-weight: 600;
+}
+.card-review .card-review-info {
+  border-right: 1px solid lightgrey;
+  border-left: 1px solid lightgrey;
+  padding: 1rem;
+}
+.card-review .card-review-info .header {
+  display: block;
+  font-size: 0.9rem;
+  color: grey;
+}
+.card-review .card-review-info .header:not(:first-of-type) {
+  margin-top: 1rem;
+}
+.card-review .card-review-payment {
+  border: 1px solid lightgrey;
+  padding: 0.9rem 1rem;
+  background-color: #f5f5f5;
+  border-radius: 0 0 4px 4px;
+}
+.card-review .card-review-payment p {
+  color: #969696;
+  font-weight: 600;
+}
+.card-review .card-review-payment p:not(:last-of-type) {
+  margin-bottom: 0.25rem;
+}
+.card-review .card-review-payment .price {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: black;
+  margin-left: 5px;
+}
+
 .mt-2rem {
   margin-top: 2rem;
 }

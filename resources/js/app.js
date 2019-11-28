@@ -8,3 +8,4 @@ require('./bootstrap');
 
 window.select2 = require('select2');
 window.sweetalert = require('sweetalert');
+window.card = require('card');
