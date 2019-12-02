@@ -5728,6 +5728,7 @@ table.clinic-info td:first-of-type {
   border-right: 1px solid lightgrey;
   border-left: 1px solid lightgrey;
   padding: 1rem;
+  font-size: 15px;
 }
 .card-review .card-review-info .header {
   display: block;

@@ -5,10 +5,10 @@
 @section('content')
 <div class="container">
 
-    <h5 class="mt-4">Efetuar um agendamento</h5>
+    <h5 class="mt-4">Efetuar um Agendamento</h5>
     <hr>
 
-    <form method="POST" action="{{ route('appointments.book') }}">
+    <form method="POST" action="{{ route('appointments.payment') }}">
         @csrf
 
         <div class="row mt-4">
