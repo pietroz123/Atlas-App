@@ -15,9 +15,10 @@
                 <h5 class="mb-5">Dados do Titular do Cartão</h5>
         
                 <form id="form-card">
-                    <div class="form-group">
+                    <div class="form-group position-relative">
                         <label for="card-number">Número do Cartão</label>
                         <input type="text" name="card-number" id="card-number" class="form-control">
+                        <div class="card-flag"></div>
                     </div>
                     
                     <div class="row">
@@ -58,7 +59,7 @@
                     <div class="row">
                         <div class="col-6">
                             <div class="form-group">
-                                <label for="tel">Telefone</label>
+                                <label for="tel">Celular</label>
                                 <input type="text" name="tel" id="tel" class="form-control">
                             </div>
                         </div>
@@ -70,6 +71,12 @@
             <div class="col px-5">
         
                 <div class="card-wrapper"></div>
+
+                <div class="payment-methods">
+                    <div class="credit-card"></div>
+                    <div class="boleto"></div>
+                    <div class="online-debit"></div>
+                </div>
         
             </div>
             {{-- APPOINTMENT REVIEW --}}
@@ -113,5 +120,87 @@
 @endsection
 
 @section('scripts')
+    <script type="text/javascript" src="https://stc.sandbox.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.directpayment.js"></script>
     <script src="{{ asset('js/payments/pay-appointment.js') }}"></script>
+    <script>
+
+        // Inicia a sessão do PagSeguro
+        function startSession() {
+            PagSeguroDirectPayment.setSessionId('{{ $session_id }}');
+        }
+        
+        // Lista os Meios de Pagamento do PagSeguro
+        function listPaymentMethods() {
+            PagSeguroDirectPayment.getPaymentMethods({
+                amount: 500.00,
+                success: function(response) {
+                    
+                    // Retorna os meios de pagamento disponíveis.
+                    const pm = response.paymentMethods;
+
+                    $.each(pm.CREDIT_CARD.options, function(i, item) {
+                        $('.payment-methods .credit-card').append('<div class="method"><img src="https://stc.pagseguro.uol.com.br/'+ item.images.SMALL.path +'"><span>'+ item.name +'</span></div>')
+                    });
+                    
+                    $('.payment-methods .boleto').append('<div class="method"><img src="https://stc.pagseguro.uol.com.br/'+ pm.BOLETO.options.BOLETO.images.SMALL.path +'"><span>'+ pm.BOLETO.name +'</span></div>')
+                    
+                    $.each(pm.ONLINE_DEBIT.options, function(i, item) {
+                        $('.payment-methods .online-debit').append('<div class="method"><img src="https://stc.pagseguro.uol.com.br/'+ item.images.SMALL.path +'"><span>'+ item.name +'</span></div>')
+                    });
+
+                    console.log(response);
+                },
+                error: function(response) {
+                    // Callback para chamadas que falharam.
+                    console.log(response);
+                },
+                complete: function(response) {
+                    // Callback para todas chamadas.
+                    console.log(response);
+                }
+            });
+        }
+        
+        $(document).ready(function() {
+
+            startSession();
+            // listPaymentMethods();
+
+            /**
+             * Get card flag
+             */
+            $('#card-number').keyup(function() {
+
+                const cardNumber = $(this).val().replace(/ /g,'');
+                const qtyChars = cardNumber.length;
+
+                if (qtyChars == 6) {
+                    // Send request
+                    PagSeguroDirectPayment.getBrand({
+                        cardBin: cardNumber,
+                        success: function(response) {
+                            //Bandeira encontrada
+                            const brand = response.brand;
+                            const flag = brand.name;
+                            const img = '<img src="https://stc.pagseguro.uol.com.br/public/img/payment-methods-flags/42x20/'+ flag +'.png">';
+                            
+                            $('.card-flag').html(img);
+                        },
+                        error: function(response) {
+                            //tratamento do erro
+                        },
+                        complete: function(response) {
+                            //tratamento comum para todas chamadas
+                        }
+                    });
+                }
+                else if (qtyChars < 6) {
+                    $('.card-flag').empty();
+                }
+
+            });
+
+        });
+
+    </script>
 @endsection

@@ -84,3 +84,25 @@ Route::namespace('Patient')->middleware('auth.patient')->group(function() {
  */
 
 Route::post('/appointments/payment', 'AppointmentPaymentController@appointmentsPayment')->name('appointments.payment');
+
+
+
+use GuzzleHttp\Client;
+
+Route::get('/teste', function() {
+
+    $client = new Client([
+        'base_uri' => 'https://ws.sandbox.pagseguro.uol.com.br/v2/',
+        'timeout'  => 2.0, 
+    ]);
+
+    $response = $client->request('POST', '/sessions', [
+        'form_params' => [
+            'email' => env('PAGSEGURO_EMAIL'),
+            'token' => env('PAGSEGURO_TOKEN_SANDBOX'),
+        ]
+    ]);
+    $xml = new SimpleXMLElement( $response->getBody()->getContents() );
+    dd(json_decode( json_encode($xml) )->id);
+
+});

@@ -5758,6 +5758,12 @@ table.clinic-info td:first-of-type {
   margin-left: 5px;
 }
 
+.card-flag {
+  position: absolute;
+  right: 8px;
+  bottom: 9px;
+}
+
 .mt-2rem {
   margin-top: 2rem;
 }

@@ -22,7 +22,7 @@
                     <input type="time" class="form-control" name="ap-time" id="ap-time" value="{{ $ap_time }}" readonly>
                 </div>
                 <div class="form-group">
-                    <label for="ap-add-info">Informações adicionais</label>
+                    <label for="ap-add-info">Informações Adicionais</label>
                     <textarea type="text" class="form-control" name="ap-add-info" id="ap-add-info" rows="4"></textarea>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                     <input type="text" class="form-control" name="ap-doctor-name" id="ap-doctor-name" value="{{ $doctor->full_name }}" readonly>
                     <input type="hidden" name="ap-doctor-id" id="ap-doctor-id" value="{{ $doctor->id }}" readonly>
                 </div>
-                <p class="font-weight-bold mt-4 mb-3">Informações sobre a clínica</p>
+                <p class="font-weight-bold mt-4 mb-3">Informações sobre a Clínica</p>
                 <table class="clinic-info">
                     <input type="hidden" name="clinic-id" value="{{ $clinic->id }}">
                     <tbody>
