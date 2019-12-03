@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Auth;
 use App\Doctor;
+use App\Appointment;
 
 class AppointmentPaymentController extends Controller
 {
@@ -62,6 +64,9 @@ class AppointmentPaymentController extends Controller
         $sender_hash = request('sender-hash');
         $installment_qty = request('installment-qty');
         $installment_value = request('installment-value');
+        $ap_doctor_id = request('ap-doctor-id');
+        $ap_date = request('ap-date');
+        $ap_time = request('ap-time');
 
         /**
          * Create POST request to /transactions
@@ -139,7 +144,32 @@ class AppointmentPaymentController extends Controller
 
         $xml = simplexml_load_string( $response->getBody()->getContents() );
         $json = json_decode( json_encode($xml) );
-        dd($json);
+
+        // TODO
+        // Salvar o pedido no banco
+        
+        /**
+         * Get data from the request
+         */
+        $patient_id = Auth::guard('patient')->user()->id;
+        $doctor_id = $ap_doctor_id;
+        $start_time = $ap_time;
+        $status = 'active';
+        $date = $ap_date;
+
+        /**
+         * Create Appointment
+         */
+        Appointment::create([
+            'patient_id' => $patient_id,
+            'doctor_id' => $doctor_id,
+            'probable_start_time' => $start_time,
+            'status' => $status,
+            'appointment_date' => $date,
+        ]);
+
+        // Return to dashboard
+        return redirect()->route('patients.dashboard.appointments.index')->with('success', 'Agendamento realizado com sucesso');
 
     }
 }
