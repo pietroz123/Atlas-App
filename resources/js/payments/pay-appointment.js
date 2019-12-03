@@ -138,7 +138,26 @@ $(document).ready(function() {
             }
             var hash = response.senderHash;     // Hash estará disponível nesta variável.
             $('#sender-hash').val(hash);
+            getCardToken();
         });
+        
+        loop();
+
+        function loop() {
+            if ($('#card-token').val().length == 0 || $('#sender-hash').val().length == 0) {
+                setTimeout(loop, 0);
+            }
+            else {
+                submitForm();
+            }
+        }
+
+        function submitForm() {
+            // Submit form
+            var form = $('#form-card');
+            form.submit();
+        }
+        
     });
 
 });

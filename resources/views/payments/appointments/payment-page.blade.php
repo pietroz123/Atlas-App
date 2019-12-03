@@ -5,7 +5,7 @@
 @section('content')
 <div class="container">
 
-    <form method="POST" action="{{ route('appointments.book') }}" id="form-card">
+    <form method="POST" action="{{ route('appointments.payment.checkout') }}" id="form-card">
         @csrf
         
         <div class="row">
@@ -73,6 +73,7 @@
             <div class="col px-5">
         
                 <input type="hidden" name="pagseguro-session-id" id="pagseguro-session-id" value="{{ $session_id }}">
+
                 <div class="card-wrapper"></div>
 
                 <div class="payment-methods">

@@ -9,6 +9,9 @@ use App\Doctor;
 
 class AppointmentPaymentController extends Controller
 {
+    /**
+     * Return Payment Page
+     */
     public function appointmentsPayment()
     {
         /**
@@ -24,7 +27,7 @@ class AppointmentPaymentController extends Controller
          */
         $client = new Client([
             'base_uri' => 'https://ws.sandbox.pagseguro.uol.com.br/v2/',
-            'timeout'  => 2.0, 
+            // 'timeout'  => 2.0, 
         ]);
     
         $response = $client->request('POST', '/sessions', [
@@ -47,5 +50,89 @@ class AppointmentPaymentController extends Controller
             'doctor' => $doctor,
             'session_id' => $session_id,
         ]);
+    }
+
+    /**
+     * Checkout
+     */
+    public function checkout()
+    {
+        // Get Request data
+        $card_token = request('card-token');
+        $sender_hash = request('sender-hash');
+
+        /**
+         * 
+         */
+        $client = new Client([
+            'base_uri' => 'https://ws.sandbox.pagseguro.uol.com.br/v2/',
+            // 'timeout'  => 2.0, 
+        ]);
+    
+        $response = $client->request('POST', '/transactions', [
+            'form_params' => [
+                'email' => env('PAGSEGURO_EMAIL'),
+                'token' => env('PAGSEGURO_TOKEN_SANDBOX'),
+                'paymentMode' => 'default',
+                'paymentMethod' => 'creditCard',
+                'receiverEmail' => env('PAGSEGURO_EMAIL'),
+                'currency' => 'BRL',
+                'extraAmount' => '1.00',
+                'itemId1' => '0001',
+                'itemDescription1' => 'Notebook Prata',
+                'itemAmount1' => '24300.00',
+                'itemQuantity1' => '1',
+                'notificationURL' => 'https://sualoja.com.br/notificacao',
+                'reference' => 'REF1234',
+
+                // Info Remetente
+                'senderName' => 'Jose Comprador',
+                'senderCPF' => '22111944785',
+                'senderAreaCode' => '11',
+                'senderPhone' => '56273440',
+                'senderEmail' => 'comprador@uol.com.br',
+
+                // Chaves
+                'senderHash' => $sender_hash,
+                'creditCardToken' => $card_token,
+
+                // // Info de Envio
+                // 'shippingAddressRequired' => 'true',
+                // 'shippingAddressStreet' => 'Av. Brig. Faria Lima',
+                // 'shippingAddressNumber' => '1384',
+                // 'shippingAddressComplement' => '5o andar',
+                // 'shippingAddressDistrict' => 'Jardim Paulistano',
+                // 'shippingAddressPostalCode' => '01452002',
+                // 'shippingAddressCity' => 'Sao Paulo',
+                // 'shippingAddressState' => 'SP',
+                // 'shippingAddressCountry' => 'BRA',
+                // 'shippingType' => '1',
+                // 'shippingCost' => '0.00',
+                
+                // Info Parcelas
+                'installmentQuantity' => 1,
+                'noInterestInstallmentQuantity' => 1,
+                'installmentValue' => 60.0,
+
+                // Info Pagamento
+                'creditCardHolderName' => 'Jose Comprador',
+                'creditCardHolderCPF' => '22111944785',
+                'creditCardHolderBirthDate' => '27/10/1987',
+                'creditCardHolderAreaCode' => '11',
+                'creditCardHolderPhone' => '56273440',
+                'billingAddressStreet' => 'Av. Brig. Faria Lima',
+                'billingAddressNumber' => '1384',
+                'billingAddressComplement' => '5o andar',
+                'billingAddressDistrict' => 'Jardim Paulistano',
+                'billingAddressPostalCode' => '01452002',
+                'billingAddressCity' => 'Sao Paulo',
+                'billingAddressState' => 'SP',
+                'billingAddressCountry' => 'BRA',
+            ]
+        ]);
+
+        $xml = simplexml_load_string( $response->getBody()->getContents() );
+        $json = json_decode( json_encode($xml) );
+        dd($json);
     }
 }

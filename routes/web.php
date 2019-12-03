@@ -84,6 +84,7 @@ Route::namespace('Patient')->middleware('auth.patient')->group(function() {
  */
 
 Route::post('/appointments/payment', 'AppointmentPaymentController@appointmentsPayment')->name('appointments.payment');
+Route::post('/appointments/payment/checkout', 'AppointmentPaymentController@checkout')->name('appointments.payment.checkout');
 
 
 
