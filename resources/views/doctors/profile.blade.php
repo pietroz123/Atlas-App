@@ -41,6 +41,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
+                        
                     <span>(18 avaliações)</span>
                 </div>
 
@@ -62,13 +63,20 @@
                     <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
                         <div class="d-flex">
                             <div class="doctor-about-address">
-                                <h4 class="doctor-about-header">Endereço</h4>
-                                <p>{{ $doctor->address }}</p>
-                                <p>Sorocaba - SP</p>
+                                <h4 class="doctor-about-header mb-3">Endereço</h4>
+                                <p>{{ $doctor->clinic->address }}</p>
+                                <p>{{ $doctor->clinic->city->city_name }} - {{ $doctor->clinic->city->state->state_abbrev }}</p>
                             </div>
                             <div class="doctor-about-contact ml-5">
-                                <h4 class="doctor-about-header">Informações de Contato</h4>
-                                <p>{{ $doctor->phone_number }}</p>
+                                <h4 class="doctor-about-header mb-3">Informações de Contato</h4>
+                                <div class="row">
+                                    <div class="col-4">Médico:</div>
+                                    <div class="col mb-3">{{ $doctor->phone_number }}</div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">Clínica:</div>
+                                    <div class="col">{{ $doctor->clinic->phone_number }}</div>
+                                </div>
                             </div>
                         </div>
                     </div>

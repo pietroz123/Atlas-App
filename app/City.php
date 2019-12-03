@@ -15,4 +15,9 @@ class City extends Model
 
     // Disable timestamps
     public $timestamps = false;
+
+    // Relationships
+    public function state() {
+        return $this->belongsTo('App\State', 'co_state', 'co_state');
+    }
 }
