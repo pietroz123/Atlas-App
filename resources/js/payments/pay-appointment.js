@@ -53,18 +53,21 @@ function getInstallments(cardFlag) {
             $.each(installments, function(i, flag) {
 
                 var options = [];
+                options.push('<option>Selecione uma parcela</option>');
+                
                 // Loop through installment options
                 $.each(flag, function(i, ins) {
                     const amount = ins.installmentAmount;
                     const qty = ins.quantity;
+                    const installmentAmount = amount.toFixed(2);
                     options.push(
-                        '<option value="'+ amount +'">' +
+                        '<option value="'+ qty +'" data-inst-value="'+ amount.toFixed(2) +'">' +
                             '<span>'+ qty +'</span> parcela(s) de R$ ' + amount.toFixed(2).replace('.', ',') +
                         '</option>'
                     );
                 });
 
-                $selectIns = $('select#installment');
+                $selectIns = $('select#installment-qty');
                 $selectIns.empty();
                 $selectIns.append(options);
                 $('.installments-container').show();
@@ -80,6 +83,13 @@ function getInstallments(cardFlag) {
         }
     });
 }
+
+// Get installment value
+$(document).on('change', '#installment-qty', function() {
+    $option = $(this).children("option:selected");
+    const value = $option.attr('data-inst-value');
+    $('#installment-value').val(value);
+});
 
 // Recupera o token do cartão de crédito
 function getCardToken() {

@@ -60,6 +60,8 @@ class AppointmentPaymentController extends Controller
         // Get Request data
         $card_token = request('card-token');
         $sender_hash = request('sender-hash');
+        $installment_qty = request('installment-qty');
+        $installment_value = request('installment-value');
 
         /**
          * 
@@ -73,46 +75,49 @@ class AppointmentPaymentController extends Controller
             'form_params' => [
                 'email' => env('PAGSEGURO_EMAIL'),
                 'token' => env('PAGSEGURO_TOKEN_SANDBOX'),
+
                 'paymentMode' => 'default',
                 'paymentMethod' => 'creditCard',
                 'receiverEmail' => env('PAGSEGURO_EMAIL'),
                 'currency' => 'BRL',
-                'extraAmount' => '1.00',
-                'itemId1' => '0001',
+
+                // 'extraAmount' => '1.00',
+
+                'itemId1' => '1',
                 'itemDescription1' => 'Notebook Prata',
-                'itemAmount1' => '24300.00',
+                'itemAmount1' => '60.00',
                 'itemQuantity1' => '1',
                 'notificationURL' => 'https://sualoja.com.br/notificacao',
                 'reference' => 'REF1234',
 
                 // Info Remetente
-                'senderName' => 'Jose Comprador',
+                'senderName' => 'José Comprador',
                 'senderCPF' => '22111944785',
                 'senderAreaCode' => '11',
                 'senderPhone' => '56273440',
-                'senderEmail' => 'comprador@uol.com.br',
+                'senderEmail' => 'c42739828696487174320@sandbox.pagseguro.com.br',
 
                 // Chaves
                 'senderHash' => $sender_hash,
                 'creditCardToken' => $card_token,
 
-                // // Info de Envio
+                // Info de Envio
                 // 'shippingAddressRequired' => 'true',
-                // 'shippingAddressStreet' => 'Av. Brig. Faria Lima',
-                // 'shippingAddressNumber' => '1384',
-                // 'shippingAddressComplement' => '5o andar',
-                // 'shippingAddressDistrict' => 'Jardim Paulistano',
-                // 'shippingAddressPostalCode' => '01452002',
-                // 'shippingAddressCity' => 'Sao Paulo',
-                // 'shippingAddressState' => 'SP',
-                // 'shippingAddressCountry' => 'BRA',
-                // 'shippingType' => '1',
-                // 'shippingCost' => '0.00',
+                'shippingAddressStreet' => 'Av. Brig. Faria Lima',
+                'shippingAddressNumber' => '1384',
+                'shippingAddressComplement' => '5o andar',
+                'shippingAddressDistrict' => 'Jardim Paulistano',
+                'shippingAddressPostalCode' => '01452002',
+                'shippingAddressCity' => 'Sao Paulo',
+                'shippingAddressState' => 'SP',
+                'shippingAddressCountry' => 'BRA',
+                'shippingType' => '1',
+                'shippingCost' => '0.00',
                 
                 // Info Parcelas
-                'installmentQuantity' => 1,
-                'noInterestInstallmentQuantity' => 1,
-                'installmentValue' => 60.0,
+                'installmentQuantity' => $installment_qty,
+                'noInterestInstallmentQuantity' => 4,
+                'installmentValue' => $installment_value,
 
                 // Info Pagamento
                 'creditCardHolderName' => 'Jose Comprador',

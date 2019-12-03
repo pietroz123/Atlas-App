@@ -110,8 +110,9 @@
                     <div class="card-review-payment">
                         <div class="installments-container" style="display: none">
                             <div class="installments">
-                                <label for="installment" class="font-weight-bold">Parcelas</label>
-                                <select name="installment" id="installment" class="browser-default custom-select"></select>
+                                <input type="hidden" name="installment-value" id="installment-value">
+                                <label for="installment-qty" class="font-weight-bold">Parcelas</label>
+                                <select name="installment-qty" id="installment-qty" class="browser-default custom-select"></select>
                             </div>
                             <hr>
                         </div>
