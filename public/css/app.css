@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Lato:400,400i&display=swap);@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500&display=swap);@import url(https://fonts.googleapis.com/css?family=Rajdhani:500,600);@import url(https://fonts.googleapis.com/css?family=Bitter&display=swap);@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap);@import url(https://fonts.googleapis.com/css?family=Lora&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Asap:400,500,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Exo:400,500,600&display=swap);/*!
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://fonts.googleapis.com/css?family=Lato:400,400i&display=swap);@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,500&display=swap);@import url(https://fonts.googleapis.com/css?family=Rajdhani:500,600);@import url(https://fonts.googleapis.com/css?family=Bitter&display=swap);@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap);@import url(https://fonts.googleapis.com/css?family=Lora&display=swap);@import url(https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Asap:400,500,600&display=swap);@import url(https://fonts.googleapis.com/css?family=Exo:400,500,600&display=swap);@import url(//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css);/*!
  * Font Awesome Free 5.11.2 by @fontawesome - https://fontawesome.com
  * License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License)
  */
@@ -5864,6 +5864,48 @@ a:hover {
 
 .select2-container--default .select2-selection--multiple {
   height: 100% !important;
+}
+
+.rating {
+  border: none;
+  float: left;
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > label:before {
+  margin: 5px;
+  font-size: 1.25em;
+  font-family: FontAwesome;
+  display: inline-block;
+  content: "\F005";
+}
+
+.rating > .half:before {
+  content: "\F089";
+  position: absolute;
+}
+
+.rating > label {
+  color: #ddd;
+  float: right;
+}
+
+/***** CSS Magic to Highlight Stars on Hover *****/
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+  color: #FFD700;
+}
+
+/* hover previous stars in list */
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+  color: #FFED85;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1198.98px) {

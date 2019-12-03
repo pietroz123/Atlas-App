@@ -22,7 +22,7 @@ class DashboardController extends Controller
      */
     public function appointments()
     {
-        $appointments = Appointment::where('patient_id', Auth::guard('patient')->user()->id)->get();
+        $appointments = Appointment::where('patient_id', Auth::guard('patient')->user()->id)->orderBy('appointment_date')->get();
 
         return view('patients.appointments.index', [
             'appointments' => $appointments,

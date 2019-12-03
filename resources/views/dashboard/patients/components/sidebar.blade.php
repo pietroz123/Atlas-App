@@ -25,7 +25,7 @@
             </a>
         </li>
         <li class="dashboard-sidebar-item">
-            <a href="#!">
+            <a href="{{ route('patients.dashboard.ratings.index') }}">
                 <i class="far fa-star"></i>
                 Avaliações
             </a>
