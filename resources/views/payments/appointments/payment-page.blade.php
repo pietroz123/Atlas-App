@@ -108,7 +108,13 @@
         
                     </div>
                     <div class="card-review-payment">
-                        <p>1x de R$60,00 sem juros</p>
+                        <div class="installments-container" style="display: none">
+                            <div class="installments">
+                                <label for="installment" class="font-weight-bold">Parcelas</label>
+                                <select name="installment" id="installment" class="browser-default custom-select"></select>
+                            </div>
+                            <hr>
+                        </div>
                         <p>Total a Pagar: <span class="price">R$60,00</span></p>
                     </div>
                 </div>

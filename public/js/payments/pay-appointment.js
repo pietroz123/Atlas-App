@@ -8,7 +8,7 @@ function startSession() {
 // Lista os Meios de Pagamento do PagSeguro
 function listPaymentMethods() {
     PagSeguroDirectPayment.getPaymentMethods({
-        amount: 500.00,
+        amount: 60.00,
         success: function(response) {
 
             // Retorna os meios de pagamento disponíveis.
@@ -33,6 +33,50 @@ function listPaymentMethods() {
         complete: function(response) {
             // Callback para todas chamadas.
             console.log(response);
+        }
+    });
+}
+
+// Exibe a quantidade e valores das parcelas
+function getInstallments(cardFlag) {
+    PagSeguroDirectPayment.getInstallments({
+        amount: 60.00,
+        maxInstallmentNoInterest: 2,
+        brand: cardFlag,
+        success: function(response) {
+
+            // Retorna as opções de parcelamento disponíveis
+            const installments = response.installments;
+            console.log(installments);
+            
+            // Loop through card flags
+            $.each(installments, function(i, flag) {
+
+                var options = [];
+                // Loop through installment options
+                $.each(flag, function(i, ins) {
+                    const amount = ins.installmentAmount;
+                    const qty = ins.quantity;
+                    options.push(
+                        '<option value="'+ amount +'">' +
+                            '<span>'+ qty +'</span> parcela(s) de R$ ' + amount.toFixed(2).replace('.', ',') +
+                        '</option>'
+                    );
+                });
+
+                $selectIns = $('select#installment');
+                $selectIns.empty();
+                $selectIns.append(options);
+                $('.installments-container').show();
+
+            });
+
+        },
+        error: function(response) {
+            // Callback para chamadas que falharam.
+        },
+        complete: function(response){
+            // Callback para todas chamadas.
         }
     });
 }
@@ -109,6 +153,9 @@ $(document).ready(function() {
                     const img = '<img src="https://stc.pagseguro.uol.com.br/public/img/payment-methods-flags/42x20/'+ flag +'.png">';
                     
                     $('.card-flag').html(img);
+
+                    // Recupera as parcelas
+                    getInstallments(flag);
                 },
                 error: function(response) {
                     //tratamento do erro
