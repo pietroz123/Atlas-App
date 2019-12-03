@@ -644,6 +644,9 @@ table.clinic-info {
     .calendar-schedule {
         display: flex;
         width: 310px;
+        &.profile {
+            width: 100%;
+        }
         .calendar-day {
             &:not(:last-of-type) {
                 margin-right: 10px;

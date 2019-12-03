@@ -66,6 +66,29 @@ class Doctor extends Authenticatable
     }
 
     /**
+     * Return doctor avg rating
+     */
+    public function avgRating()
+    {
+        /**
+         * Ratings
+         */
+        $ratings = $this->patientRatings;
+        $countRatings = count($ratings);
+        if ($countRatings > 0) {
+            $sum = 0;
+            foreach ($ratings as $rating) {
+                $sum += (int) $rating->rating;
+            }
+            $avgRating = ceil($sum / $countRatings);
+        }
+        else
+            $avgRating = 0;
+
+        return $avgRating;
+    }
+
+    /**
      * Return doctor available times
      */
     public function available_times($ap_date)

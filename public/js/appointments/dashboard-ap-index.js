@@ -11,12 +11,12 @@ $(document).ready(function() {
         // Fill input
         $('#ap-id').val(apId);
 
+        // Show modal
         $stars = $('input[name="rating"]');
         $.each($stars, function(i, item) {
             item.checked = false;
         });
         $('.rating-feedback').hide();
-        // Show modal
         $('#modal-rating').modal('show');
 
     });

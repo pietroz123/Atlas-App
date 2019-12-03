@@ -48,10 +48,12 @@ class DoctorController extends Controller
     {
         // Retrieve doctor
         $doctor = Doctor::find($id);
-        $ratings = $doctor->patientRatings;
         
+        /**
+         * Ratings
+         */
+        $ratings = $doctor->patientRatings;
         $countRatings = count($ratings);
-
         if ($countRatings > 0) {
             $sum = 0;
             foreach ($ratings as $rating) {
@@ -61,7 +63,7 @@ class DoctorController extends Controller
         }
         else
             $avgRating = 0;
-        
+
         return view('doctors.profile', [
             'doctor' => $doctor,
             'avgRating' => $avgRating,

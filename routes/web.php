@@ -93,10 +93,12 @@ Route::post('/appointments/payment', 'AppointmentPaymentController@appointmentsP
 Route::post('/appointments/payment/checkout', 'AppointmentPaymentController@checkout')->name('appointments.payment.checkout');
 
 
-
+use App\Doctor;
 use GuzzleHttp\Client;
 
 Route::get('/teste', function() {
+
+    dd(Doctor::first()->available_times('2019-11-04'));
 
     $client = new Client([
         'base_uri' => 'https://ws.sandbox.pagseguro.uol.com.br/v2/',

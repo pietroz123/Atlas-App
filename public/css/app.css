@@ -5456,6 +5456,9 @@ table.clinic-info td:first-of-type {
   display: flex;
   width: 310px;
 }
+.doctor-found .calendar-schedule.profile {
+  width: 100%;
+}
 .doctor-found .calendar-schedule .calendar-day:not(:last-of-type) {
   margin-right: 10px;
 }

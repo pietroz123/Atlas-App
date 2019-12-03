@@ -11,12 +11,13 @@
                 </a>
             </p>
             <div class="star-rating">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-                <span>(18 avaliações)</span>
+                @for ($i = 0; $i < $doctor->avgRating(); $i++)
+                    <i class="fas fa-star"></i>
+                @endfor
+                @for ($i = 0; $i < 5 - $doctor->avgRating(); $i++)
+                    <i class="far fa-star"></i>
+                @endfor
+                <span>({{ count($doctor->patientRatings) }} avaliações)</span>
             </div>
             <p class="doctor-phone">
                 <i class="fas fa-phone-alt"></i>
