@@ -19,6 +19,7 @@
                         <label for="card-number">Número do Cartão</label>
                         <input type="text" name="card-number" id="card-number" class="form-control">
                         <input type="hidden" name="card-token" id="card-token">
+                        <input type="hidden" name="sender-hash" id="sender-hash">
                         <div class="card-flag"></div>
                     </div>
                     
@@ -111,7 +112,7 @@
                     </div>
                 </div>
         
-                <button class="btn btn-block bg-main-color-dark white-text mt-4">Pagar</button>
+                <button class="btn btn-block bg-main-color-dark white-text mt-4" id="js-btn-pay">Pagar</button>
         
             </div>
         </div>
