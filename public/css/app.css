@@ -5588,6 +5588,9 @@ table.clinic-info td:first-of-type {
 .star-rating i:last-of-type {
   padding-right: 8px;
 }
+.star-rating .fa-star {
+  color: #ffc107;
+}
 
 /**
  * DOCTOR PROFILE
@@ -5762,10 +5765,6 @@ table.clinic-info td:first-of-type {
   position: absolute;
   right: 8px;
   bottom: 9px;
-}
-
-.fa-star {
-  color: #ffc107;
 }
 
 .mt-2rem {

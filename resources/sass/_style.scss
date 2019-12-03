@@ -792,6 +792,9 @@ table.clinic-info {
             padding-right: 8px;
         }
     }
+    .fa-star {
+        color: #ffc107;
+    }
 }
 
 /**
@@ -1009,8 +1012,4 @@ table.clinic-info {
     position: absolute;
     right: 8px;
     bottom: 9px;
-}
-
-.fa-star {
-    color: #ffc107;
 }
