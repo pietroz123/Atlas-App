@@ -52,19 +52,17 @@ class Doctor extends Authenticatable
     /**
      * Relationships
      */
-    public function specialties()
-    {
+    public function specialties() {
         return $this->belongsToMany('App\Specialty');
     }
-
-    public function clinic()
-    {
+    public function clinic() {
         return $this->belongsTo('App\Clinic');
     }
-
-    public function availabilities()
-    {
+    public function availabilities() {
         return $this->hasMany('App\DoctorAvailability');
+    }
+    public function patientRatings() {
+        return $this->hasMany('App\PatientRating');
     }
 
     /**

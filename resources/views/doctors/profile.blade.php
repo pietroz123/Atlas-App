@@ -36,13 +36,13 @@
                 <p class="doctor-crm">CRM SP95874</p>
                 <p class="doctor-type">Médico</p>
                 <div class="star-rating">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                        
-                    <span>(18 avaliações)</span>
+                    @for ($i = 0; $i < $avgRating; $i++)
+                        <i class="fas fa-star"></i>
+                    @endfor
+                    @for ($i = 0; $i < 5 - $avgRating; $i++)
+                        <i class="far fa-star"></i>
+                    @endfor
+                    <span>({{ $countRatings }} avaliações)</span>
                 </div>
 
                 <ul class="nav nav-tabs mt-4" id="myTab" role="tablist">
@@ -54,10 +54,10 @@
                         <a class="nav-link agenda" id="agenda-tab" data-toggle="tab" href="#agenda" role="tab" aria-controls="agenda"
                             aria-selected="false">Agenda</a>
                     </li>
-                    <li class="nav-item">
+                    {{-- <li class="nav-item">
                         <a class="nav-link avaliacoes" id="avaliacoes-tab" data-toggle="tab" href="#avaliacoes" role="tab" aria-controls="avaliacoes"
                             aria-selected="false">Avaliações</a>
-                    </li>
+                    </li> --}}
                 </ul>
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="about" role="tabpanel" aria-labelledby="about-tab">
@@ -90,7 +90,7 @@
                         sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester
                         stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
                     </div>
-                    <div class="tab-pane fade" id="avaliacoes" role="tabpanel" aria-labelledby="avaliacoes-tab">
+                    {{-- <div class="tab-pane fade" id="avaliacoes" role="tabpanel" aria-labelledby="avaliacoes-tab">
                         <div class="comment-wrapper">
                             <p class="author">
                                 <span class="name">Bianca</span>
@@ -108,7 +108,7 @@
                                 Médico muito atencioso. Recomendo!
                             </p>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
             </section>

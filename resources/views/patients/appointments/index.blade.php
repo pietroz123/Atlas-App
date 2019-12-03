@@ -91,7 +91,7 @@
                             <input type="radio" required id="star4" name="rating" value="4"><label class = "full" for="star4" title="Bom - 4"></label>
                             <input type="radio" required id="star3" name="rating" value="3"><label class = "full" for="star3" title="Mediano - 3"></label>
                             <input type="radio" required id="star2" name="rating" value="2"><label class = "full" for="star2" title="Ruim - 2"></label>
-                            <input type="radio" required id="star1" name="rating" value="1"><label class = "full" for="star1" title="Péssimo - 1 star"></label>
+                            <input type="radio" required id="star1" name="rating" value="1"><label class = "full" for="star1" title="Péssimo - 1"></label>
                         </fieldset>
                         <span class="invalid-feedback rating-feedback" role="alert">
                             <strong>Por favor selecione uma estrela.</strong>

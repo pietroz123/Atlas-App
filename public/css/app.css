@@ -5764,6 +5764,10 @@ table.clinic-info td:first-of-type {
   bottom: 9px;
 }
 
+.fa-star {
+  color: #ffc107;
+}
+
 .mt-2rem {
   margin-top: 2rem;
 }
