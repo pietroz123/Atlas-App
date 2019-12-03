@@ -93,10 +93,14 @@
                             <input type="radio" required id="star2" name="rating" value="2"><label class = "full" for="star2" title="Ruim - 2"></label>
                             <input type="radio" required id="star1" name="rating" value="1"><label class = "full" for="star1" title="Péssimo - 1 star"></label>
                         </fieldset>
+                        <span class="invalid-feedback rating-feedback" role="alert">
+                            <strong>Por favor selecione uma estrela.</strong>
+                        </span>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                        <button type="submit" class="btn btn-primary">Avaliar</button>
+                        <input type="hidden" name="ap-id" id="ap-id">
+                        <button type="submit" class="btn btn-primary js-btn-add-rating">Avaliar</button>
                     </div>
                 </div>
             </form>
