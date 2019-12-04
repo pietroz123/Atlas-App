@@ -90,6 +90,8 @@ Route::namespace('Doctor')->middleware('auth.doctor')->group(function() {
     Route::get('/dashboard/medico', 'DashboardController@index')->name('doctors.dashboard.index');
 
     // Calendar
+    Route::get('/agenda', 'CalendarController@showCalendar')->name('doctors.dashboard.calendar');
+    Route::get('/medico/agendamentos', 'CalendarController@getAppointments');
 
 });
 

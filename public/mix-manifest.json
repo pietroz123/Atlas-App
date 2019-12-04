@@ -8,5 +8,6 @@
     "/js/appointments/search-index.js": "/js/appointments/search-index.js",
     "/js/appointments/dashboard-ap-index.js": "/js/appointments/dashboard-ap-index.js",
     "/js/doctors/profile.js": "/js/doctors/profile.js",
+    "/js/doctors/calendar.js": "/js/doctors/calendar.js",
     "/js/payments/pay-appointment.js": "/js/payments/pay-appointment.js"
 }

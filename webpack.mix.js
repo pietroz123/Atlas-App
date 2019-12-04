@@ -38,6 +38,7 @@ mix.scripts('resources/js/appointments/search-index.js', 'public/js/appointments
 
 mix.scripts('resources/js/appointments/dashboard-ap-index.js', 'public/js/appointments/dashboard-ap-index.js');
 mix.scripts('resources/js/doctors/profile.js', 'public/js/doctors/profile.js');
+mix.scripts('resources/js/doctors/calendar.js', 'public/js/doctors/calendar.js');
 
 // PAYMENT
 mix.scripts('resources/js/payments/pay-appointment.js', 'public/js/payments/pay-appointment.js');
