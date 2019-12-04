@@ -8,7 +8,7 @@
 <hr>
 
 <div class="d-flex flex-column justify-content-center align-items-center">
-    <img src="https://image.flaticon.com/icons/svg/145/145867.svg" class="rounded-circle user-image mb-2" alt="">
+    <img src="https://image.flaticon.com/icons/svg/846/846958.svg" class="rounded-circle user-image mb-2" alt="">
     <p>{{ Auth::guard('doctor')->user()->full_name }}</p>
 </div>
 

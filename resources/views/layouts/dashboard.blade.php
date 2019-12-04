@@ -31,7 +31,7 @@
         <div id="app">
             <main class="@yield('main-class')">
                 <div class="dashboard-wrapper">
-                    <aside class="dashboard-sidebar">
+                    <aside class="dashboard-sidebar {{ getActiveGuard() }}">
                         @yield('dashboard-sidebar')
                     </aside>
                     <section class="dashboard-content">

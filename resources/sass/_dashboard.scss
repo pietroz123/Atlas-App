@@ -3,7 +3,10 @@
 // DASHBOARD
 // =======================================================
 
-@mixin sidebar-background {
+@mixin sidebar-background-doctor {
+    background-color: #f1f1f1;
+}
+@mixin sidebar-background-patient {
     background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
@@ -14,13 +17,19 @@
     position: fixed;
     width: 300px;
     min-height: 100vh;
-    @include sidebar-background();
+
+    &.doctor {
+        @include sidebar-background-doctor();
+    }
+    &.patient {
+        @include sidebar-background-patient();
+    }
     -webkit-box-shadow: 3px 0px 4px 0px rgba(0,0,0,0.4);
     -moz-box-shadow: 3px 0px 4px 0px rgba(0,0,0,0.4);
     box-shadow: 3px 0px 4px 0px rgba(0,0,0,0.4);
 
     .user-image {
-        width: 70px;
+        width: 56px;
         background-color: white;
     }
 }
@@ -84,3 +93,11 @@
         }
     }
 }
+
+/**
+ * Doctor Dashboard ONLY
+ */
+
+/**
+ * Patient Dashboard ONLY
+ */

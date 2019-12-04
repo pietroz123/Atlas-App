@@ -105,6 +105,7 @@ Route::post('/appointments/payment/checkout', 'AppointmentPaymentController@chec
 
 use App\Doctor;
 use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/teste', function() {
 
