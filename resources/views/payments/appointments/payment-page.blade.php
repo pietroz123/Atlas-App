@@ -112,7 +112,7 @@
                             <div class="installments">
                                 <input type="hidden" name="installment-value" id="installment-value">
                                 <label for="installment-qty" class="font-weight-bold">Parcelas</label>
-                                <select name="installment-qty" id="installment-qty" class="browser-default custom-select"></select>
+                                <select name="installment-qty" id="installment-qty" class="browser-default custom-select" required></select>
                             </div>
                             <hr>
                         </div>

@@ -98,7 +98,12 @@ use GuzzleHttp\Client;
 
 Route::get('/teste', function() {
 
-    dd(Doctor::first()->available_times('2019-11-04'));
+    if(!App\Appointment::where('probable_start_time', '10:15')->get()->first()){
+        dd('não');
+    }
+    else {
+        dd('sim');
+    }
 
     $client = new Client([
         'base_uri' => 'https://ws.sandbox.pagseguro.uol.com.br/v2/',

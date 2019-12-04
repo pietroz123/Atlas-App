@@ -581,15 +581,17 @@ table.clinic-info {
 
 .doctor-found {
 
-    border: 1px solid #D2D2D2;
-    border-radius: 4px;
-    padding: 5px;
+    &:not(.profile) {
+        border: 1px solid #D2D2D2;
+        border-radius: 4px;
+        padding: 5px;
+        &:hover {
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 12px;
+        }
+    }
     margin-bottom: 10px;
     p {
         margin: 0;
-    }
-    &:hover {
-        box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 12px;
     }
 
     /**
@@ -672,7 +674,7 @@ table.clinic-info {
             }
         }
         .lock-area {
-            max-height: 185px;
+            max-height: 300px;
             overflow: hidden;
             &.unlocked {
                 max-height: 100%;
@@ -708,6 +710,19 @@ table.clinic-info {
             }
             &:focus {
                 outline: 0;
+            }
+        }
+
+        /**
+         * Doctor Profile
+         */
+        &.profile {
+            width: 100% !important;
+            .slick-track {
+                width: 100% !important;
+            }
+            .slick-slide {
+                width: 54px !important;
             }
         }
     }

@@ -102,7 +102,6 @@ function getCardToken() {
         success: function(response) {
             // Retorna o cartão tokenizado.
             const token = response.card.token;
-            console.log('token: ', token);
             $('#card-token').val(token);
         },
         error: function(response) {

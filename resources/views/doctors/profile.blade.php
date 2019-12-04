@@ -84,84 +84,94 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane doctor-found fade" id="agenda" role="tabpanel" aria-labelledby="agenda-tab">
-                        <div class="doctor-calendar">
-                            <button class="calendar-nav calendar-nav-prev">
-                                <i class="fas fa-chevron-left"></i>
-                            </button>
-                
-                            <div class="calendar locked">
-                                <div class="lock-area">
-                                    
-                                    {{-- Essa é a div do SLICK --}}
-                                    <div class="calendar-schedule profile">
-                
-                                        {{-- Essa div repete --}}
-                                        @php
-                                            $date = date('Y-m-d');
-                                        @endphp
-                                        @while (strtotime($date) <= strtotime('+1 week'))
-                                            <div class="calendar-day">
-                                                <div class="calendar-day-date">
-                                                    <span class="day-name">{{ date('D', strtotime($date)) . '.' }}</span>
-                                                    <span class="day-date">{{ date('d M', strtotime($date)) }}</span>
-                                                </div>
-                                                <div class="calendar-day-slots d-flex flex-column">
-                                                    @php
-                                                        $availabilities = $doctor->availabilities;
-                                                        $morning = $availabilities->where('period', 'morning')->first();
-                                                        $afternoon = $availabilities->where('period', 'afternoon')->first();
-                                                        $morningStart = date('H:i', strtotime($morning->start_time));
-                                                    @endphp
-                                                    @while (strtotime($morningStart) < strtotime($morning->end_time))
-                                                        <a href="{{ route('appointments.bookpage',  [
-                                                            'doctor_id' => $doctor->id,
-                                                            'ap_date' => $date,
-                                                            'ap_time' => $morningStart
-                                                        ]) }}" class="calendar-slot available">{{ $morningStart }}</a>
-                                                        @php
-                                                            $morningStart = date('H:i', strtotime("+15 minutes", strtotime($morningStart)) );
-                                                        @endphp
-                                                    @endwhile
-                                                    @for ($i = 0; $i < 3; $i++)
-                                                        <a href="#!">-</a>
-                                                    @endfor
-                                                    @php
-                                                        $afternoonStart = date('H:i', strtotime($afternoon->start_time));
-                                                    @endphp
-                                                    @while (strtotime($afternoonStart) < strtotime($afternoon->end_time))
-                                                        <a href="{{ route('appointments.bookpage',  [
-                                                            'doctor_id' => $doctor->id,
-                                                            'ap_date' => $date,
-                                                            'ap_time' => $afternoonStart
-                                                        ]) }}" class="calendar-slot available">{{ $afternoonStart }}</a>
-                                                        @php
-                                                            $afternoonStart = date('H:i', strtotime("+15 minutes", strtotime($afternoonStart)) );
-                                                        @endphp
-                                                    @endwhile
-                                                </div>
-                                            </div>
+                    <div class="tab-pane fade" id="agenda" role="tabpanel" aria-labelledby="agenda-tab">
+                        <div class="doctor-found profile">
+                            <div class="doctor-calendar">
+                                <button class="calendar-nav calendar-nav-prev">
+                                    <i class="fas fa-chevron-left"></i>
+                                </button>
+                            
+                                <div class="calendar profile locked">
+                                    <div class="lock-area">
+                                        
+                                        {{-- Essa é a div do SLICK --}}
+                                        <div class="calendar-schedule">
+                            
+                                            {{-- Essa div repete --}}
                                             @php
-                                                $date = date("Y-m-d", strtotime("+1 day", strtotime($date)));
+                                                $date = date('Y-m-d');
                                             @endphp
-                                        @endwhile
-                                        {{-- Essa div repete --}}
-                
+                                            @while (strtotime($date) <= strtotime('+1 week'))
+                                                <div class="calendar-day">
+                                                    <div class="calendar-day-date">
+                                                        <span class="day-name">{{ date('D', strtotime($date)) . '.' }}</span>
+                                                        <span class="day-date">{{ date('d M', strtotime($date)) }}</span>
+                                                    </div>
+                                                    <div class="calendar-day-slots d-flex flex-column">
+                                                        @php
+                                                            $availabilities = $doctor->availabilities;
+                                                            $morning = $availabilities->where('period', 'morning')->first();
+                                                            $afternoon = $availabilities->where('period', 'afternoon')->first();
+                                                            $morningStart = date('H:i', strtotime($morning->start_time));
+                                                        @endphp
+                                                        @while (strtotime($morningStart) < strtotime($morning->end_time))
+                                                            @if (!App\Appointment::where('probable_start_time', $morningStart)->where('appointment_date', $date)->where('doctor_id', $doctor->id)->get()->first())
+                                                                <a href="{{ route('appointments.bookpage',  [
+                                                                    'doctor_id' => $doctor->id,
+                                                                    'ap_date' => $date,
+                                                                    'ap_time' => $morningStart
+                                                                ]) }}" class="calendar-slot available">{{ $morningStart }}</a>
+                                                            @else
+                                                                <a class="calendar-slot not-available" title="Horário não disponível" href="#!">-</a>
+                                                            @endif
+                                                            @php
+                                                                $morningStart = date('H:i', strtotime("+15 minutes", strtotime($morningStart)) );
+                                                            @endphp
+                                                        @endwhile
+                                                        @for ($i = 0; $i < 3; $i++)
+                                                            <a class="calendar-slot not-available" title="Horário não disponível" href="#!">-</a>
+                                                        @endfor
+                                                        @php
+                                                            $afternoonStart = date('H:i', strtotime($afternoon->start_time));
+                                                        @endphp
+                                                        @while (strtotime($afternoonStart) < strtotime($afternoon->end_time))
+                                                            @if (!App\Appointment::where('probable_start_time', $afternoonStart)->where('appointment_date', $date)->where('doctor_id', $doctor->id)->get()->first())
+                                                                <a href="{{ route('appointments.bookpage',  [
+                                                                    'doctor_id' => $doctor->id,
+                                                                    'ap_date' => $date,
+                                                                    'ap_time' => $afternoonStart
+                                                                ]) }}" class="calendar-slot available">{{ $afternoonStart }}</a>
+                                                            @else
+                                                                <a class="calendar-slot not-available" title="Horário não disponível" href="#!">-</a>
+                                                            @endif
+                                                            @php
+                                                                $afternoonStart = date('H:i', strtotime("+15 minutes", strtotime($afternoonStart)) );
+                                                            @endphp
+                                                        @endwhile
+                                                    </div>
+                                                </div>
+                                                @php
+                                                    $date = date("Y-m-d", strtotime("+1 day", strtotime($date)));
+                                                @endphp
+                                            @endwhile
+                                            {{-- Essa div repete --}}
+                            
+                                        </div>
+                                        {{-- Essa é a div do SLICK --}}
+                            
                                     </div>
-                                    {{-- Essa é a div do SLICK --}}
-                
+                                    
+                                    <button class="btn-view-more closed">Ver mais horários</button>
+                                    
+                            
                                 </div>
-                                
-                                <button class="btn-view-more closed">Ver mais horários</button>
-                                
-                
+                            
+                                <button class="calendar-nav calendar-nav-next">
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
                             </div>
-                
-                            <button class="calendar-nav calendar-nav-next">
-                                <i class="fas fa-chevron-right"></i>
-                            </button>
+                            {{-- END CALENDAR --}}
                         </div>
-                        {{-- END CALENDAR --}}
                     </div>
                     {{-- <div class="tab-pane fade" id="avaliacoes" role="tabpanel" aria-labelledby="avaliacoes-tab">
                         <div class="comment-wrapper">

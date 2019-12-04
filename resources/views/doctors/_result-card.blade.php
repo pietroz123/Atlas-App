@@ -59,27 +59,35 @@
                                         $morningStart = date('H:i', strtotime($morning->start_time));
                                     @endphp
                                     @while (strtotime($morningStart) < strtotime($morning->end_time))
-                                        <a href="{{ route('appointments.bookpage',  [
-                                            'doctor_id' => $doctor->id,
-                                            'ap_date' => $date,
-                                            'ap_time' => $morningStart
-                                        ]) }}" class="calendar-slot available">{{ $morningStart }}</a>
+                                        @if (!App\Appointment::where('probable_start_time', $morningStart)->where('appointment_date', $date)->where('doctor_id', $doctor->id)->get()->first())
+                                            <a href="{{ route('appointments.bookpage',  [
+                                                'doctor_id' => $doctor->id,
+                                                'ap_date' => $date,
+                                                'ap_time' => $morningStart
+                                            ]) }}" class="calendar-slot available">{{ $morningStart }}</a>
+                                        @else
+                                            <a class="calendar-slot not-available" title="Horário não disponível" href="#!">-</a>
+                                        @endif
                                         @php
                                             $morningStart = date('H:i', strtotime("+15 minutes", strtotime($morningStart)) );
                                         @endphp
                                     @endwhile
                                     @for ($i = 0; $i < 3; $i++)
-                                        <a href="#!">-</a>
+                                        <a class="calendar-slot not-available" title="Horário não disponível" href="#!">-</a>
                                     @endfor
                                     @php
                                         $afternoonStart = date('H:i', strtotime($afternoon->start_time));
                                     @endphp
                                     @while (strtotime($afternoonStart) < strtotime($afternoon->end_time))
-                                        <a href="{{ route('appointments.bookpage',  [
-                                            'doctor_id' => $doctor->id,
-                                            'ap_date' => $date,
-                                            'ap_time' => $afternoonStart
-                                        ]) }}" class="calendar-slot available">{{ $afternoonStart }}</a>
+                                        @if (!App\Appointment::where('probable_start_time', $afternoonStart)->where('appointment_date', $date)->where('doctor_id', $doctor->id)->get()->first())
+                                            <a href="{{ route('appointments.bookpage',  [
+                                                'doctor_id' => $doctor->id,
+                                                'ap_date' => $date,
+                                                'ap_time' => $afternoonStart
+                                            ]) }}" class="calendar-slot available">{{ $afternoonStart }}</a>
+                                        @else
+                                            <a class="calendar-slot not-available" title="Horário não disponível" href="#!">-</a>
+                                        @endif
                                         @php
                                             $afternoonStart = date('H:i', strtotime("+15 minutes", strtotime($afternoonStart)) );
                                         @endphp

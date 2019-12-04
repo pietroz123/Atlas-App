@@ -6,5 +6,7 @@
     "/js/home/medicos.js": "/js/home/medicos.js",
     "/js/appointments/search-result.js": "/js/appointments/search-result.js",
     "/js/appointments/search-index.js": "/js/appointments/search-index.js",
+    "/js/appointments/dashboard-ap-index.js": "/js/appointments/dashboard-ap-index.js",
+    "/js/doctors/profile.js": "/js/doctors/profile.js",
     "/js/payments/pay-appointment.js": "/js/payments/pay-appointment.js"
 }

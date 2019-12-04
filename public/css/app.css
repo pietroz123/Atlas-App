@@ -5401,9 +5401,6 @@ table.clinic-info td:first-of-type {
 }
 
 .doctor-found {
-  border: 1px solid #D2D2D2;
-  border-radius: 4px;
-  padding: 5px;
   margin-bottom: 10px;
   /**
    * DOCTOR INFORMATION
@@ -5412,11 +5409,16 @@ table.clinic-info td:first-of-type {
    * DOCTOR CALENDAR
    */
 }
+.doctor-found:not(.profile) {
+  border: 1px solid #D2D2D2;
+  border-radius: 4px;
+  padding: 5px;
+}
+.doctor-found:not(.profile):hover {
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 12px;
+}
 .doctor-found p {
   margin: 0;
-}
-.doctor-found:hover {
-  box-shadow: rgba(0, 0, 0, 0.12) 0px 0px 12px;
 }
 .doctor-found .doctor-details {
   display: flex;
@@ -5464,6 +5466,9 @@ table.clinic-info td:first-of-type {
 }
 .doctor-found .calendar {
   position: relative;
+  /**
+   * Doctor Profile
+   */
 }
 .doctor-found .calendar.locked {
   padding-bottom: 25px;
@@ -5479,7 +5484,7 @@ table.clinic-info td:first-of-type {
   position: absolute;
 }
 .doctor-found .calendar .lock-area {
-  max-height: 185px;
+  max-height: 300px;
   overflow: hidden;
 }
 .doctor-found .calendar .lock-area.unlocked {
@@ -5518,6 +5523,15 @@ table.clinic-info td:first-of-type {
 }
 .doctor-found .calendar .btn-view-more:focus {
   outline: 0;
+}
+.doctor-found .calendar.profile {
+  width: 100% !important;
+}
+.doctor-found .calendar.profile .slick-track {
+  width: 100% !important;
+}
+.doctor-found .calendar.profile .slick-slide {
+  width: 54px !important;
 }
 .doctor-found .calendar-nav {
   height: 30px;

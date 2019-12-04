@@ -23,16 +23,13 @@ $(document).ready(function() {
     /**
      * Init Slick
      */
-    $('.calendar-schedule').each(function(i, item) {
-        console.log(item);
-        
-        // $(this).slick({
-        //     infinite: true,
-        //     slidesToShow: 5,
-        //     slidesToScroll: 5,
-        //     prevArrow: $(this).parents('.doctor-calendar').find('.calendar-nav-prev'),
-        //     nextArrow: $(this).parents('.doctor-calendar').find('.calendar-nav-next'),
-        // });
-    });
+    $calendar = $('.calendar-schedule');
+    // $calendar.slick({
+    //     infinite: true,
+    //     slidesToShow: 7,
+    //     slidesToScroll: 7,
+    //     prevArrow: $('.calendar-nav-prev'),
+    //     nextArrow: $('.calendar-nav-next'),
+    // });
 
 });
