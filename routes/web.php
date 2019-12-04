@@ -65,7 +65,6 @@ Route::post('/login/patient', 'Auth\LoginController@patientLogin');
 Route::post('/register/doctor', 'Auth\RegisterController@createDoctor')->name('register.doctor');
 Route::post('/register/patient', 'Auth\RegisterController@createPatient')->name('register.patient');
 
-Route::view('/dashboard/medico', 'doctors.dashboard');
 
 /**
  * DASHBOARD ROUTES
@@ -82,6 +81,15 @@ Route::namespace('Patient')->middleware('auth.patient')->group(function() {
     // Ratings
     Route::get('/avaliacoes', 'RatingController@index')->name('patients.dashboard.ratings.index');
     Route::post('/avaliacoes', 'RatingController@addRating')->name('patients.dashboard.ratings.add');
+
+});
+
+// DOCTORS
+Route::namespace('Doctor')->middleware('auth.doctor')->group(function() {
+
+    Route::get('/dashboard/medico', 'DashboardController@index')->name('doctors.dashboard.index');
+
+    // Calendar
 
 });
 

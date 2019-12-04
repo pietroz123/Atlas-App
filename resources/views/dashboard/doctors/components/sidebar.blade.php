@@ -9,7 +9,7 @@
 
 <div class="d-flex flex-column justify-content-center align-items-center">
     <img src="https://image.flaticon.com/icons/svg/145/145867.svg" class="rounded-circle user-image mb-2" alt="">
-    <p>{{ Auth::guard('patient')->user()->full_name }}</p>
+    <p>{{ Auth::guard('doctor')->user()->full_name }}</p>
 </div>
 
 <hr>
@@ -19,33 +19,15 @@
     <span class="dashboard-sidebar-divider">Navegação</span>
     <ul class="dashboard-sidebar-items">
         <li class="dashboard-sidebar-item">
-            <a href="{{ route('patients.dashboard.appointments.index') }}">
+            <a href="#!">
                 <i class="far fa-calendar-alt"></i>
-                Consultas
-            </a>
-        </li>
-        <li class="dashboard-sidebar-item">
-            <a href="{{ route('appointments.search') }}">
-                <i class="far fa-calendar-check"></i>
-                Buscar Agendamentos
+                Agenda
             </a>
         </li>
     </ul>
 
     <span class="dashboard-sidebar-divider">Dados Gerais</span>
     <ul class="dashboard-sidebar-items">
-        {{-- <li class="dashboard-sidebar-item">
-            <a href="#!">
-                <i class="far fa-address-card"></i>
-                Dados Cadastrais
-            </a>
-        </li>
-        <li class="dashboard-sidebar-item">
-            <a href="#!">
-                <i class="fas fa-cog"></i>
-                Configurações
-            </a>
-        </li> --}}
         <li class="dashboard-sidebar-item">
             <a href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                 <i class="fas fa-sign-out-alt"></i>
