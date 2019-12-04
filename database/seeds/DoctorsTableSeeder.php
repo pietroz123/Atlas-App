@@ -19,7 +19,7 @@ class DoctorsTableSeeder extends Seeder
         Doctor::truncate();
 
         // Generate random doctors
-        factory(App\Doctor::class, 50)->create();
+        factory(App\Doctor::class, 5000)->create();
 
         // Retrieve all specialties
         $specialties = Specialty::all();
@@ -38,7 +38,7 @@ class DoctorsTableSeeder extends Seeder
             DoctorAvailability::create([
                 'doctor_id' => $doctor->id,
                 'period' => 'morning',
-                'start_time' => rand(6, 10) . ':00:00',
+                'start_time' => rand(8, 10) . ':00:00',
                 'end_time' => 12 . ':00:00',
             ]);
             DoctorAvailability::create([
