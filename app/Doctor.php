@@ -20,6 +20,7 @@ class Doctor extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'clinic_id',
         'full_name',
         'email',
         'password',
