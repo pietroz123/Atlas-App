@@ -21,6 +21,14 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li>
+                            <div class="pt-3">
+                                <a href="{{ url()->previous() }}" class="rounded-pill btn-info py-2 px-3">
+                                    <i class="fas fa-arrow-left mr-2"></i>
+                                    Voltar
+                                </a>
+                            </div>
+                        </li>
+                        <li>
                             {{-- <!-- Search Input Box -->
                             <div class="input-wrapper">
                                 <div class="input-icon">
