@@ -7031,11 +7031,14 @@ table.clinic-info td:first-of-type {
   position: absolute;
 }
 .doctor-found .calendar .lock-area {
-  max-height: 300px;
+  max-height: 180px;
   overflow: hidden;
 }
 .doctor-found .calendar .lock-area.unlocked {
   max-height: 100%;
+}
+.doctor-found .calendar .lock-area.profile {
+  max-height: 300px;
 }
 .doctor-found .calendar .btn-view-more {
   color: #3A688A;
@@ -7329,6 +7332,14 @@ table.clinic-info td:first-of-type {
   position: absolute;
   right: 8px;
   bottom: 9px;
+}
+
+.dashboard-principal {
+  font-size: 17px;
+}
+
+.btn-buscar {
+  font-size: 15px;
 }
 
 .mt-2rem {

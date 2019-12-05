@@ -92,7 +92,7 @@
                                 </button>
                             
                                 <div class="calendar profile locked">
-                                    <div class="lock-area">
+                                    <div class="lock-area profile">
                                         
                                         {{-- Essa é a div do SLICK --}}
                                         <div class="calendar-schedule">

@@ -102,6 +102,15 @@ Route::namespace('Doctor')->middleware('auth.doctor')->group(function() {
 Route::post('/appointments/payment', 'AppointmentPaymentController@appointmentsPayment')->name('appointments.payment');
 Route::post('/appointments/payment/checkout', 'AppointmentPaymentController@checkout')->name('appointments.payment.checkout');
 
+/**
+ * AJAX ROUTES
+ */
+Route::namespace('Ajax')->prefix('ajax')->group(function() {
+
+    Route::post('/getLocations', 'AjaxController@getLocations');
+
+});
+
 
 use App\Doctor;
 use GuzzleHttp\Client;
@@ -109,25 +118,5 @@ use Illuminate\Support\Facades\Auth;
 
 Route::get('/teste', function() {
 
-    if(!App\Appointment::where('probable_start_time', '10:15')->get()->first()){
-        dd('não');
-    }
-    else {
-        dd('sim');
-    }
-
-    $client = new Client([
-        'base_uri' => 'https://ws.sandbox.pagseguro.uol.com.br/v2/',
-        'timeout'  => 2.0, 
-    ]);
-
-    $response = $client->request('POST', '/sessions', [
-        'form_params' => [
-            'email' => env('PAGSEGURO_EMAIL'),
-            'token' => env('PAGSEGURO_TOKEN_SANDBOX'),
-        ]
-    ]);
-    $xml = new SimpleXMLElement( $response->getBody()->getContents() );
-    dd(json_decode( json_encode($xml) )->id);
 
 });

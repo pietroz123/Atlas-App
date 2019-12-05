@@ -675,10 +675,13 @@ table.clinic-info {
             }
         }
         .lock-area {
-            max-height: 300px;
+            max-height: 180px;
             overflow: hidden;
             &.unlocked {
                 max-height: 100%;
+            }
+            &.profile {
+                max-height: 300px;
             }
         }
         .btn-view-more {
@@ -1032,3 +1035,15 @@ table.clinic-info {
     right: 8px;
     bottom: 9px;
 }
+
+// Dashboar Paciente
+
+.dashboard-principal {
+    font-size: 17px;
+}
+
+.btn-buscar {
+    font-size: 15px;
+
+}
+

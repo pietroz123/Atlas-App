@@ -14,11 +14,16 @@
                     <form id="search-appointment" action="{{ route('appointments.result') }}" method="GET">
                         @csrf
                         <div class="box">
+
                             <h3>Encontre seu Agendamento</h3>
+
                             <div class="form-group">
                                 <label for="location">Onde</label>
-                                <input type="text" class="form-control" id="location" name="location" placeholder="Selecione o local">
+                                <select class="browser-default custom-select" id="location" name="location">
+                                    <option></option>
+                                </select>
                             </div>
+                            
                             <div class="form-group">
                                 <label for="specialty">Especialidade</label>
                                 <select class="browser-default custom-select" id="specialty" name="specialty">
@@ -28,10 +33,12 @@
                                     @endforeach
                                 </select>
                             </div>
+
                             <div class="form-group">
                                 <label for="name">Nome (Opcional)</label>
                                 <input type="text" class="form-control" id="name" name="name" placeholder="Escolha seu médico">
                             </div>
+
                             <div class="d-flex flex-row-reverse">
                                 <button type="submit" class="btn btn-info">Buscar</button>
                             </div>

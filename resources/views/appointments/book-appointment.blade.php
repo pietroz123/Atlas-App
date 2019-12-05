@@ -54,7 +54,7 @@
         </div>
         
         <div class="mt-4">
-            <button class="btn btn-light mr-1">Cancelar</button>
+            <a href="{{ url()->previous() }}" class="btn btn-light mr-1">Cancelar</a>
             <button class="btn bg-main-color-dark white-text">Pagamento</button>
         </div>
     </form>
