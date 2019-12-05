@@ -44,6 +44,10 @@ class RatingController extends Controller
             'rating' => $rating,
         ]);
 
+        // Mark appointment as rated
+        $ap->rated = true;
+        $ap->save();
+
         return redirect()->route('patients.dashboard.appointments.index')->with('success', 'Avaliação registrada com sucesso');
 
     }

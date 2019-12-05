@@ -57,7 +57,7 @@
                                 @csrf
                                 <button class="btn-action"><i class="fas fa-trash-alt"></i></button>
                             </form>
-                            @if ($ap->status == 'complete')
+                            @if ($ap->status == 'complete' && $ap->rated == false)
                                 <button class="btn-action js-btn-rate" data-ap-id="{{ $ap->id }}"><i class="far fa-star"></i></button>
                             @endif
                         </td>

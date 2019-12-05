@@ -19,6 +19,7 @@ class CreateAppointmentsTable extends Migration
             $table->bigInteger('doctor_id')->unsigned();
             $table->time('probable_start_time');
             $table->enum('status', ['active', 'canceled', 'complete']);
+            $table->boolean('rated')->default(false);
             $table->date('appointment_date');
             $table->timestamps();
         });
