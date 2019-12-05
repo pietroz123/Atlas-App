@@ -11,7 +11,7 @@ trait WhatsappTrait
     /**
      * Envia um whatsapp com notificação de agendamento
      */
-    public function sendAppointmentWhatsapp(Agendamento $ap)
+    public function sendAppointmentWhatsapp(Appointment $ap)
     {
         $sid    = env('TWILIO_SID'); 
         $token  = env('TWILIO_TOKEN'); 
