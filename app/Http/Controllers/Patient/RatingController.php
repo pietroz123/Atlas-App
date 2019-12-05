@@ -44,7 +44,7 @@ class RatingController extends Controller
             'rating' => $rating,
         ]);
 
-        return redirect()->route('patients.dashboard.ratings.index')->with('success', 'Avaliação registrada com sucesso');
+        return redirect()->route('patients.dashboard.appointments.index')->with('success', 'Avaliação registrada com sucesso');
 
     }
 
