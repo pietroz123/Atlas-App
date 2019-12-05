@@ -39,8 +39,8 @@
                     </div>
                     
                     <div class="form-group">
-                        <label for="name">Nome completo</label>
-                        <input type="text" name="name" id="name" class="form-control" value="{{ $patient->full_name }}">
+                        <label for="name">Nome no cartão</label>
+                        <input type="text" name="name" id="name" class="form-control">
                     </div>
                     
                     <div class="row">

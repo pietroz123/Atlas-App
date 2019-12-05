@@ -37,7 +37,7 @@
             <section class="doctor-information p-3">
 
                 <h4 class="doctor-name">{{ $doctor->full_name }}</h4>
-                <p class="doctor-crm">CRM SP95874</p>
+                <p class="doctor-crm">CRM {{ $doctor->crm }}</p>
                 <p class="doctor-type">Médico</p>
                 <div class="star-rating">
                     @for ($i = 0; $i < $avgRating; $i++)
