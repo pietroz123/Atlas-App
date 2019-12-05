@@ -43,9 +43,16 @@ class AppointmentPaymentController extends Controller
         $session_id = $json->id;
 
         /**
+         * Get logged in patient
+         */
+        $patient = Auth::guard('patient')->user();
+
+
+        /**
          * Return payment page
          */
         return view('payments.appointments.payment-page', [
+            'patient' => $patient,
             'ap_date' => $ap_date,
             'ap_time' => $ap_time,
             'ap_add_info' => $ap_add_info,

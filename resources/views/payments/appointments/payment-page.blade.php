@@ -40,7 +40,7 @@
                     
                     <div class="form-group">
                         <label for="name">Nome completo</label>
-                        <input type="text" name="name" id="name" class="form-control">
+                        <input type="text" name="name" id="name" class="form-control" value="{{ $patient->full_name }}">
                     </div>
                     
                     <div class="row">
@@ -62,7 +62,7 @@
                         <div class="col-6">
                             <div class="form-group">
                                 <label for="tel">Celular</label>
-                                <input type="text" name="tel" id="tel" class="form-control">
+                                <input type="text" name="tel" id="tel" class="form-control" value="{{ $patient->phone }}">
                             </div>
                         </div>
                     </div>

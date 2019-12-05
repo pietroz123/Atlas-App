@@ -4,6 +4,7 @@
     "/css/mdbootstrap.css": "/css/mdbootstrap.css",
     "/js/mdbootstrap.js": "/js/mdbootstrap.js",
     "/js/home/medicos.js": "/js/home/medicos.js",
+    "/js/auth/register-patient.js": "/js/auth/register-patient.js",
     "/js/appointments/search-result.js": "/js/appointments/search-result.js",
     "/js/appointments/search-index.js": "/js/appointments/search-index.js",
     "/js/appointments/dashboard-ap-index.js": "/js/appointments/dashboard-ap-index.js",

@@ -8,4 +8,5 @@ require('./bootstrap');
 
 window.select2 = require('select2');
 window.sweetalert = require('sweetalert');
+window.jquerymask = require('jquery-mask-plugin');
 window.card = require('card');

@@ -104,3 +104,7 @@
 
 </div>
 @endsection
+
+@section('scripts')
+    <script src="{{ asset('js/auth/register-patient.js') }}"></script>
+@endsection

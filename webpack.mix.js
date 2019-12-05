@@ -32,6 +32,9 @@ mix.scripts([
 // Arquivos JS
 mix.scripts('resources/js/home/medicos.js', 'public/js/home/medicos.js');
 
+// AUTH
+mix.scripts('resources/js/auth/register-patient.js', 'public/js/auth/register-patient.js');
+
 // SEARCH
 mix.scripts('resources/js/appointments/search-result.js', 'public/js/appointments/search-result.js');
 mix.scripts('resources/js/appointments/search-index.js', 'public/js/appointments/search-index.js');
