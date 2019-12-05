@@ -16,6 +16,7 @@ $faker = \Faker\Factory::create('pt_BR');
 $factory->define(App\Doctor::class, function () use ($faker) {
     return [
         'clinic_id' => Clinic::all()->random()->id,
+        'crm' => rand(100000, 999999),
         'full_name' => $faker->name($gender = 'male'|'female'),
         'phone_number' => $faker->phoneNumber,
         'email' => str_random(5) . $faker->freeEmail,

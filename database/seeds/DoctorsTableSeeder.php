@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Doctor;
+use App\Clinic;
 use App\Specialty;
 use App\DoctorAvailability;
 
@@ -19,7 +20,7 @@ class DoctorsTableSeeder extends Seeder
         Doctor::truncate();
 
         // Generate random doctors
-        factory(App\Doctor::class, 5000)->create();
+        factory(App\Doctor::class, 500)->create();
 
         // Retrieve all specialties
         $specialties = Specialty::all();
@@ -57,6 +58,7 @@ class DoctorsTableSeeder extends Seeder
         $doctor = Doctor::create([
             'clinic_id' => Clinic::all()->random()->id,
             'full_name' => 'José Eduardo',
+            'crm' => '221390',
             'phone_number' => '(15) 3232-3748',
             'email' => 'joseedu@gmail.com',
             'professional_statement' => 'Meu lema é tudo ser bem feito.',

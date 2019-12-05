@@ -16,7 +16,7 @@ class ClinicsTableSeeder extends Seeder
         Clinic::truncate();
 
         // Generate random doctors
-        factory(App\Clinic::class, 1000)->create();
+        factory(App\Clinic::class, 100)->create();
 
     }
 }

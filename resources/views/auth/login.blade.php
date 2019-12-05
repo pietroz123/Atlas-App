@@ -58,27 +58,29 @@
             </form>
         </div>
         <div class="col col-register-social">
-            <p>Realizar login com:</p>
-
-            <div class="mt-4 mb-4">
-                <a href="#!">
-                    <img src="{{ asset('img/icons/social/facebook.png') }}" class="social-icon" alt="Ícone Facebook">
-                </a>
-                <a href="#!">
-                    <img src="{{ asset('img/icons/social/google.png') }}" class="social-icon" alt="Ícone Google">
-                </a>
-            </div>
+            
+            @if (isset($url) && $url == 'patient')
+                <p>Realizar login com:</p>
+                <div class="mt-4 mb-4">
+                    <a href="#!">
+                        <img src="{{ asset('img/icons/social/facebook.png') }}" class="social-icon" alt="Ícone Facebook">
+                    </a>
+                    <a href="#!">
+                        <img src="{{ asset('img/icons/social/google.png') }}" class="social-icon" alt="Ícone Google">
+                    </a>
+                </div>
+            @endif
 
             <span>Não possui uma conta?</span>
             @if (isset($url) && $url == 'doctor')
-                <span>
+                <span class="d-block">
                     <a href="{{ url('/cadastro/medico') }}">
                         Se registrar como médico.
                     </a>
                 </span>
             @endif
             @if (isset($url) && $url == 'patient')
-                <span>
+                <span class="d-block">
                     <a href="{{ url('/cadastro/paciente') }}">
                         Se registrar como paciente.
                     </a>

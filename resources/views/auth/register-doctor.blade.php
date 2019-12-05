@@ -15,10 +15,16 @@
                 <h5 class="mb-4">Informações Básicas</h5>
 
                 <div class="row mt-3">
-                    <div class="col-3">
+                    <div class="col-4">
                         <div class="form-group">
                             <label for="crm">CRM</label>
                             <input id="crm" type="text" class="form-control" required autofocus>
+                            <span class="invalid-feedback" role="alert">
+                                <strong>CRM inválido</strong>
+                            </span>
+                            <span class="valid-feedback" role="alert">
+                                <strong>CRM válido</strong>
+                            </span>
                         </div>
                     </div>
                     <div class="col">
