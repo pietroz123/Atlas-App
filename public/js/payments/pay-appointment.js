@@ -203,6 +203,8 @@ $(document).ready(function() {
      */
     $('#js-btn-pay').click(function(e) {
 
+        $(this).attr('disabled', true);
+
         e.preventDefault();
 
         PagSeguroDirectPayment.onSenderHashReady(function(response){
