@@ -7035,7 +7035,7 @@ table.clinic-info td:first-of-type {
   overflow: hidden;
 }
 .doctor-found .calendar .lock-area.unlocked {
-  max-height: 100%;
+  max-height: 100% !important;
 }
 .doctor-found .calendar .lock-area.profile {
   max-height: 300px;
@@ -7147,6 +7147,21 @@ table.clinic-info td:first-of-type {
 }
 .doctor-found .calendar-slot:focus {
   outline: 0;
+}
+
+.no-doctors-found {
+  background-image: url(../img/back/no-doctors.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: calc(100vh - 83px);
+  display: flex;
+  justify-content: center;
+  padding-top: 5rem;
+  color: #505050;
+}
+.no-doctors-found .btn.go-back {
+  background-color: #3A688A !important;
 }
 
 .star-rating {

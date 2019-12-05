@@ -111,18 +111,39 @@
 
 @section('content')
 
-    <div class="doctors-found">
-        <div class="p-3">
+    @if (count($doctors) > 0)
 
-            @foreach ($doctors as $doctor)
-                @include('doctors._result-card', ['doctor' => $doctor])
-            @endforeach
+        <div class="doctors-found">
+            <div class="p-3">
 
-            {{-- Pagination --}}
-            {{ $doctors->links() }}
+                @foreach ($doctors as $doctor)
+                    @include('doctors._result-card', ['doctor' => $doctor])
+                @endforeach
+
+                {{-- Pagination --}}
+                {{ $doctors->links() }}
+
+            </div>
+        </div>
+    
+    @else
+
+        <div class="no-doctors-found">
+
+            <div>
+                <h2 class="text-center">Ops!</h2>
+                <h3 class="text-center">Não encontramos nenhum médico.</h3>
+                <div class="d-flex justify-content-center mt-5">
+                    <a href="{{ route('appointments.search') }}" class="btn btn-primary go-back">
+                        <i class="fas fa-arrow-left mr-2"></i>
+                        Tente realizar a busca novamente.
+                    </a>
+                </div>
+            </div>
 
         </div>
-    </div>
+        
+    @endif
     
 @endsection
 
