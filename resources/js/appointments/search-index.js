@@ -22,6 +22,7 @@ $(document).ready(function() {
                 };
             },
             processResults: function (data, params) {
+                console.log('data: ', data);
                 return {
                     results: data,
                 };

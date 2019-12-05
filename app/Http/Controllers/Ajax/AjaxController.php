@@ -32,7 +32,7 @@ class AjaxController extends Controller
         /**
          * Add states with query to results
          */
-        $states = State::where('state_name', 'like', '%'.$query.'%')->get();
+        $states = State::where('state_name', 'like', '%'.$query.'%')->orWhere('state_abbrev', 'like', '%'.$query.'%')->get();
 
         foreach ($states as $state) {
             $results[] = [
@@ -40,6 +40,9 @@ class AjaxController extends Controller
                 'text' => $state->state_name . ' - ' . $state->state_abbrev,
             ];
         }
+
+        // Sort by text
+        $results = array_values( collect($results)->sortBy('text')->toArray() );
 
         /**
          * Return JSON
