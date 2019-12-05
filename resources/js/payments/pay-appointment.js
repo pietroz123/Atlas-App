@@ -125,8 +125,8 @@ $(document).ready(function() {
         reverse: true,
         placeholder: "___.___.___-__",
     });
-    $('#card-expiry').mask('00/00/0000', {
-        placeholder: "__/__/____",
+    $('#card-expiry').mask('00/0000', {
+        placeholder: "__/____",
     });
     $('#birth-day').mask('00/00/0000', {
         placeholder: "__/__/____",
