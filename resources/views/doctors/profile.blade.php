@@ -17,7 +17,7 @@
             <aside class="doctor-aside d-flex flex-column align-items-center p-3">
     
                 <div class="doctor-img-container">
-                    <img src="{{ asset('img/doctorr.jpg') }}" class="doctor-img" alt="Humberto Cenci Guimarães">
+                    <img src="https://image.flaticon.com/icons/svg/149/149071.svg" class="doctor-img" alt="{{ $doctor->full_name }}">
                 </div>
                 <div class="doctor-info text-center mt-3">
                     <h4 class="doctor-info-header">

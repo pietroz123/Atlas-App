@@ -1,7 +1,7 @@
 <div class="row doctor-found" data-doctor-id="{{ $doctor->id }}">
     <div class="col doctor-details">
         <div class="doctor-img-container">
-            <img src="{{ asset('img/doctorr.jpg') }}" class="doctor-img" alt="Humberto Cenci Guimarães">
+            <img src="https://image.flaticon.com/icons/svg/149/149071.svg" class="doctor-img" alt="{{ $doctor->full_name }}">
         </div>
         <div class="doctor-info">
             <p class="doctor-specialty">{{ $doctor->specialties()->get()->pluck('name')->first() }}</p>
