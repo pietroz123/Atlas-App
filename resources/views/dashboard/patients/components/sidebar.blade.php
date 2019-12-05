@@ -19,6 +19,12 @@
     <span class="dashboard-sidebar-divider">Navegação</span>
     <ul class="dashboard-sidebar-items">
         <li class="dashboard-sidebar-item">
+            <a href="/">
+                <i class="fas fa-home"></i>
+                Página Principal
+            </a>
+        </li>
+        <li class="dashboard-sidebar-item">
             <a href="{{ route('patients.dashboard.appointments.index') }}">
                 <i class="far fa-calendar-alt"></i>
                 Consultas
