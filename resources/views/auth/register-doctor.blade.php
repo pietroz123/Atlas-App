@@ -18,7 +18,7 @@
                     <div class="col-4">
                         <div class="form-group">
                             <label for="crm">CRM</label>
-                            <input id="crm" type="text" class="form-control" required autofocus>
+                            <input id="crm" type="text" name="crm" class="form-control @error('crm') is-invalid @enderror" value="{{ old('crm') }}" required autofocus>
                             <span class="invalid-feedback" role="alert">
                                 <strong>CRM inválido</strong>
                             </span>
@@ -40,32 +40,19 @@
                     </div>
                 </div>
                 
-                <div class="form-group">
-                    <label for="email">Email</label>
-        
-                    <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required autocomplete="email" autofocus>
-        
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                </div>
-
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
-                            <label for="cell_phone_number">Celular</label>
+                            <label for="email">Email</label>
                 
-                            <input type="text" name="cell_phone_number" id="cell_phone_number" class="form-control" required autofocus>
+                            <input type="email" name="email" id="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" required autocomplete="email" autofocus>
                 
-                            {{-- @error('cell_phone_number')
+                            @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
-                            @enderror --}}
+                            @enderror
                         </div>
-
                     </div>
                     <div class="col">
                         <div class="form-group">
@@ -81,7 +68,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col">
                         <div class="form-group">
@@ -128,7 +115,7 @@
                     <select class="browser-default custom-select" id="specialties" name="specialties[]" multiple="multiple" required>
                         <option></option>
                         @foreach ($specialties as $specialty)
-                            <option value="{{ $specialty->id }}">{{ $specialty->name }}</option>
+                            <option value="{{ $specialty->id }}" {{ (collect(old('specialties'))->contains($specialty->id)) ? 'selected': '' }}>{{ $specialty->name }}</option>
                         @endforeach
                     </select>
                 </div>
@@ -138,7 +125,7 @@
                     <select class="browser-default custom-select" id="clinic" name="clinic" required>
                         <option></option>
                         @foreach ($clinics as $clinic)
-                            <option value="{{ $clinic->id }}">{{ $clinic->address }}</option>
+                            <option value="{{ $clinic->id }}" {{ old('clinic') == $clinic->id ? 'selected' : '' }}>{{ $clinic->address }}</option>
                         @endforeach
                     </select>
                 </div>

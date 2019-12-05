@@ -6,6 +6,7 @@ use App\User;
 use App\Doctor;
 use App\Patient;
 use App\Specialty;
+use App\DoctorAvailability;
 use App\Clinic;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -65,9 +66,10 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'full_name' => ['required', 'string', 'max:255'],
+            'crm' => ['required'],
             'professional_statement' => ['required', 'string', 'max:4096'],
             'practicing_from' => ['required', 'date'],
-            'phone_number' => ['required', 'string', 'min:10', 'max:10'],
+            'phone_number' => ['required', 'string', 'min:10', 'max:15'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:doctors'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -126,8 +128,14 @@ class RegisterController extends Controller
     protected function createDoctor(Request $request)
     {
         $this->validatorDoctor($request->all())->validate();
+
+        /**
+         * Create doctor
+         */
         $doctor = Doctor::create([
             'full_name' => $request['full_name'],
+            'crm' => $request['crm'],
+            'clinic_id' => $request['clinic'],
             'email' => $request['email'],
             'professional_statement' => $request['professional_statement'],
             'practicing_from' => $request['practicing_from'],
@@ -136,6 +144,29 @@ class RegisterController extends Controller
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
         ]);
+
+        /**
+         * Add specialties
+         */
+        $specialties = $request['specialties'];
+        $doctor->specialties()->attach(
+            $specialties
+        );
+
+        // Create doctor availabilities
+        DoctorAvailability::create([
+            'doctor_id' => $doctor->id,
+            'period' => 'morning',
+            'start_time' => rand(8, 10) . ':00:00',
+            'end_time' => 12 . ':00:00',
+        ]);
+        DoctorAvailability::create([
+            'doctor_id' => $doctor->id,
+            'period' => 'afternoon',
+            'start_time' => rand(13, 16) . ':00:00',
+            'end_time' => 18 . ':00:00',
+        ]);
+
         return redirect()->intended('login/medico');
     }
 

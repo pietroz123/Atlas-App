@@ -21,6 +21,7 @@ class Doctor extends Authenticatable
      */
     protected $fillable = [
         'clinic_id',
+        'crm',
         'full_name',
         'email',
         'password',
