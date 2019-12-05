@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\User;
 use App\Doctor;
 use App\Patient;
+use App\Specialty;
+use App\Clinic;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -65,7 +67,6 @@ class RegisterController extends Controller
             'full_name' => ['required', 'string', 'max:255'],
             'professional_statement' => ['required', 'string', 'max:4096'],
             'practicing_from' => ['required', 'date'],
-            'address' => ['required', 'string'],
             'phone_number' => ['required', 'string', 'min:10', 'max:10'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:doctors'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
@@ -107,7 +108,16 @@ class RegisterController extends Controller
      */
     public function showDoctorRegisterForm()
     {
-        return view('auth.register-doctor');
+        // Get available specialties
+        $specialties = Specialty::all();
+
+        // Get clinics
+        $clinics = Clinic::all();
+
+        return view('auth.register-doctor', [
+            'specialties' => $specialties,
+            'clinics' => $clinics,
+        ]);
     }
 
     /**
@@ -122,7 +132,6 @@ class RegisterController extends Controller
             'professional_statement' => $request['professional_statement'],
             'practicing_from' => $request['practicing_from'],
             'password' => $request['password'],
-            'address' => $request['address'],
             'phone_number' => $request['phone_number'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
