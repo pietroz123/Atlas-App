@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Traits\WhatsappTrait;
 use App\Doctor;
 use App\Appointment;
 use App\City;
 
 class AppointmentController extends Controller
 {
-    use WhatsappTrait;
 
     /**
      * Return Book an appointment page
@@ -29,40 +27,6 @@ class AppointmentController extends Controller
             'ap_date',
             'ap_time',
         ));
-    }
-
-    /**
-     * Book an appointment
-     */
-    public function bookAppointment()
-    {
-        /**
-         * Get data from the request
-         */
-        $patient_id = Auth::guard('patient')->user()->id;
-        $doctor_id = request('ap-doctor-id');
-        $start_time = request('ap-time');
-        $status = 'active';
-        $date = request('ap-date');
-
-        /**
-         * Create Appointment
-         */
-        $ap = Appointment::create([
-            'patient_id' => $patient_id,
-            'doctor_id' => $doctor_id,
-            'probable_start_time' => $start_time,
-            'status' => $status,
-            'appointment_date' => $date,
-        ]);
-        
-        /**
-         * Send Whatsapp
-         */
-        $this->sendAppointmentWhatsapp($ap);
-
-        // Return to dashboard
-        return redirect()->route('patients.dashboard.appointments.index')->with('success', 'Agendamento realizado com sucesso');
     }
 
     /**

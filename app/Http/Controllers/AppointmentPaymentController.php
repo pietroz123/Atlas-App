@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Traits\WhatsappTrait;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use App\Doctor;
@@ -11,6 +11,8 @@ use App\Appointment;
 
 class AppointmentPaymentController extends Controller
 {
+    use WhatsappTrait;
+
     /**
      * Return Payment Page
      */
@@ -167,7 +169,7 @@ class AppointmentPaymentController extends Controller
         /**
          * Create Appointment
          */
-        Appointment::create([
+        $ap = Appointment::create([
             'patient_id' => $patient_id,
             'doctor_id' => $doctor_id,
             'probable_start_time' => $start_time,
@@ -175,8 +177,21 @@ class AppointmentPaymentController extends Controller
             'appointment_date' => $date,
         ]);
 
+        /**
+         * Send Whatsapp
+         */
+        $this->sendAppointmentWhatsapp($ap);
+
         // Return to dashboard
-        return redirect()->route('patients.dashboard.appointments.index')->with('success', 'Agendamento realizado com sucesso');
+        return redirect()->route('patients.dashboard.appointments.index')->with(
+            'success', 
+            '
+                <h4 class="alert-heading">Agendamento realizado com sucesso!</h4>
+                <p>Enviamos um Whatsapp com as infomações para que você não se esqueça.</p>
+                <hr>
+                <p class="mb-0">Estamos processando o seu pagamento.</p>
+            '
+        );
 
     }
 }

@@ -4,7 +4,6 @@ namespace App\Traits;
 
 use Twilio\Rest\Client;
 use App\Appointment;
-use App\Pacote;
 
 trait WhatsappTrait
 {
@@ -23,7 +22,7 @@ trait WhatsappTrait
         $mensagem = "Atlas Saúde\n\n";
         $mensagem .= "*Novo agendamento realizado* com *". $ap->doctor->full_name . "*";
         $mensagem .= "\n\n*Horário*:\n";
-        $mensagem .= date('Y-m-d H:i:s', strtotime("$ap->appointment_date $ap->probable_start_time"));
+        $mensagem .= date('d/m/Y H:i', strtotime("$ap->appointment_date $ap->probable_start_time"));
 
         /**
          * Envia o Whatsapp
